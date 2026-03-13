@@ -12,13 +12,13 @@ interface Project {
 export const PROJECTS: Project[] = [
   {
     id: 1,
-    title: "AxiomML",
-    description: "Breath-taking AI-generated backgrounds with AI prompts.",
+    title: "Axiom-ML",
+    description: "Don't just import models. Code them from scratch.",
     image: "/AxiomMLLogo.png",
     landing: "/landings/AxiomML.png",
-    tech: ["Next.js", "OpenAI", "Stripe"],
+    tech: ["Next.js", "Docker", "Stripe"],
     category: "Full-Stack",
-    liveUrl: "https://aesthetify.com"
+    liveUrl: "https://axiom-ml.vercel.app/"
   },
   {
     id: 2,
@@ -34,7 +34,7 @@ export const PROJECTS: Project[] = [
   {
     id: 3,
     title: "GitGud",
-    description: "Private internal DevOps tooling.",
+    description: "Production Grade Github RAG SaaS",
     image: "/gitgud-logo.svg",
     landing: "/landings/GitGud.png",
     tech: ["Node.js", "Docker"],

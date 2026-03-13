@@ -131,7 +131,7 @@ export default function Hero() {
 							<span className=" text-white/60">Building</span>&nbsp;&nbsp;
 							<Highlighter action="underline" color="#5315c0">
 								<LinkPreview
-									url="https://ui.aceternity.com"
+									url="https://axiom-ml.vercel.app/"
 									className="font-bold bg-clip-text text-transparent bg-gradient-to-br from-purple-500 to-pink-500 z-20"
 								>
 									<span className="font-serif italic text-white tracking-wide brightness-110">
