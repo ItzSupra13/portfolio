@@ -97,15 +97,15 @@ export default function Experience() {
 								Engineered{' '}
 								<span className="text-white font-medium">
 									8+ production routes
-								</span>
+								</span>{' '}
 								including analytics dashboards and
 								<span className="text-white font-medium">
 									{' '}
 									AI-powered tools
 								</span>
-								, optimizing SQL queries to reduce data retrieval time by
+								, optimizing some SQL queries to reduce data retrieval time by
 								<span className="text-white font-medium"> 35%</span>. Integrated{' '}
-								<span className="text-white font-medium">5+ external APIs</span>
+								<span className="text-white font-medium">3+ external APIs</span>{' '}
 								and streamlined backend workflows, improving overall system
 								performance by
 								<span className="text-white font-medium"> 40%</span>.

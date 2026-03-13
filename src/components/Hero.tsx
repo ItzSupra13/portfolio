@@ -22,6 +22,7 @@ import {
 	TooltipTrigger,
 } from '@/components/ui/tooltip';
 import { Kbd } from './ui/kbd';
+import { toast } from "sonner";
 
 export default function Hero() {
 	const words = useMemo(
@@ -183,7 +184,8 @@ export default function Hero() {
 				{/* CTA Buttons */}
 				<div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center">
 					{/* Primary Button */}
-					<button className="group relative w-full sm:w-auto rounded-xl border border-dashed border-white/30 bg-gradient-to-b from-[#f0652f] to-[#d44d1d] px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:border-white/60 hover:scale-[1.02] active:scale-[0.95] hover:shadow-[0_0_20px_rgba(240,101,47,0.4)]">
+					<button className="group relative w-full sm:w-auto rounded-xl border border-dashed border-white/30 bg-gradient-to-b from-[#f0652f] to-[#d44d1d] px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:border-white/60 hover:scale-[1.02] active:scale-[0.95] hover:shadow-[0_0_20px_rgba(240,101,47,0.4)]"
+					onClick={() => toast.warning("Resume is under development ^_^")}>
 						<span className="flex items-center justify-center gap-2">
 							<FaEye className="text-lg transition-transform" />
 							View Resume
