@@ -5,6 +5,7 @@ import Work from '@/components/Work';
 import Education from '@/components/Education';
 import TechStack from '@/components/TechStack';
 import Personal from '@/components/Personal';
+import Writing from '@/components/Writing';
 
 export default function Page() {
 	return (
@@ -15,6 +16,7 @@ export default function Page() {
 				<About />
 				<Experience />
 				<Work />
+				<Writing />
 				<Education />
 				<TechStack />
 				<Personal/>

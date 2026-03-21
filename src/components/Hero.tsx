@@ -196,7 +196,15 @@ export default function Hero() {
 					<span className="hidden sm:inline text-sm text-white/40">or</span>
 
 					{/* Secondary Button */}
-					<button className="w-full sm:w-auto rounded-lg border border-dashed border-white/10 bg-white/[0.03] px-6 py-3 text-sm text-white/80 transition hover:border-white/20 hover:bg-white/[0.06]">
+					<button
+					  className="w-full sm:w-auto rounded-lg border border-dashed border-white/10 bg-white/[0.03] px-6 py-3 text-sm text-white/80 transition hover:border-white/20 hover:bg-white/[0.06]"
+					  onClick={() => {
+					    document.getElementById("work")?.scrollIntoView({
+					      behavior: "smooth",
+						  block: "start",
+					    });
+					  }}
+					>
 						<span className="flex items-center justify-center gap-2">
 							See Projects
 						</span>

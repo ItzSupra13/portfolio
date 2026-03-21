@@ -2,26 +2,12 @@
 
 import React from 'react';
 import { motion } from 'motion/react';
-
-const CompanyLogoData = [
-	{
-		src: '/ju.png',
-		alt: 'JU Logo',
-		name: 'Jadavpur University',
-		usage: 'Bachelor of Engineering',
-	},
-	{
-		src: '/iitm.png',
-		alt: 'IITM Logo',
-		name: 'IIT Madras',
-		usage: 'Online Data Science Program',
-	},
-];
+import { CompanyLogoData } from '@/lib/constants'
 
 const InfiniteScrollingLogosAnimation = () => {
 	return (
 		<div className="py-2 overflow-hidden">
-			<div className="container mx-auto px-4">
+			<div className="mx-auto max-w-4xl px-6 sm:px-8 lg:px-10">
 				<div
 					className="flex relative overflow-hidden"
 					/* Modern Fade Mask - much cleaner than pseudo-elements */
@@ -34,7 +20,7 @@ const InfiniteScrollingLogosAnimation = () => {
 				>
 					<motion.div
 						transition={{
-							duration: 8, // Increased to 40 for a slow, elegant crawl
+							duration: 12, // Increased to 40 for a slow, elegant crawl
 							ease: 'linear',
 							repeat: Infinity,
 						}}

@@ -5,7 +5,10 @@ export default function TechStack() {
 		<section className="pb-16">
 			<div className="grid md:grid-cols-[125px_1fr] gap-x-10 gap-y-6">
 				<p className="text-lg text-white/60 font-medium md:text-right">
-					Tech Stack
+					Tech Stack <br />
+					<span className="text-xs text-white/40">
+						(I can adapt tho :P)
+					</span>
 				</p>
 
 				<div className="space-y-12">
