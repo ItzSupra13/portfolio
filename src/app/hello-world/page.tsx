@@ -44,7 +44,7 @@ export default function BlogPage() {
           {/* Left */}
           <div className="flex items-center gap-3">
             <span className="tracking-wider uppercase font-mono">
-              April 1, 2026
+              March 22, 2026
             </span>
           </div>
 

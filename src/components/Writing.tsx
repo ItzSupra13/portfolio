@@ -29,7 +29,7 @@ const writings = [
 //     slug: 'hi',
 //   },
   {
-    date: '01/04/25',
+    date: '22/03/25',
     title: 'Hello World',
     readTime: '1 m',
     slug: 'hello-world',
