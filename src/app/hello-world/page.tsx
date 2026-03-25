@@ -5,26 +5,26 @@ import { HiOutlineBars3BottomLeft } from 'react-icons/hi2';
 import Link from 'next/link';
 
 const MORE_POSTS = [
-  {
-    date: '11/01/25',
-    title: 'Design tokens 101',
-    time: '2 m',
-  },
-  {
-    date: '12/02/25',
-    title: 'How AI is changing my workflow',
-    time: '2 m',
-  },
-  {
-    date: '16/02/25',
-    title: 'UI Performance',
-    time: '4 m',
-  },
-  {
-    date: '21/02/25',
-    title: 'How to think like both a designer & engineer',
-    time: '2 m',
-  },
+  // {
+  //   date: '11/01/25',
+  //   title: 'Design tokens 101',
+  //   time: '2 m',
+  // },
+  // {
+  //   date: '12/02/25',
+  //   title: 'How AI is changing my workflow',
+  //   time: '2 m',
+  // },
+  // {
+  //   date: '16/02/25',
+  //   title: 'UI Performance',
+  //   time: '4 m',
+  // },
+  // {
+  //   date: '21/02/25',
+  //   title: 'How to think like both a designer & engineer',
+  //   time: '2 m',
+  // },
 ];
 
 export default function BlogPage() {
@@ -120,7 +120,7 @@ export default function BlogPage() {
         </div>
 
         {/* 📚 MORE */}
-        <div className="mt-16">
+        {/* <div className="mt-16">
           <p className="text-xs tracking-[0.2em] text-white/30 mb-6">
             MORE
           </p>
@@ -131,7 +131,7 @@ export default function BlogPage() {
                 key={index}
                 className="group flex items-center justify-between text-sm"
               >
-                {/* Left */}
+
                 <div className="flex items-center gap-6">
                   <span className="text-white/30 w-[80px]">
                     {post.date}
@@ -142,7 +142,7 @@ export default function BlogPage() {
                   </span>
                 </div>
 
-                {/* Right */}
+
                 <div className="flex items-center gap-1 text-white/40">
                   <BsClock className="size-3.5" />
                   <span>{post.time}</span>
@@ -150,7 +150,7 @@ export default function BlogPage() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
       </div>
     </main>
