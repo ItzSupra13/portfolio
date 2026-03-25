@@ -31,15 +31,15 @@ const writings = [
   {
     date: '22/03/25',
     title: 'Hello World',
-    readTime: '1 m',
+    readTime: '5 m',
     slug: 'hello-world',
   },
 ];
 
 export default function Writing() {
   return (
-    <section className="pb-16">
-      <div className="grid md:grid-cols-[125px_1fr] gap-x-10 gap-y-6">
+    <section className="pb-6">
+      <div className="grid md:grid-cols-[125px_1fr] gap-x-10 gap-y-3">
         
         {/* Section Label */}
         <p className="text-lg text-white/60 font-medium md:text-right mt-1.5">
@@ -54,7 +54,7 @@ export default function Writing() {
               <Link
                 href={`/${item.slug}`}
                 key={index}
-                className="group w-full flex items-center justify-between px-4 py-2 transition-all duration-300 hover:bg-white/[0.04]"
+                className="group w-full flex items-center justify-between px-2 rounded-sm py-2 transition-all duration-300 hover:bg-white/[0.04]"
               >
                 {/* Left */}
                 <div className="flex items-center gap-6">
@@ -71,9 +71,9 @@ export default function Writing() {
                 </div>
 
                 {/* Right */}
-                <div className="flex items-center gap-1 text-white/40 text-sm">
+                <div className="flex items-center gap-1 text-[#8f8f8f] text-sm">
                   <BsClock className="size-3.5" />
-                  <span>{item.readTime}</span>
+                  <span className='ml-1 font-mono tracking-tighter'>{item.readTime}</span>
                 </div>
               </Link>
             ))}

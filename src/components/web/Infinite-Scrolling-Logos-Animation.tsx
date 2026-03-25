@@ -7,7 +7,7 @@ import { CompanyLogoData } from '@/lib/constants'
 const InfiniteScrollingLogosAnimation = () => {
 	return (
 		<div className="py-2 overflow-hidden">
-			<div className="mx-auto max-w-4xl px-6 sm:px-8 lg:px-10">
+			<div className="mx-auto max-w-4xl px-8 sm:px-12 lg:px-15">
 				<div
 					className="flex relative overflow-hidden"
 					/* Modern Fade Mask - much cleaner than pseudo-elements */
@@ -26,7 +26,7 @@ const InfiniteScrollingLogosAnimation = () => {
 						}}
 						initial={{ x: 0 }}
 						animate={{ x: '-50%' }}
-						className="flex flex-none gap-2 pr-20" // Increased gap for breathability
+						className="flex flex-none gap-2 pr-20"
 					>
 						{[...new Array(2)].fill(0).map((_, index) => (
 							<React.Fragment key={index}>
@@ -45,7 +45,7 @@ const InfiniteScrollingLogosAnimation = () => {
 										{/* Text */}
 										<div>
 											<p className="text-white font-medium">{company.name}</p>
-											<p className="text-xs text-white/50">{company.usage}</p>
+											<p className="text-xs text-[#8b8b8b]">{company.usage}</p>
 										</div>
 									</div>
 								))}

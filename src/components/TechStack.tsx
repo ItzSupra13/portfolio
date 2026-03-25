@@ -11,7 +11,7 @@ export default function TechStack() {
 					</span>
 				</p>
 
-				<div className="space-y-12">
+				<div className="space-y-12 -ml-10">
 					<InfiniteScrollingLogosAnimation />
 				</div>
 			</div>

@@ -9,7 +9,7 @@ import Writing from '@/components/Writing';
 
 export default function Page() {
 	return (
-		<main className="min-h-screen bg-[#0e0e11] text-white selection:bg-white/10 overflow-x-hidden">
+		<main className="min-h-screen bg-[#0d0d0d] text-white selection:bg-white/10 overflow-x-hidden">
 			{/* OUTER CONTAINER — critical spacing layer */}
 			<div className="mx-auto max-w-5xl px-6 sm:px-8 lg:px-10">
 				<Hero/>
@@ -20,7 +20,7 @@ export default function Page() {
 				<Education />
 				<TechStack />
 				<Personal/>
-				<footer className="pb-16 text-center text-xs text-white/40">
+				<footer className="pb-16 text-center text-xs text-[#8b8b8b]">
 					© 2026 | Made with ❤️ by AsterDev
 				</footer>
 			</div>

@@ -10,18 +10,18 @@ export default function Experience() {
 				{/* Timeline Container */}
 				<div className="relative">
 					{/* Vertical Line */}
-					<div className="absolute left-3 -translate-x-1/2 top-8 h-full border-l border-dashed border-white/20" />
+					<div className="absolute left-3 -translate-x-[0.7px] top-8 h-full border-l border-dashed border-white/20" />
 
-					<div className="space-y-8">
+					<div className="space-y-6">
 						{/* Item */}
 						<div className="relative pl-10">
 							{/* Dot */}
-							<div className="absolute left-3 -translate-x-1/2 top-1.5 flex items-center justify-center w-6 h-6 rounded-full bg-[#0e0e11] border border-white/20">
+							<div className="absolute left-3 -translate-x-1/2 top-1.5 flex items-center justify-center w-6 h-6 rounded-full bg-[#0e0e11] border border-white/20 ">
 								<div className="w-2.5 h-2.5 rounded-full bg-white/70" />
 							</div>
 
 							{/* Date */}
-							<p className="text-xs text-white/40 mb-2">
+							<p className="text-xs text-[#8b8b8b] mb-2">
 								November 2025 — November 2025
 							</p>
 

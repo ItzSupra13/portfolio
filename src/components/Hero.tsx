@@ -89,7 +89,7 @@ export default function Hero() {
 		return () => clearInterval(interval);
 	}, []);
 	return (
-		<section className="pt-9 pb-16 text-center">
+		<section className="pt-9 pb-8 text-center">
 			<div className="flex flex-col items-center">
 				{/* Time */}
 				<div className="m-6 text-4xl font-bold text-white/30">
