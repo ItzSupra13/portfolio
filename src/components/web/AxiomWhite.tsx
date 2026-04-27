@@ -3,10 +3,7 @@ type AxiomMarkProps = {
   height?: number | string;
 };
 
-export default function AxiomMark({
-  width = 80,
-  height = 80,
-}: AxiomMarkProps) {
+export default function AxiomMark({ width = 80, height = 80 }: AxiomMarkProps) {
   return (
     <svg
       width={width}
@@ -44,12 +41,7 @@ export default function AxiomMark({
         strokeWidth="2.6"
         strokeLinecap="round"
       />
-      <path
-        d="M18.0737 8L9.5 27"
-        stroke="#2dd4bf"
-        strokeWidth="2.6"
-        strokeLinecap="round"
-      />
+      <path d="M18.0737 8L9.5 27" stroke="#2dd4bf" strokeWidth="2.6" strokeLinecap="round" />
     </svg>
   );
 }

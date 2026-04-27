@@ -25,7 +25,7 @@ export function WordRotate({
   const controls = useAnimation();
   const [index, setIndex] = useState(0);
 
-  const WORD_HEIGHT = 1.2; 
+  const WORD_HEIGHT = 1.2;
   const GAP = 0.1;
 
   useEffect(() => {
@@ -53,19 +53,12 @@ export function WordRotate({
   }, [index, words.length, controls, moveDuration, pauseDuration]);
 
   return (
-    <div
-      className="relative overflow-hidden min-w-[250px]"
-      style={{ height: `${WORD_HEIGHT}em` }}
-    >
+    <div className="relative overflow-hidden min-w-[250px]" style={{ height: `${WORD_HEIGHT}em` }}>
       <motion.div animate={controls}>
         {words.map((word, i) => (
           <div
             key={i}
-            className={cn(
-              "flex items-center justify-center font-sans",
-              word.tracking,
-              className
-            )}
+            className={cn("flex items-center justify-center font-sans", word.tracking, className)}
             style={{
               height: `${WORD_HEIGHT}em`,
               marginBottom: `${GAP}em`,

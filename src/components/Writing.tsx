@@ -1,55 +1,51 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { BsClock } from 'react-icons/bs';
+import Link from "next/link";
+import { BsClock } from "react-icons/bs";
 
 const writings = [
-//   {
-//     date: '21/02/25',
-//     title: 'How to think like both a designer & engineer',
-//     readTime: '2 m',
-//     slug: 'hi'
-//   },
-//   {
-//     date: '16/02/25',
-//     title: 'UI Performance',
-//     readTime: '4 m',
-//     slug: 'hi',
-//   },
-//   {
-//     date: '12/02/25',
-//     title: 'How AI is changing my workflow',
-//     readTime: '2 m',
-//     slug: 'hi',
-//   },
-//   {
-//     date: '11/01/25',
-//     title: 'Design tokens 101',
-//     readTime: '2 m',
-//     slug: 'hi',
-//   },
+  //   {
+  //     date: '21/02/25',
+  //     title: 'How to think like both a designer & engineer',
+  //     readTime: '2 m',
+  //     slug: 'hi'
+  //   },
+  //   {
+  //     date: '16/02/25',
+  //     title: 'UI Performance',
+  //     readTime: '4 m',
+  //     slug: 'hi',
+  //   },
+  //   {
+  //     date: '12/02/25',
+  //     title: 'How AI is changing my workflow',
+  //     readTime: '2 m',
+  //     slug: 'hi',
+  //   },
+  //   {
+  //     date: '11/01/25',
+  //     title: 'Design tokens 101',
+  //     readTime: '2 m',
+  //     slug: 'hi',
+  //   },
   {
-    date: '22/03/25',
-    title: 'Hello World',
-    readTime: '5 m',
-    slug: 'hello-world',
+    date: "22/03/25",
+    title: "Hello World",
+    readTime: "5 m",
+    slug: "hello-world",
   },
 ];
 
 export default function Writing() {
   return (
-    <section className="pb-6">
+    <section className="pb-12">
       <div className="grid md:grid-cols-[125px_1fr] gap-x-10 gap-y-3">
-        
         {/* Section Label */}
-        <p className="text-lg text-white/60 font-medium md:text-right mt-1.5">
-          Writing
-        </p>
+        <p className="text-lg text-white/60 font-medium md:text-right mt-1.5">Writing</p>
 
         {/* Content */}
         <div className="w-full">
           <div className="divide-y divide-white/5 overflow-hidden">
-            
             {writings.map((item, index) => (
               <Link
                 href={`/${item.slug}`}
@@ -58,11 +54,8 @@ export default function Writing() {
               >
                 {/* Left */}
                 <div className="flex items-center gap-6">
-                  
                   {/* Date */}
-                  <span className="text-sm text-white/40 w-[80px]">
-                    {item.date}
-                  </span>
+                  <span className="text-sm text-white/40 w-[80px]">{item.date}</span>
 
                   {/* Title */}
                   <span className="text-white tracking-tighter font-sans transition-colors">
@@ -73,11 +66,10 @@ export default function Writing() {
                 {/* Right */}
                 <div className="flex items-center gap-1 text-[#8f8f8f] text-sm">
                   <BsClock className="size-3.5" />
-                  <span className='ml-1 font-mono tracking-tighter'>{item.readTime}</span>
+                  <span className="ml-1 font-mono tracking-tighter">{item.readTime}</span>
                 </div>
               </Link>
             ))}
-
           </div>
         </div>
       </div>
