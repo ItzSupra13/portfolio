@@ -20,11 +20,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Aster Dev",
     description: "Postfolio Website",
-    url: "https://asterdev.vercel.app/",
+    url: "https://asterdev.vercel.app",
     siteName: "Asterdev",
     images: [
       {
-        url: "https://asterdev.vercel.app/og",
+        url: "https://asterdev.vercel.app/AsterDev.png",
         width: 1200,
         height: 630,
         alt: "Preview image",
@@ -32,12 +32,12 @@ export const metadata: Metadata = {
     ],
     type: "website",
   },
-  //   twitter: {
-  //     card: "summary_large_image",
-  //     title: "Your App",
-  //     description: "Something cool",
-  //     images: ["https://yourdomain.com/og-image.png"],
-  //   },
+    twitter: {
+      card: "summary_large_image",
+      title: "Your App",
+      description: "Something cool",
+      images: ["https://yourdomain.com/og-image.png"],
+    },
 };
 
 export default function RootLayout({
