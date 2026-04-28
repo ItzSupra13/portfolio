@@ -36,7 +36,7 @@ export const metadata: Metadata = {
       card: "summary_large_image",
       title: "Your App",
       description: "Something cool",
-      images: ["https://yourdomain.com/og-image.png"],
+      images: ["https://asterdev.vercel.app/AsterDev.png"],
     },
 };
 
