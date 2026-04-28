@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     siteName: "Asterdev",
     images: [
       {
-        url: "https://asterdev.vercel.app/AsterDev.png",
+        url: "https://asterdev.vercel.app/me.png",
         width: 1200,
         height: 630,
         alt: "Preview image",
@@ -34,9 +34,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "",
-    description: "Something cool",
-    images: ["https://asterdev.vercel.app/AsterDev.png"],
+    title: "Aster Dev",
+    description: "Portfolio Website | Supratim Chakraborty",
+    images: ["https://asterdev.vercel.app/me.png"],
   },
 };
 

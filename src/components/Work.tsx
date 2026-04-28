@@ -23,16 +23,16 @@ export default function Work() {
 
   return (
     <section id="work" className="pb-8">
-      <div className="grid md:grid-cols-[125px_1fr] gap-x-10 gap-y-6">
+      <div className="grid gap-x-10 gap-y-6 md:grid-cols-[125px_1fr]">
         {/* Section Label */}
-        <p className="text-lg text-white/60 font-medium md:text-right">
+        <p className="text-lg font-medium text-white/60 md:text-right">
           Work <br />
           <span className="text-xs text-white/40">Good ones atleast lol</span>
         </p>
 
-        <div className="space-y-6 mt-1">
+        <div className="mt-1 space-y-6">
           {/* Tabs */}
-          <div className="flex flex-wrap gap-3 max-w-[700px]">
+          <div className="flex max-w-[700px] flex-wrap gap-3">
             {TABS.map((tab) => {
               const isActive = activeTab === tab;
 
@@ -43,12 +43,11 @@ export default function Work() {
                     setActiveTab(tab);
                     setShowAll(false);
                   }}
-                  className={`cursor-pointer border border-dashed transition-all duration-200
-                    ${
-                      isActive
-                        ? "bg-white text-black border-white"
-                        : "bg-white/5 text-white/40 border-white/20 hover:bg-white/10 hover:text-white/70"
-                    }`}
+                  className={`cursor-pointer border border-dashed transition-all duration-200 ${
+                    isActive
+                      ? "border-white bg-white text-black"
+                      : "border-white/20 bg-white/5 text-white/40 hover:bg-white/10 hover:text-white/70"
+                  }`}
                 >
                   {tab}
                 </Badge>
@@ -69,19 +68,10 @@ export default function Work() {
                   delay: showAll ? i * 0.05 : 0,
                 }}
               >
-                <div
-                  className="group relative overflow-hidden rounded-2xl border border-white/20 min-h-[125px] 
-                  bg-[linear-gradient(135deg,#0e0e11_0%,#0e0e11_60%,#141418_100%)] 
-                  transition-all duration-300 hover:cursor-pointer border-dashed max-w-[800px]"
-                >
+                <div className="group relative min-h-[125px] max-w-[800px] overflow-hidden rounded-2xl border border-dashed border-white/20 bg-[linear-gradient(135deg,#0e0e11_0%,#0e0e11_60%,#141418_100%)] transition-all duration-300 hover:cursor-pointer">
                   {/* Glow */}
-                  <div className="pointer-events-none absolute inset-0 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div
-                      className="absolute bottom-0 left-12 translate-x-[-30%] translate-y-[30%] h-36 w-112
-                      rounded-full
-                      bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.2)_0%,rgba(255,255,255,0.10)_15%,rgba(255,255,255,0.05)_35%,transparent_55%)]
-                      blur-2xl"
-                    />
+                  <div className="pointer-events-none absolute inset-0 z-10 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    <div className="absolute bottom-0 left-12 h-36 w-112 translate-x-[-30%] translate-y-[30%] rounded-full bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.2)_0%,rgba(255,255,255,0.10)_15%,rgba(255,255,255,0.05)_35%,transparent_55%)] blur-2xl" />
                   </div>
 
                   {/* Mobile Image */}
@@ -95,12 +85,12 @@ export default function Work() {
                   </div>
 
                   {/* Desktop Image */}
-                  <div className="absolute inset-y-0 right-0 hidden md:block w-[45%] overflow-hidden">
+                  <div className="absolute inset-y-0 right-0 hidden w-[45%] overflow-hidden md:block">
                     <Image
                       src={project.landing}
                       alt={project.title}
                       fill
-                      className="object-cover translate-y-5 rotate-10 scale-150"
+                      className="translate-y-5 scale-150 rotate-10 object-cover"
                     />
                     {/* Layered gradients for depth and edge blending */}
                     <div className="absolute inset-0 bg-gradient-to-r from-[#0e0e11] via-[#0e0e11]/40 to-transparent" />
@@ -113,7 +103,7 @@ export default function Work() {
                     onClick={() => window.open(project.liveUrl, "_blank")}
                     className="relative z-20 flex flex-col justify-center px-6 py-7 md:w-[55%]"
                   >
-                    <div className="flex items-center gap-3 mb-4">
+                    <div className="mb-4 flex items-center gap-3">
                       <Image
                         src={project.image}
                         alt={project.title}
@@ -147,13 +137,13 @@ export default function Work() {
           {activeTab === "All" && filteredProjects.length > 3 && (
             <button
               onClick={() => setShowAll((prev) => !prev)}
-              className="group flex w-full items-center justify-center gap-2 rounded-xl border border-dashed border-white/5 bg-white/[0.02] py-3 text-sm font-medium text-white/40 transition-all duration-300 hover:border-white/10 hover:bg-white/[0.04] hover:text-white/80 active:scale-95 max-w-[700px]"
+              className="group flex w-full max-w-[700px] items-center justify-center gap-2 rounded-xl border border-dashed border-white/5 bg-white/[0.02] py-3 text-sm font-medium text-white/40 transition-all duration-300 hover:border-white/10 hover:bg-white/[0.04] hover:text-white/80 active:scale-95"
             >
               <span>{showAll ? "Collapse" : "View all"}</span>
 
               <FaAngleDown
                 className={`transition-all duration-300 ${
-                  showAll ? "rotate-180 scale-110" : ""
+                  showAll ? "scale-110 rotate-180" : ""
                 } group-hover:translate-y-0.5`}
               />
             </button>
