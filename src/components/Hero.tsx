@@ -89,9 +89,9 @@ export default function Hero() {
           <WordRotate words={words} />
         </div>
 
-        <div className="relative inline-block group mb-4">
+        <div className="group relative mb-4 inline-block">
           {/* Outer Ring / Glow */}
-          <div className="absolute inset-0 rounded-full bg-blue-500/10 blur-md group-hover:bg-blue-500/20 transition-all duration-500" />
+          <div className="absolute inset-0 rounded-full bg-blue-500/10 blur-md transition-all duration-500 group-hover:bg-blue-500/20" />
 
           {/* Image Container */}
           <div className="group relative h-20 w-20">
@@ -102,13 +102,13 @@ export default function Hero() {
                 alt="Profile"
                 fill
                 priority
-                className="object-cover zoom-in-20"
+                className="zoom-in-20 object-cover"
               />
             </div>
 
             {/* Verified Badge */}
-            <div className="absolute bottom-0 right-0 flex size-5 items-center justify-center rounded-full bg-zinc-950 ring-[3px] ring-zinc-950">
-              <BsFillCircleFill className=" fill-[#16bf5e]" />
+            <div className="absolute right-0 bottom-0 flex size-5 items-center justify-center rounded-full bg-zinc-950 ring-[3px] ring-zinc-950">
+              <BsFillCircleFill className="fill-[#16bf5e]" />
             </div>
           </div>
         </div>
@@ -122,14 +122,14 @@ export default function Hero() {
           {/* Role: Elegant and Subdued */}
           <div className="mt-1 flex items-center gap-1.5">
             <div className="text-2xl tracking-tight">
-              <span className=" text-white/60">Building</span>&nbsp;&nbsp;
+              <span className="text-white/60">Building</span>&nbsp;&nbsp;
               <Highlighter action="underline" color="#5315c0">
                 <LinkPreview
                   url="https://axiom-ml.vercel.app/"
                   imageSrc="/landings/AxiomML.png"
-                  className="font-bold bg-clip-text text-transparent bg-gradient-to-br from-purple-500 to-pink-500 z-20"
+                  className="z-20 bg-gradient-to-br from-purple-500 to-pink-500 bg-clip-text font-bold text-transparent"
                 >
-                  <span className="font-serif italic text-white tracking-wide brightness-110">
+                  <span className="font-serif tracking-wide text-white italic brightness-110">
                     Axiom-ML
                   </span>
                 </LinkPreview>
@@ -141,23 +141,25 @@ export default function Hero() {
         {/* Social Icons */}
         <div className="mt-6 flex items-center gap-8 text-white/40">
           <Link href={"https://x.com/aster_dev_"}>
-            <span className="transition hover:text-white text-3xl">
+            <span className="text-3xl transition hover:text-white">
               <FaXTwitter />
             </span>
           </Link>
           <Link href={"www.linkedin.com/in/supratim13"}>
-            <span className="transition hover:text-white text-3xl">
+            <span className="text-3xl transition hover:text-white">
               <FaLinkedin />
             </span>
           </Link>
           <Link href={"https://github.com/ItzSupra13"}>
-            <span className="transition hover:text-white text-3xl">
+            <span className="text-3xl transition hover:text-white">
               <FaGithub />
             </span>
           </Link>
-          <span className="transition hover:text-white text-3xl">
+          <span className="pt-1.5 text-3xl transition hover:text-white">
             <Tooltip>
-              <TooltipTrigger>{copied ? <MdMarkEmailRead /> : <IoMail />}</TooltipTrigger>
+              <TooltipTrigger>
+                {copied ? <MdMarkEmailRead size={36} /> : <IoMail size={36} />}
+              </TooltipTrigger>
               <TooltipContent>
                 <p className="flex items-center justify-center gap-1.5 transition-all">
                   {copied ? (
@@ -177,7 +179,7 @@ export default function Hero() {
         <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center">
           {/* Primary Button */}
           <button
-            className="group relative w-full sm:w-auto rounded-xl border border-dashed border-white/30 bg-gradient-to-b from-[#f0652f] to-[#d44d1d] px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:border-white/60 hover:scale-[1.02] active:scale-[0.95] hover:shadow-[0_0_20px_rgba(240,101,47,0.4)]"
+            className="group relative w-full rounded-xl border border-dashed border-white/30 bg-gradient-to-b from-[#f0652f] to-[#d44d1d] px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:scale-[1.02] hover:border-white/60 hover:shadow-[0_0_20px_rgba(240,101,47,0.4)] active:scale-[0.95] sm:w-auto"
             onClick={() => toast.warning("Resume is under development ^_^")}
           >
             <span className="flex items-center justify-center gap-2">
@@ -187,11 +189,11 @@ export default function Hero() {
           </button>
 
           {/* OR text */}
-          <span className="hidden sm:inline text-sm text-white/40">or</span>
+          <span className="hidden text-sm text-white/40 sm:inline">or</span>
 
           {/* Secondary Button */}
           <button
-            className="w-full sm:w-auto rounded-lg border border-dashed border-white/10 bg-white/[0.03] px-6 py-3 text-sm text-white/80 transition hover:border-white/20 hover:bg-white/[0.06]"
+            className="w-full rounded-lg border border-dashed border-white/10 bg-white/[0.03] px-6 py-3 text-sm text-white/80 transition hover:border-white/20 hover:bg-white/[0.06] sm:w-auto"
             onClick={() => {
               document.getElementById("work")?.scrollIntoView({
                 behavior: "smooth",
