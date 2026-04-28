@@ -15,7 +15,7 @@ export default function Contact() {
   const [sent, setSent] = useState(false);
   const [errors, setErrors] = useState<Record<string, boolean>>({});
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     const newErrors: Record<string, boolean> = {};
     if (!name.trim()) newErrors.name = true;
     if (!email.trim()) newErrors.email = true;
@@ -27,9 +27,19 @@ export default function Contact() {
       return;
     }
 
-    // Wire up your form backend here (Resend, Formspree, etc.)
-    setSent(true);
-    toast.success("Message sent!");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        body: JSON.stringify({ name, email, message, topic }),
+      });
+
+      if (!res.ok) throw new Error();
+
+      setSent(true);
+      toast.success("Message sent!");
+    } catch {
+      toast.error("Failed to send message");
+    }
   };
 
   const inputBase =
@@ -37,27 +47,27 @@ export default function Contact() {
 
   return (
     <section className="pb-16">
-      <div className="grid md:grid-cols-[125px_1fr] gap-x-10 gap-y-6 ">
+      <div className="grid gap-x-10 gap-y-6 md:grid-cols-[125px_1fr]">
         {/* Section Label */}
-        <p className="text-lg text-white/60 font-medium md:text-right">Get in Touch</p>
+        <p className="text-lg font-medium text-white/60 md:text-right">Get in Touch</p>
 
         {/* Content */}
-        <div className="space-y-6 -mt-1">
+        <div className="-mt-1 space-y-6">
           {!sent ? (
-            <div className="border border-dashed border-white/20 rounded-xl p-5 bg-white/[0.02]">
+            <div className="rounded-xl border border-dashed border-white/20 bg-white/[0.02] p-5">
               {/* Header */}
               <div className="mb-5">
                 <h2 className="text-xl font-semibold tracking-tight text-white">
                   Let's build something <span className="text-white/30">worth shipping.</span>
                 </h2>
-                <p className="mt-1 text-sm text-white/40 tracking-tight">
+                <p className="mt-1 text-sm tracking-tight text-white/40">
                   Drop a message — I usually reply within 24h.
                 </p>
               </div>
 
               {/* Topic Chips */}
               <div className="mb-4">
-                <p className="mb-2 text-[11px] uppercase tracking-widest text-white/25">
+                <p className="mb-2 text-[11px] tracking-widest text-white/25 uppercase">
                   What's this about?
                 </p>
                 <div className="flex flex-wrap gap-2">
@@ -80,7 +90,7 @@ export default function Contact() {
               {/* Name + Email Row */}
               <div className="mb-3 grid gap-3 sm:grid-cols-2">
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-[11px] uppercase tracking-widest text-white/25">
+                  <label className="text-[11px] tracking-widest text-white/25 uppercase">
                     Name
                   </label>
                   <input
@@ -94,7 +104,7 @@ export default function Contact() {
                   />
                 </div>
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-[11px] uppercase tracking-widest text-white/25">
+                  <label className="text-[11px] tracking-widest text-white/25 uppercase">
                     Email
                   </label>
                   <input
@@ -111,7 +121,7 @@ export default function Contact() {
 
               {/* Message */}
               <div className="mb-5 flex flex-col gap-1.5">
-                <label className="text-[11px] uppercase tracking-widest text-white/25">
+                <label className="text-[11px] tracking-widest text-white/25 uppercase">
                   Message
                 </label>
                 <textarea
@@ -127,12 +137,12 @@ export default function Contact() {
 
               {/* Footer Row */}
               <div className="flex items-center justify-between gap-4">
-                <p className="text-xs text-white/20 leading-relaxed">
+                <p className="text-xs leading-relaxed text-white/20">
                   or email at <span className="text-white/40">itzasterdev@gmail.com</span>
                 </p>
                 <button
                   onClick={handleSubmit}
-                  className="flex items-center gap-2 rounded-xl border border-dashed border-white/20 bg-gradient-to-b from-[#f0652f] to-[#d44d1d] px-5 py-2.5 text-sm font-medium text-white transition-all duration-200 hover:border-white/40 hover:scale-[1.02] active:scale-[0.97] hover:shadow-[0_0_18px_rgba(240,101,47,0.35)]"
+                  className="flex items-center gap-2 rounded-xl border border-dashed border-white/20 bg-gradient-to-b from-[#f0652f] to-[#d44d1d] px-5 py-2.5 text-sm font-medium text-white transition-all duration-200 hover:scale-[1.02] hover:border-white/40 hover:shadow-[0_0_18px_rgba(240,101,47,0.35)] active:scale-[0.97]"
                 >
                   Send message
                   <svg
@@ -150,14 +160,14 @@ export default function Contact() {
             </div>
           ) : (
             /* Success State */
-            <div className="flex flex-col items-start gap-3 rounded-xl border border-dashed border-white/20 bg-white/[0.02] px-5 py-8">
-              <div className="flex size-9 items-center justify-center rounded-full border border-dashed border-[#16bf5e]/30 bg-[#16bf5e]/08">
-                <MdMarkEmailRead className="text-[#16bf5e] text-lg" />
-              </div>
-              <div>
-                <h3 className="text-base font-semibold tracking-tight text-white">Message sent!</h3>
-                <p className="mt-0.5 text-sm text-white/40">
-                  Thanks for reaching out. I'll get back to you soon.
+            <div className="flex flex-col items-start gap-4 rounded-xl border border-dashed border-white/20 bg-white/[0.03] px-6 py-6 backdrop-blur-sm">
+              {/* Icon */}
+              <div className="flex items-center gap-3">
+                <div className="flex size-10 items-center justify-center rounded-full border border-dashed border-[#16bf5e]/30 bg-[#16bf5e]/10">
+                  <MdMarkEmailRead className="text-[18px] text-[#16bf5e]" />
+                </div>
+                <p className="mt-1 text-sm leading-relaxed text-white/45">
+                  Your message has been queued. I’ll get back to you within 24 hours.
                 </p>
               </div>
             </div>

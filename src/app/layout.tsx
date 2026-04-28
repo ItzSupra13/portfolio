@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   description: "Portfolio Website | Aster Dev | Supratim Chakraborty",
   openGraph: {
     title: "Aster Dev",
-    description: "Postfolio Website",
+    description: "HI I'm Supratim Chakraborty aka Aster Dev & this is my Portfolio Website :)",
     url: "https://asterdev.vercel.app",
     siteName: "Asterdev",
     images: [
@@ -32,12 +32,12 @@ export const metadata: Metadata = {
     ],
     type: "website",
   },
-    twitter: {
-      card: "summary_large_image",
-      title: "Your App",
-      description: "Something cool",
-      images: ["https://asterdev.vercel.app/AsterDev.png"],
-    },
+  twitter: {
+    card: "summary_large_image",
+    title: "",
+    description: "Something cool",
+    images: ["https://asterdev.vercel.app/AsterDev.png"],
+  },
 };
 
 export default function RootLayout({
