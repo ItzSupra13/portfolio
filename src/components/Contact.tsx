@@ -1,10 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { IoMail } from "react-icons/io5";
 import { MdMarkEmailRead } from "react-icons/md";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
 import Link from "next/link";
 import { toast } from "sonner";
 
@@ -45,7 +42,7 @@ export default function Contact() {
         <p className="text-lg text-white/60 font-medium md:text-right">Get in Touch</p>
 
         {/* Content */}
-        <div className="space-y-6">
+        <div className="space-y-6 -mt-1">
           {!sent ? (
             <div className="border border-dashed border-white/20 rounded-xl p-5 bg-white/[0.02]">
               {/* Header */}

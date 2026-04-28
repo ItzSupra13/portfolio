@@ -27,7 +27,7 @@ export default function Work() {
         {/* Section Label */}
         <p className="text-lg text-white/60 font-medium md:text-right">
           Work <br />
-          <span className="text-xs text-white/40">(Good ones atleast lol.)</span>
+          <span className="text-xs text-white/40">Good ones atleast lol</span>
         </p>
 
         <div className="space-y-6 mt-1">
