@@ -1,6 +1,7 @@
 interface Project {
   id: number;
   title: string;
+  subtitle: string;
   description: string;
   image: string;
   landing: string;
@@ -8,11 +9,14 @@ interface Project {
   category: "Full-Stack" | "ML & DL" | "Backend";
   sourceUrl?: string;
   liveUrl: string;
+  wip?:boolean;
+  wipHint?:string;
 }
 export const PROJECTS: Project[] = [
   {
     id: 1,
     title: "Axiom-ML",
+    subtitle: "Leetcode for AI Algorithms",
     description:
       "Don't just import models. Code them from scratch. A one stop Leetcode ML platform to understand and code your everyday Algorithms from scratch.",
     image: "/logos/axiom-ml.png",
@@ -24,8 +28,8 @@ export const PROJECTS: Project[] = [
   {
     id: 2,
     title: "Origyn",
-    description:
-      "Do Anything with local models. Generate Images, Music, Videos. Clone Voice. Vibecode & Design Apps. Use Tools with RAG Pipelines and Deep Agents with browser.",
+    subtitle: "All purpose local AI Harness",
+    description: "Do Anything with local models. Generate Images, Music, Videos. Clone Voice. Vibecode & Design Apps. Use Tools with RAG Pipelines and Deep Agents with browser.",
     image: "/logos/origyn.jpg",
     landing: "/landings/Aesthetify.png",
     tech: ["Next.js", "TypeScript", "Framer"],
@@ -36,14 +40,16 @@ export const PROJECTS: Project[] = [
   {
     id: 3,
     title: "AGE-ent",
-    description:
-      "Computer-use local models to assist Aged Individuals in using their Computers in a much more tech-savvy manner",
+    subtitle: "Computer use agent for Elders",
+    description: "Computer-use local models to assist Aged Individuals in using their Computers in a much more tech-savvy manner",
     image: "/logos/gitgud.svg",
     landing: "/landings/GitGud.png",
     tech: ["Node.js", "Docker"],
     category: "Full-Stack",
     sourceUrl: "https://github.com/yourrepo",
     liveUrl: "https://gitgud.com",
+    wip: true,
+    wipHint: "Experimenting with computer use agents",
   }, // 1 month
   // 	{
   // 		id: 4,
@@ -133,7 +139,7 @@ export const CompanyLogoData = [
     usage: "SQL Database",
   },
   {
-    src: "/stack/Neon.png",
+    src: "/stack/Supabase.png",
     alt: "Supabase",
     name: "Supabase",
     usage: "Serverless SQL",
@@ -169,7 +175,7 @@ export const CompanyLogoData = [
     usage: "Deployment platform",
   },
   {
-    src: "/stack/PyTorch.png",
+    src: "/stack/Cloudflare.png",
     alt: "Cloudflare",
     name: "Cloudflare",
     usage: "Deployment Platform",

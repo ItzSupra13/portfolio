@@ -36,9 +36,9 @@ export default function Education() {
 
               {/* Description */}
               <p className="max-w-xl text-[16px] leading-relaxed tracking-tight text-[#8b8b8b] sm:text-base">
-                Focused on <span className="text-zinc-200">software engineering</span>, distributed
-                systems, and <span className="text-zinc-200">UI architecture</span>. Built multiple
-                full-stack production projects.
+                Specializing in <span className="text-zinc-200">ML Engineering</span>, 
+                distributed systems, and <span className="text-zinc-200">Scientific Machine Learning</span>. 
+                Designing production-grade pipelines for agentic simulations and computer vision.
               </p>
             </div>
           </div>
@@ -74,9 +74,9 @@ export default function Education() {
 
               {/* Description */}
               <p className="max-w-xl text-[16px] leading-relaxed tracking-tight text-[#8b8b8b] sm:text-base">
-                Focused on <span className="text-zinc-200">software engineering</span>, distributed
-                systems, and <span className="text-zinc-200">UI architecture</span>. Built multiple
-                full-stack production projects.
+                Applying <span className="text-zinc-200">Mechanical Engineering</span> principles to 
+                the future of <span className="text-zinc-200">Autonomous Systems</span>. 
+                Leveraging Machine Learning to solve complex challenges in robotics, kinematics, and real-time physical simulations.
               </p>
             </div>
           </div>

@@ -16,7 +16,7 @@ export default function About() {
                  shadow-[inset_0_1px_2px_rgba(255,255,255,0.05),inset_0_-1px_2px_rgba(0,0,0,0.6)]"
             >
               <Image src="/AsterDev.png" alt="AsterDev Logo" height={20} width={20} className="" />
-              <span className="text-white">Aster Dev</span>
+              <span className="text-white pb-0.5">Aster Dev</span>
             </span>
             . I love building things{" "}
             <span className="items-center">

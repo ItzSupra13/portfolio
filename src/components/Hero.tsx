@@ -155,7 +155,9 @@ export default function Hero() {
               <FaGithub />
             </span>
           </Link>
-          <span className="pt-1.5 text-3xl transition hover:text-white">
+          <span 
+          onClick={() => window.open("mailto:itzasterdev@gmail.com", "_blank")}
+          className="pt-1.5 text-3xl transition hover:text-white">
             <Tooltip>
               <TooltipTrigger>
                 {copied ? <MdMarkEmailRead size={36} /> : <IoMail size={36} />}
@@ -180,11 +182,11 @@ export default function Hero() {
           {/* Primary Button */}
           <button
             className="group relative w-full rounded-xl border border-dashed border-white/30 bg-gradient-to-b from-[#f0652f] to-[#d44d1d] px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:scale-[1.02] hover:border-white/60 hover:shadow-[0_0_20px_rgba(240,101,47,0.4)] active:scale-[0.95] sm:w-auto"
-            onClick={() => toast.warning("Resume is under development ^_^")}
+            onClick={() => window.open("/cv.pdf", "_blank")}
           >
             <span className="flex items-center justify-center gap-2">
               <FaEye className="text-lg transition-transform" />
-              View Resume
+              View CV
             </span>
           </button>
 

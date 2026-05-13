@@ -8,6 +8,7 @@ import { ArrowUpRightIcon } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import { motion } from "motion/react";
+import { LuMousePointerClick } from "react-icons/lu"
 
 const TABS = ["All", "Full-Stack", "ML & DL", "Backend"];
 
@@ -68,11 +69,38 @@ export default function Work() {
                   delay: showAll ? i * 0.05 : 0,
                 }}
               >
-                <div className="group relative min-h-[125px] max-w-[800px] overflow-hidden rounded-2xl border border-dashed border-white/20 bg-[linear-gradient(135deg,#0e0e11_0%,#0e0e11_60%,#141418_100%)] transition-all duration-300 hover:cursor-pointer">
-                  {/* Glow */}
-                  <div className="pointer-events-none absolute inset-0 z-10 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                    <div className="absolute bottom-0 left-12 h-36 w-112 translate-x-[-30%] translate-y-[30%] rounded-full bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.2)_0%,rgba(255,255,255,0.10)_15%,rgba(255,255,255,0.05)_35%,transparent_55%)] blur-2xl" />
-                  </div>
+                <div
+                  className={`group relative min-h-[125px] max-w-[800px] overflow-hidden rounded-2xl border border-dashed bg-[linear-gradient(135deg,#0e0e11_0%,#0e0e11_60%,#141418_100%)] transition-all duration-300 ${
+                    project.wip
+                      ? "cursor-default border-white/15"
+                      : "border-white/20 hover:cursor-pointer"
+                  }`}
+                >
+                  {/* WIP — cold vignette tint */}
+                  {project.wip && (<>
+                    <div
+                      dangerouslySetInnerHTML={{ __html: '<!-- Clever of you to check elements for the secret project :) -->' }} 
+                    />
+                    <div className="pointer-events-none absolute inset-0 z-20 bg-[radial-gradient(ellipse_at_center,rgba(148,163,184,0.03)_0%,rgba(0,0,0,0.35)_100%)]" />
+                  </>)}
+                  {/* WIP info badge */}
+                  {project.wip && (
+                    <div className="group/info absolute top-3 right-3 z-30 ">
+                      <div className="flex h-6 w-23 items-center justify-center rounded-full border border-dashed border-white/15 bg-white/[0.06] text-[11px] font-medium text-white/80 transition-all duration-200 group-hover/info:border-white/30 group-hover/info:text-white/60">
+                        In Progress <span className="ml-1"><LuMousePointerClick /></span>
+                      </div>
+                      <div className="pointer-events-none absolute top-7 right-0 w-max max-w-[200px] rounded-lg border border-white/10 bg-[#0e0e11]/95 px-3 py-2 text-xs text-white/80 opacity-0 backdrop-blur-md transition-opacity duration-200 group-hover/info:opacity-100">
+                        {project.wipHint ?? "Coming soon"}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Glow — non-WIP only */}
+                  {!project.wip && (
+                    <div className="pointer-events-none absolute inset-0 z-10 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                      <div className="absolute bottom-0 left-12 h-36 w-112 translate-x-[-30%] translate-y-[30%] rounded-full bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.2)_0%,rgba(255,255,255,0.10)_15%,rgba(255,255,255,0.05)_35%,transparent_55%)] blur-2xl" />
+                    </div>
+                  )}
 
                   {/* Mobile Image */}
                   <div className="absolute inset-0 md:hidden">
@@ -80,7 +108,12 @@ export default function Work() {
                       src={project.landing}
                       alt={project.title}
                       fill
-                      className="object-cover opacity-10"
+                      className="object-cover"
+                      style={
+                        project.wip
+                          ? { opacity: 0.04, filter: "grayscale(1) blur(6px)" }
+                          : { opacity: 0.1 }
+                      }
                     />
                   </div>
 
@@ -91,19 +124,28 @@ export default function Work() {
                       alt={project.title}
                       fill
                       className="translate-y-5 scale-150 rotate-10 object-cover"
+                      style={
+                        project.wip ? { filter: "blur(14px) grayscale(1) brightness(0.25)" } : {}
+                      }
                     />
-                    {/* Layered gradients for depth and edge blending */}
                     <div className="absolute inset-0 bg-gradient-to-r from-[#0e0e11] via-[#0e0e11]/40 to-transparent" />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0e0e11] via-[#0e0e11]/20 to-transparent" />
                     <div className="absolute inset-0 bg-gradient-to-b from-[#0e0e11]/60 via-transparent to-transparent" />
+                    {project.wip && <div className="absolute inset-0 bg-[#0e0e11]/75" />}
                   </div>
 
                   {/* Content */}
                   <div
-                    onClick={() => window.open(project.liveUrl, "_blank")}
-                    className="relative z-20 flex flex-col justify-center px-6 py-7 md:w-[55%]"
+                    onClick={() => !project.wip && window.open(project.liveUrl, "_blank")}
+                    className={`relative z-20 flex flex-col justify-center px-6 py-6 md:w-[55%] ${
+                      project.wip ? "select-none" : ""
+                    }`}
                   >
-                    <div className="mb-4 flex items-center gap-3">
+                    {/* Title row */}
+                    <div
+                      className="mb-3 flex items-center gap-3"
+                      style={project.wip ? { filter: "blur(5px)", opacity: 0.2 } : {}}
+                    >
                       <Image
                         src={project.image}
                         alt={project.title}
@@ -112,7 +154,7 @@ export default function Work() {
                         className="object-cover"
                       />
                       <span className="text-2xl tracking-tighter text-white">{project.title}</span>
-                      {project.sourceUrl && (
+                      {project.sourceUrl && !project.wip && (
                         <Link href={project.sourceUrl} target="_blank">
                           <Badge asChild>
                             <span className="flex items-center gap-1">
@@ -123,8 +165,15 @@ export default function Work() {
                         </Link>
                       )}
                     </div>
-                    <div className="max-w-[400px] space-y-1">
-                      <h3 className="text-sm text-white">{project.title}</h3>
+
+                    {/* Description */}
+                    <div
+                      className="max-w-[400px] space-y-1"
+                      style={project.wip ? { filter: "blur(5px)", opacity: 0.2 } : {}}
+                    >
+                      <h3 className={`text-sm ${project.wip ? "text-white" : "text-white"}`}>
+                        {project.title}
+                      </h3>
                       <p className="text-sm tracking-tight text-white/60">{project.description}</p>
                     </div>
                   </div>
@@ -151,5 +200,16 @@ export default function Work() {
         </div>
       </div>
     </section>
+  );
+}
+
+export function HiddenComment() {
+  return (
+    <div
+      dangerouslySetInnerHTML={{
+        __html: "<!-- Hey clever of you to check inspect to find this project details :) -->",
+      }}
+      style={{ display: "none" }}
+    />
   );
 }
