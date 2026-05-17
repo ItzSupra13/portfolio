@@ -1,8 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { MdMarkEmailRead } from "react-icons/md";
-import Link from "next/link";
 import { toast } from "sonner";
 
 const topics = ["Collaboration", "Freelance", "Feedback", "Other"] as const;
@@ -46,10 +45,10 @@ export default function Contact() {
     "w-full rounded-xl border border-dashed bg-white/[0.02] px-4 py-2.5 text-sm text-white/85 placeholder:text-white/20 outline-none transition-all focus:bg-white/[0.04] focus:border-white/20";
 
   return (
-    <section className="pb-16">
+    <section className="">
       <div className="grid gap-x-10 gap-y-6 md:grid-cols-[125px_1fr]">
         {/* Section Label */}
-        <p className="text-lg font-medium text-white/60 md:text-right">Get in Touch</p>
+        <p className="text-lg font-medium text-white/60 md:pr-4 md:text-right">Get in Touch</p>
 
         {/* Content */}
         <div className="-mt-1 space-y-6">

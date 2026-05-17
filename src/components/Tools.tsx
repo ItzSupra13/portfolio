@@ -36,10 +36,10 @@ const tools: Tool[] = [
 
 export default function Tools() {
   return (
-    <section className="pb-12">
+    <section className="">
       <div className="grid md:grid-cols-[125px_1fr] gap-x-10 gap-y-6">
         {/* Section Label */}
-        <div className="md:text-right">
+        <div className="md:pr-4 md:text-right">
           <p className="text-lg text-white/60 font-medium">Tools</p>
           <p className="text-xs text-white/30 mt-0.5">Might be useful :)</p>
         </div>

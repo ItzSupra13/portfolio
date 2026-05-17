@@ -38,10 +38,10 @@ const writings = [
 
 export default function Writing() {
   return (
-    <section className="pb-12">
+    <section className="">
       <div className="grid md:grid-cols-[125px_1fr] gap-x-10 gap-y-3">
         {/* Section Label */}
-        <p className="text-lg text-white/60 font-medium md:text-right mt-1.5">Writing</p>
+        <p className="text-lg text-white/60 font-medium md:pr-4 md:text-right mt-1.5">Writing</p>
 
         {/* Content */}
         <div className="w-full">

@@ -1,14 +1,14 @@
 export default function Experience() {
   return (
-    <section className="pb-8">
+    <section className="">
       <div className="grid gap-x-10 gap-y-6 md:grid-cols-[125px_1fr]">
         {/* Section Label */}
-        <p className="text-lg font-medium text-white/60 md:text-right">Experience</p>
+        <p className="text-lg font-medium text-white/60 md:pr-4 md:text-right">Experience</p>
 
         {/* Timeline Container */}
         <div className="relative">
           {/* Vertical Line */}
-          <div className="absolute top-8 left-3 h-full -translate-x-[0.7px] border-l border-dashed border-white/20" />
+          <div className="absolute top-8 left-3 h-[105%] md:h-full -translate-x-[0.7px] border-l border-dashed border-white/20" />
 
           <div className="space-y-6">
             {/* Item */}

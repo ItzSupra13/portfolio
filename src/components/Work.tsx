@@ -23,12 +23,12 @@ export default function Work() {
     activeTab === "All" && !showAll ? filteredProjects.slice(0, 3) : filteredProjects;
 
   return (
-    <section id="work" className="pb-8">
+    <section id="work" className="">
       <div className="grid gap-x-10 gap-y-6 md:grid-cols-[125px_1fr]">
         {/* Section Label */}
-        <p className="text-lg font-medium text-white/60 md:text-right">
+        <p className="text-lg font-medium text-white/60 md:pr-4 md:text-right">
           Work <br />
-          <span className="text-xs text-white/40">Good ones atleast lol</span>
+          <span className="text-[11px] text-white/40">Good ones atleast lol</span>
         </p>
 
         <div className="mt-1 space-y-6">

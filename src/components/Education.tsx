@@ -2,9 +2,9 @@ import Image from "next/image";
 
 export default function Education() {
   return (
-    <section className="pb-16">
+    <section className="">
       <div className="grid gap-x-10 gap-y-6 md:grid-cols-[125px_1fr]">
-        <p className="text-lg font-medium text-white/60 md:text-right">Education</p>
+        <p className="text-lg font-medium text-white/60 md:pr-4 md:text-right">Education</p>
 
         <div className="space-y-7">
           {/* Item */}

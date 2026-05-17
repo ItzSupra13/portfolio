@@ -3,9 +3,9 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <section className="pb-8">
+    <section className="">
       <div className="grid md:grid-cols-[125px_1fr] gap-x-10 gap-y-4">
-        <p className="text-lg text-[#8b8b8b] font-medium md:text-right">About</p>
+        <p className="text-lg text-[#8b8b8b] font-medium md:pr-4 md:pr-4 md:text-right">About</p>
 
         <div className="max-w-2xl space-y-6 text-lg tracking-tight text-[#8b8b8b] leading-relaxed">
           <p>

@@ -1,23 +1,26 @@
 import { FaSpotify } from "react-icons/fa";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Personal() {
   return (
-    <section className="pb-12">
+    <section className="">
       <div className="grid md:grid-cols-[125px_1fr] gap-x-10 gap-y-6">
-        {/* Section Label */}
-        <p className="text-lg text-white/60 font-medium md:text-right">Personal</p>
-
-        {/* Content */}
+        <p className="text-lg text-white/60 font-medium md:pr-4 md:text-right">Personal</p>
         <div className="space-y-12">
-          <div className="border border-dashed border-white/20 rounded-xl p-3 bg-white/[0.02] hover:bg-white/[0.04] transition-colors">
-            {/* Top Row */}
-            <div className="flex items-center gap-2 bg-white/5 p-2 border-1 border-dashed border-white/10 rounded-xl">
-              {/* Album Art */}
-              <img
-                src="/anohianotoki.jpg" // replace with your image path
+          <Link 
+            href="https://open.spotify.com/track/2A97bms3lEk8DlnGJGs88r?si=550a55a8172d486e"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group block border border-dashed border-white/20 rounded-xl p-3 bg-white/[0.02] hover:bg-white/[0.04] transition-colors"
+          >
+            <div className="flex items-center gap-2 bg-white/5 p-2 border border-dashed border-white/10 rounded-xl">
+              <Image
+                src="/anohianotoki.jpg"
                 alt="Anohi Anotoki Cover"
-                className="w-16 h-16 rounded-md object-cover"
+                height={80}
+                width={80}
+                className="rounded-md object-cover"
               />
 
               {/* Song Info */}
@@ -30,16 +33,14 @@ export default function Personal() {
             {/* Bottom Row */}
             <div className="flex items-center justify-between mt-2 text-sm">
               <p className="text-white/50">Current Favourite Song</p>
-              <Link
-                href={"https://open.spotify.com/track/2A97bms3lEk8DlnGJGs88r?si=550a55a8172d486e"}
-              >
-                <div className="flex items-center gap-1 mr-1 text-white/60 hover:text-white transition-colors cursor-pointer">
-                  <span>Listen on Spotify</span>
-                  <FaSpotify />
-                </div>
-              </Link>
+              
+              {/* 2. Removed the nested <Link> and used group-hover instead */}
+              <div className="flex items-center gap-1 mr-1 text-white/60 group-hover:text-white transition-colors">
+                <span>Listen on Spotify</span>
+                <FaSpotify />
+              </div>
             </div>
-          </div>
+          </Link>
         </div>
       </div>
     </section>
