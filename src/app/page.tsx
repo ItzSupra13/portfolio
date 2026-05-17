@@ -59,7 +59,7 @@ export default function Page() {
 
       {/* FOOTER */}
       <GridSection showHashes hideOnMobile>
-        <footer className="flex items-center justify-center py-16 text-xs text-[#8b8b8b]">
+        <footer className="flex items-center justify-center py-8 text-xs text-[#8b8b8b]">
           © 2026 | Made with <FaHeart className="mx-1 text-orange-700" /> by&nbsp;
           <Tooltip>
             <TooltipTrigger asChild>
