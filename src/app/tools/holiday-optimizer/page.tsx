@@ -780,3 +780,10 @@
 //     </main>
 //   );
 // }
+const HolOp = () => {
+  return (
+    <div>HolOp</div>
+  )
+}
+
+export default HolOp;
