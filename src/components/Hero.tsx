@@ -1,5 +1,3 @@
-
-// /src/components/Hero.tsx
 "use client";
 
 import { WordRotate } from "@/components/ui/word-rotate";
@@ -19,24 +17,25 @@ import { LinkPreview } from "@/components/ui/link-preview";
 import { MdMarkEmailRead } from "react-icons/md";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { Kbd } from "./ui/kbd";
-import Crosshair from "./web/CrossHair";
+import { Ascii } from "ascii.rest/react";
+import { earthrise } from "ascii.rest/pieces";
 
 export default function Hero() {
   const words = useMemo(() => [
-    { text: "Hello",      tracking: "tracking-tight"  },
-    { text: "नमस्ते",     tracking: "tracking-wider"  },
-    { text: "নমস্কার",    tracking: "tracking-wider"  },
-    { text: "Hola",       tracking: "tracking-tight"  },
-    { text: "Bonjour",    tracking: "tracking-tight"  },
-    { text: "Ciao",       tracking: "tracking-tight"  },
-    { text: "こんにちは", tracking: "tracking-wide"   },
+    { text: "Hello", tracking: "tracking-tight" },
+    { text: "नमस्ते", tracking: "tracking-wider" },
+    { text: "নমস্কার", tracking: "tracking-wider" },
+    { text: "Hola", tracking: "tracking-tight" },
+    { text: "Bonjour", tracking: "tracking-tight" },
+    { text: "Ciao", tracking: "tracking-tight" },
+    { text: "こんにちは", tracking: "tracking-wide" },
     { text: "안녕하세요", tracking: "tracking-normal" },
-    { text: "你好",       tracking: "tracking-wide"   },
-    { text: "Olá",        tracking: "tracking-tight"  },
-    { text: "Guten Tag",  tracking: "tracking-tight"  },
+    { text: "你好", tracking: "tracking-wide" },
+    { text: "Olá", tracking: "tracking-tight" },
+    { text: "Guten Tag", tracking: "tracking-tight" },
   ], []);
 
-  const [time, setTime]     = useState("");
+  const [time, setTime] = useState("");
   const [copied, setCopied] = useState(false);
   const email = "itzasterdev@gmail.com";
 
@@ -66,34 +65,27 @@ export default function Hero() {
 
   return (
     <section className="relative overflow-hidden pt-9 pb-8 text-center">
-      {/* ── CENTER COLUMN — dot grid ── */}
+      {/* ── ASCII BACKGROUND ── */}
       <div
-        className="pointer-events-none absolute inset-y-0 z-0"
+        aria-hidden
+        className="pointer-events-none absolute inset-0 z-0 overflow-hidden opacity-20 [container-type:size]"
         style={{
-          left: "calc(50% - 340px)",
-          right: "calc(50% - 340px)",
-          backgroundImage: `radial-gradient(circle, rgba(255,255,255,0.10) 1px, transparent 1px)`,
-          backgroundSize: "20px 20px",
+          maskImage: "radial-gradient(ellipse at center, black 40%, transparent 85%)",
+          WebkitMaskImage: "radial-gradient(ellipse at center, black 40%, transparent 85%)",
         }}
-      />
-
-      {/* ── VERTICAL LINES ── */}
-      <div className="pointer-events-none absolute inset-y-0 z-0 w-px bg-white/[0.07]"
-           style={{ left: "calc(50% - 340px)" }} />
-      <div className="pointer-events-none absolute inset-y-0 z-0 w-px bg-white/[0.07]"
-           style={{ left: "calc(50% + 340px)" }} />
-
-      {/* ── TOP BORDER + CROSSHAIRS ── */}
-      <div className="pointer-events-none absolute top-0 left-0 right-0 z-0 h-px bg-white/[0.07]" />
-      <Crosshair className="top-0" style={{ left: "calc(50% - 340px)" }} />
-      <Crosshair className="top-0"  style={{ left: "calc(50% + 340px)" }} />
-
-      {/* ── BOTTOM BORDER + CROSSHAIRS ── */}
-      <Crosshair className="bottom-0" style={{ left: "calc(50% - 340px)", transform: "translate(-50%, 50%)" }} />
-      <Crosshair className="bottom-0" style={{ left: "calc(50% + 340px)", transform: "translate(-50%, 50%)" }} />
+      >
+        <div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 [&>*]:!h-full [&>*]:!w-full"
+          style={{
+            aspectRatio: "2 / 1",
+            width: "max(100cqw, 200cqh)", // 200cqh = 2 × container height, so it always covers
+          }}
+        >
+          <Ascii piece={earthrise} />
+        </div>
+      </div>
 
       <div className="relative z-10 flex flex-col items-center">
-
         {/* Greeting */}
         <div className="m-6 text-4xl font-bold text-white/30">
           <WordRotate words={words} />

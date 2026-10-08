@@ -1,3 +1,6 @@
-ignoredBuiltDependencies:
-  - sharp
-  - unrs-resolver
+allowBuilds:
+  msw: true
+  sharp: true
+  unrs-resolver: true
+minimumReleaseAgeExclude:
+  - ascii.rest@0.2.1

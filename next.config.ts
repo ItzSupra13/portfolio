@@ -11,6 +11,9 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  experimental: {
+    globalNotFound: true, // Required for global-not-found.js to work properly
+  },
   /* config options here */
 };
 

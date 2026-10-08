@@ -27,8 +27,7 @@ export default function About() {
             </span>
             <br />
             <span className="mt-2 block">
-              Currently learning and building <span className="text-white">AI Native</span>{" "}
-              applications.
+              Currently learning and building <span className="text-white">GPU kernels</span>{" "}. My interests lie in Kernel Engineering, and Reinforcement Learning.
             </span>
           </p>
         </div>

@@ -36,9 +36,9 @@ export default function Education() {
 
               {/* Description */}
               <p className="max-w-xl text-[16px] leading-relaxed tracking-tight text-[#8b8b8b] sm:text-base">
-                Specializing in <span className="text-zinc-200">ML Engineering</span>, 
-                distributed systems, and <span className="text-zinc-200">Scientific Machine Learning</span>. 
-                Designing production-grade pipelines for agentic simulations and computer vision.
+                Specializing in <span className="text-zinc-200">Reinforcement Learning</span>, 
+                Game Theory, and <span className="text-zinc-200">how LLMs work via Inference Engineering</span>. 
+                Designing production-grade pipelines for agentic simulations and gpu threads.
               </p>
             </div>
           </div>
@@ -75,8 +75,8 @@ export default function Education() {
               {/* Description */}
               <p className="max-w-xl text-[16px] leading-relaxed tracking-tight text-[#8b8b8b] sm:text-base">
                 Applying <span className="text-zinc-200">Mechanical Engineering</span> principles to 
-                the future of <span className="text-zinc-200">Autonomous Systems</span>. 
-                Leveraging Machine Learning to solve complex challenges in robotics, kinematics, and real-time physical simulations.
+                the future of <span className="text-zinc-200">Autonomous Robotic Systems</span>. 
+                Leveraging Machine Learning to solve complex challenges in kinematics, and real-time physical simulations via Reinforcement Learning.
               </p>
             </div>
           </div>
