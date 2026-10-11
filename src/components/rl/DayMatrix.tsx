@@ -1,10 +1,10 @@
 "use client"
 import { useState } from 'react';
 import { useJournal } from '@/context/JournalContextRL';
-import { RLPhase } from '@/types/rl-journal';
+import { Phase } from '@/types/journal';
 import { Check, Clock, ChevronDown, ChevronUp, Grid, ListOrdered } from 'lucide-react';
 
-const PHASE_GROUPS: { name: RLPhase; range: [number, number]; description: string }[] = [
+const PHASE_GROUPS: { name: Phase; range: [number, number]; description: string }[] = [
   { name: 'Foundations & MDPs', range: [1, 10], description: 'Markov decision processes, Bellman optimality, and dynamic programming' },
   { name: 'Tabular Methods & TD', range: [11, 20], description: 'Monte Carlo, SARSA, Q-Learning, and TD(λ) eligibility traces' },
   { name: 'Value Function Approx & DQN', range: [21, 40], description: 'DQN, Double DQN, Dueling, Prioritized Replay, Rainbow' },

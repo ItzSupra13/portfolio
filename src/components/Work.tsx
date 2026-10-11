@@ -9,6 +9,8 @@ import Link from "next/link";
 import { useState } from "react";
 import { motion } from "motion/react";
 import { LuMousePointerClick } from "react-icons/lu"
+import { Ascii } from "ascii.rest/react";
+import desertNight from "ascii.rest/pieces/desert-night";
 
 const TABS = ["All", "Full-Stack", "ML & DL", "Backend"];
 
@@ -24,6 +26,24 @@ export default function Work() {
 
   return (
     <section id="work" className="">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 z-0 overflow-hidden opacity-20 [container-type:size]"
+        style={{
+          maskImage: "radial-gradient(ellipse at center, black 40%, transparent 85%)",
+          WebkitMaskImage: "radial-gradient(ellipse at center, black 40%, transparent 85%)",
+        }}
+      >
+        <div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 [&>*]:!h-full [&>*]:!w-full"
+          style={{
+            aspectRatio: "2 / 1",
+            width: "max(100cqw, 200cqh)", // 200cqh = 2 × container height, so it always covers
+          }}
+        >
+          <Ascii piece="misty-forest"/>
+        </div>
+      </div>
       <div className="grid gap-x-10 gap-y-6 md:grid-cols-[125px_1fr]">
         {/* Section Label */}
         <p className="text-lg font-medium text-white/60 md:pr-4 md:text-right">
@@ -44,11 +64,10 @@ export default function Work() {
                     setActiveTab(tab);
                     setShowAll(false);
                   }}
-                  className={`cursor-pointer border border-dashed transition-all duration-200 ${
-                    isActive
+                  className={`cursor-pointer border border-dashed transition-all duration-200 ${isActive
                       ? "border-white bg-white text-black"
                       : "border-white/20 bg-white/5 text-white/40 hover:bg-white/10 hover:text-white/70"
-                  }`}
+                    }`}
                 >
                   {tab}
                 </Badge>
@@ -70,16 +89,15 @@ export default function Work() {
                 }}
               >
                 <div
-                  className={`group relative min-h-[125px] max-w-[800px] overflow-hidden rounded-2xl border border-dashed bg-[linear-gradient(135deg,#0e0e11_0%,#0e0e11_60%,#141418_100%)] transition-all duration-300 ${
-                    project.wip
+                  className={`group relative min-h-[125px] max-w-[800px] overflow-hidden rounded-2xl border border-dashed bg-[linear-gradient(135deg,#0e0e11_0%,#0e0e11_60%,#141418_100%)] transition-all duration-300 ${project.wip
                       ? "cursor-default border-white/15"
                       : "border-white/20 hover:cursor-pointer"
-                  }`}
+                    }`}
                 >
                   {/* WIP — cold vignette tint */}
                   {project.wip && (<>
                     <div
-                      dangerouslySetInnerHTML={{ __html: '<!-- Clever of you to check elements for the secret project :) -->' }} 
+                      dangerouslySetInnerHTML={{ __html: '<!-- Clever of you to check elements for the secret project :) -->' }}
                     />
                     <div className="pointer-events-none absolute inset-0 z-20 bg-[radial-gradient(ellipse_at_center,rgba(148,163,184,0.03)_0%,rgba(0,0,0,0.35)_100%)]" />
                   </>)}
@@ -137,9 +155,8 @@ export default function Work() {
                   {/* Content */}
                   <div
                     onClick={() => !project.wip && window.open(project.liveUrl, "_blank")}
-                    className={`relative z-20 flex flex-col justify-center px-6 py-6 md:w-[55%] ${
-                      project.wip ? "select-none" : ""
-                    }`}
+                    className={`relative z-20 flex flex-col justify-center px-6 py-6 md:w-[55%] ${project.wip ? "select-none" : ""
+                      }`}
                   >
                     {/* Title row */}
                     <div
@@ -191,9 +208,8 @@ export default function Work() {
               <span>{showAll ? "Collapse" : "View all"}</span>
 
               <FaAngleDown
-                className={`transition-all duration-300 ${
-                  showAll ? "scale-110 rotate-180" : ""
-                } group-hover:translate-y-0.5`}
+                className={`transition-all duration-300 ${showAll ? "scale-110 rotate-180" : ""
+                  } group-hover:translate-y-0.5`}
               />
             </button>
           )}

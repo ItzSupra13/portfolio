@@ -1,10 +1,10 @@
 "use client"
 import { useState, useEffect } from 'react';
-import { JournalDay, RLPhase, DayStatus, DayResource } from '@/types/rl-journal';
+import { JournalDay, Phase, DayStatus, DayResource } from '@/types/journal';
 import { useJournal } from '@/context/JournalContextRL';
 import { X, Plus, Trash2, Eye, Edit3, Code2, Save } from 'lucide-react';
 
-const PHASES: RLPhase[] = [
+const PHASES: Phase[] = [
   'Foundations & MDPs',
   'Tabular Methods & TD',
   'Value Function Approx & DQN',
@@ -219,7 +219,7 @@ export default function DayEditorModal() {
                   </label>
                   <select
                     value={formData.phase}
-                    onChange={(e) => setFormData({ ...formData, phase: e.target.value as RLPhase })}
+                    onChange={(e) => setFormData({ ...formData, phase: e.target.value as Phase })}
                     className="w-full px-3 py-2 bg-neutral-950 border border-neutral-800 rounded-lg text-neutral-100 focus:outline-none focus:border-emerald-500"
                   >
                     {PHASES.map((p) => (

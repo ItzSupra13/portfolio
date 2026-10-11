@@ -1,11 +1,10 @@
 "use client"
 import React, { useState } from 'react';
-import { JournalDay } from '@/types/rl-journal';
+import { JournalDay } from '@/types/journal';
 import { useJournal } from '@/context/JournalContextRL';
 import { 
   Copy, 
   Check, 
-  Star, 
   ExternalLink, 
   Edit3, 
   Maximize2, 

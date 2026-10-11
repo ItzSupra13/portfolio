@@ -1,9 +1,28 @@
+import { Ascii } from "ascii.rest/react";
 import { Highlighter } from "./ui/highlighter";
 import Image from "next/image";
 
 export default function About() {
   return (
     <section className="">
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 z-0 overflow-hidden opacity-20 [container-type:size]"
+              style={{
+                maskImage: "radial-gradient(ellipse at center, black 40%, transparent 85%)",
+                WebkitMaskImage: "radial-gradient(ellipse at center, black 40%, transparent 85%)",
+              }}
+            >
+              <div
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 [&>*]:!h-full [&>*]:!w-full"
+                style={{
+                  aspectRatio: "2 / 1",
+                  width: "max(100cqw, 200cqh)", // 200cqh = 2 × container height, so it always covers
+                }}
+              >
+                <Ascii piece="storm-plains" />
+              </div>
+            </div>
       <div className="grid md:grid-cols-[125px_1fr] gap-x-10 gap-y-4">
         <p className="text-lg text-[#8b8b8b] font-medium md:pr-4 md:pr-4 md:text-right">About</p>
 

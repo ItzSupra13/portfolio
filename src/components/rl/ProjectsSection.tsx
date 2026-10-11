@@ -1,7 +1,7 @@
 "use client"
 import { useState } from 'react';
 import { useJournal } from '@/context/JournalContextRL';
-import { TargetProject, ProjectStatus } from '@/types/rl-journal';
+import { TargetProject, ProjectStatus } from '@/types/journal';
 import { 
   Plus, 
   Trash2, 

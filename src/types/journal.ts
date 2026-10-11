@@ -1,11 +1,17 @@
-export type RLPhase = 
+export type Phase = 
   | 'Foundations & MDPs'
   | 'Tabular Methods & TD'
   | 'Value Function Approx & DQN'
   | 'Policy Gradients & REINFORCE'
   | 'Actor-Critic & Continuous Control'
   | 'Model-Based RL & Planning'
-  | 'RLHF, Alignment & Frontiers';
+  | 'RLHF, Alignment & Frontiers'
+  | 'C++ & CUDA Foundations'
+  | 'Performance Engineering'
+  | 'Frontier Kernel Engineering'
+  | 'Distributed Training'
+  | 'Inference & Serving'
+  | 'Portfolio & Job Search';
 
 export type DayStatus = 'completed' | 'in-progress' | 'planned';
 
@@ -24,7 +30,7 @@ export interface DayCodeSnippet {
 
 export interface DayResource {
   title: string;
-  type: 'paper' | 'book' | 'code' | 'video' | 'blog';
+  type: 'paper' | 'book' | 'code' | 'video' | 'blog' | 'docs' | 'repo' | 'practice';
   url?: string;
 }
 
@@ -33,7 +39,7 @@ export interface JournalDay {
   dayNumber: number;
   date: string;
   title: string;
-  phase: RLPhase;
+  phase: Phase;
   status: DayStatus;
   isStarred?: boolean;
   summary: string;
@@ -43,7 +49,7 @@ export interface JournalDay {
   keyInsights?: string[];
   gotchas?: string[];
   resources?: DayResource[];
-  interactiveLabId?: 'gridworld' | 'bandit';
+  interactiveLabId?: string;
   gitCommitUrl?: string;
 }
 
@@ -71,7 +77,7 @@ export interface TargetProject {
   repoUrl?: string;
 }
 
-export type ResourceCategory = 'course' | 'blog' | 'paper' | 'video' | 'book' | 'repo' | 'other';
+export type ResourceCategory = 'course' | 'blog' | 'paper' | 'video' | 'book' | 'repo' | 'docs' | 'practice' | 'other';
 
 export interface LearningResource {
   id: string;

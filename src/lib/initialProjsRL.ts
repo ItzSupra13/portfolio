@@ -1,4 +1,4 @@
-import { TargetProject, LearningResource } from '../types/rl-journal';
+import { TargetProject, LearningResource } from '../types/journal';
 
 export const INITIAL_TARGET_PROJECTS: TargetProject[] = [
   {

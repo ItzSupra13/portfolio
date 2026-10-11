@@ -2,13 +2,13 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { 
   JournalDay, 
-  RLPhase, 
+  Phase, 
   DayStatus, 
   JournalStats, 
   TargetProject, 
   LearningResource 
-} from '../types/rl-journal';
-import { INITIAL_DAYS} from '../lib/initialDaysRL';
+} from '@/types/journal';
+import { INITIAL_DAYS} from '@/lib/initialDaysRL';
 import { INITIAL_TARGET_PROJECTS, INITIAL_LEARNING_RESOURCES } from '../lib/initialProjsRL';
 
 export interface UserProfile {
@@ -27,8 +27,8 @@ interface JournalContextType {
   resources: LearningResource[];
   searchQuery: string;
   setSearchQuery: (query: string) => void;
-  selectedPhase: RLPhase | 'All';
-  setSelectedPhase: (phase: RLPhase | 'All') => void;
+  selectedPhase: Phase | 'All';
+  setSelectedPhase: (phase: Phase | 'All') => void;
   selectedStatus: DayStatus | 'all';
   setSelectedStatus: (status: DayStatus | 'all') => void;
   sortOrder: 'asc' | 'desc';
@@ -51,8 +51,8 @@ interface JournalContextType {
   setIsExportModalOpen: (open: boolean) => void;
   isProfileModalOpen: boolean;
   setIsProfileModalOpen: (open: boolean) => void;
-  activeLab: 'gridworld' | 'bandit' | null;
-  setActiveLab: (lab: 'gridworld' | 'bandit' | null) => void;
+  activeLab: string | null;
+  setActiveLab: (lab: string | null) => void;
 
   // Actions for Days
   updateDay: (updated: JournalDay) => void;
@@ -151,7 +151,7 @@ export const JournalProvider: React.FC<{ children: React.ReactNode }> = ({ child
   });
 
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedPhase, setSelectedPhase] = useState<RLPhase | 'All'>('All');
+  const [selectedPhase, setSelectedPhase] = useState<Phase | 'All'>('All');
   const [selectedStatus, setSelectedStatus] = useState<DayStatus | 'all'>('all');
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
   const [viewMode, setViewMode] = useState<'feed' | 'matrix'>('feed');
@@ -160,7 +160,7 @@ export const JournalProvider: React.FC<{ children: React.ReactNode }> = ({ child
   const [editingDay, setEditingDay] = useState<JournalDay | null>(null);
   const [isExportModalOpen, setIsExportModalOpen] = useState(false);
   const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
-  const [activeLab, setActiveLab] = useState<'gridworld' | 'bandit' | null>(null);
+  const [activeLab, setActiveLab] = useState<string | null>(null);
 
   // Sync nav page
   useEffect(() => {
@@ -228,7 +228,7 @@ export const JournalProvider: React.FC<{ children: React.ReactNode }> = ({ child
     const nextDayNum = maxDayNum < 100 ? maxDayNum + 1 : maxDayNum + 1;
     const now = new Date().toISOString().split('T')[0];
     
-    let defaultPhase: RLPhase = 'Foundations & MDPs';
+    let defaultPhase: Phase = 'Foundations & MDPs';
     if (nextDayNum > 85) defaultPhase = 'RLHF, Alignment & Frontiers';
     else if (nextDayNum > 70) defaultPhase = 'Model-Based RL & Planning';
     else if (nextDayNum > 55) defaultPhase = 'Actor-Critic & Continuous Control';

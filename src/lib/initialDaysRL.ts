@@ -1,4 +1,4 @@
-import { JournalDay } from '../types/rl-journal';
+import { JournalDay } from '../types/journal';
 
 export const INITIAL_DAYS: JournalDay[] = [
   {

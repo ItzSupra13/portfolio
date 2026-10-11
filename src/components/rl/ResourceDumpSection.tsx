@@ -1,7 +1,7 @@
 "use client"
 import { useState, useMemo } from 'react';
 import { useJournal } from '@/context/JournalContextRL';
-import { LearningResource, ResourceCategory } from '@/types/rl-journal';
+import { LearningResource, ResourceCategory } from '@/types/journal';
 import { 
   Plus, 
   Search, 
