@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from 'react';
 import { useJournal } from '@/context/JournalContextKPI';
-import { TargetProject, ProjectStatus } from '@/types/journal';
+import { ProjectStatus } from '@/types/journal';
 import { 
   Plus, 
   Trash2, 
@@ -77,9 +77,6 @@ export const ProjectsSection: React.FC = () => {
       aria-labelledby="projects-heading"
       className="border border-emerald-500/25 rounded-2xl p-5 sm:p-6 bg-card/80 backdrop-blur-md relative shadow-[0_4px_24px_rgba(4,24,18,0.25)]"
     >
-      <span className="ch ch-tl hidden md:block" />
-      <span className="ch ch-tr hidden md:block" />
-
       {/* Section Header */}
       <div className="flex flex-wrap items-baseline justify-between gap-3 pb-4 border-b border-border/70">
         <div>
@@ -95,102 +92,8 @@ export const ProjectsSection: React.FC = () => {
             Hands-on benchmark testbeds, kernels, and systems experiments targeted during this 250-day KPI journey.
           </p>
         </div>
-
-        <button
-          type="button"
-          onClick={() => setIsAdding(!isAdding)}
-          className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono rounded-lg border border-lime-400/40 bg-lime-400/10 hover:bg-lime-400/20 text-slate-100 transition-colors cursor-pointer"
-        >
-          {isAdding ? <X className="w-3.5 h-3.5" /> : <Plus className="w-3.5 h-3.5 stroke-[2.5]" />}
-          <span>{isAdding ? 'Cancel' : 'Add Target Project'}</span>
-        </button>
       </div>
-
-      {/* Add Project Inline Form */}
-      {isAdding && (
-        <form onSubmit={handleAddSubmit} className="my-4 p-4 rounded-xl bg-muted/30 border border-lime-400/30 text-xs space-y-3 font-mono">
-          <div className="flex items-center justify-between">
-            <span className="font-bold text-lime-400 uppercase tracking-wider">New Target Project</span>
-            <span className="text-muted-foreground text-[10px]">Persists in local storage</span>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <div>
-              <label className="block text-muted-foreground mb-1">Project Title</label>
-              <input
-                type="text"
-                value={title}
-                onChange={e => setTitle(e.target.value)}
-                placeholder="e.g. FlashAttention-2 Triton Forward & Backward"
-                className="w-full px-3 py-1.5 rounded-lg border border-border bg-background text-foreground text-xs focus:outline-none focus:border-lime-400"
-                required
-              />
-            </div>
-            <div>
-              <label className="block text-muted-foreground mb-1">Target Timeline</label>
-              <input
-                type="text"
-                value={timeline}
-                onChange={e => setTimeline(e.target.value)}
-                placeholder="e.g. Days 71–120"
-                className="w-full px-3 py-1.5 rounded-lg border border-border bg-background text-foreground text-xs focus:outline-none focus:border-lime-400"
-              />
-            </div>
-          </div>
-
-          <div>
-            <label className="block text-muted-foreground mb-1">Objective & Scope</label>
-            <input
-              type="text"
-              value={description}
-              onChange={e => setDescription(e.target.value)}
-              placeholder="What kernel will you author, profile, or evaluate against cuBLAS/FlashAttention?"
-              className="w-full px-3 py-1.5 rounded-lg border border-border bg-background text-foreground text-xs focus:outline-none focus:border-lime-400"
-              required
-            />
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <div>
-              <label className="block text-muted-foreground mb-1">Tech Stack (comma separated)</label>
-              <input
-                type="text"
-                value={techInput}
-                onChange={e => setTechInput(e.target.value)}
-                placeholder="e.g. Triton, CUDA, CUTLASS, Nsight Compute"
-                className="w-full px-3 py-1.5 rounded-lg border border-border bg-background text-foreground text-xs focus:outline-none focus:border-lime-400"
-              />
-            </div>
-            <div>
-              <label className="block text-muted-foreground mb-1">Key Experiment Note</label>
-              <input
-                type="text"
-                value={notes}
-                onChange={e => setNotes(e.target.value)}
-                placeholder="e.g. Target >85% hardware FLOP/s utilization"
-                className="w-full px-3 py-1.5 rounded-lg border border-border bg-background text-foreground text-xs focus:outline-none focus:border-lime-400"
-              />
-            </div>
-          </div>
-
-          <div className="pt-1 flex justify-end gap-2">
-            <button
-              type="button"
-              onClick={() => setIsAdding(false)}
-              className="px-3 py-1 rounded text-muted-foreground hover:text-foreground cursor-pointer"
-            >
-              Cancel
-            </button>
-            <button
-              type="submit"
-              className="px-4 py-1.5 rounded-lg bg-lime-400 text-slate-950 font-bold hover:bg-lime-300 border border-lime-400 transition-colors cursor-pointer"
-            >
-              Save Project
-            </button>
-          </div>
-        </form>
-      )}
-
+      
       {/* Projects Compact List (Small Only) */}
       <div className="divide-y divide-border/60">
         {projects.map((proj, index) => {

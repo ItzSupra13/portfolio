@@ -7,11 +7,9 @@ import ResourceDumpSection from '@/components/rl/ResourceDumpSection';
 import SimulationsSection from '@/components/rl/SimulationsSection';
 import FilterBar from '@/components/rl/FilterBar';
 import DayCard from '@/components/rl/DayCard';
-import DayEditorModal from '@/components/rl/DayEditor';
 import DayReaderModal from '@/components/rl/DayReader';
 import InteractiveGridworld from '@/components/rl/InteractiveGridWorld';
 import InteractiveBandit from '@/components/rl/InteractiveBandit';
-import { Plus, Github, ArrowUp } from 'lucide-react';
 
 function MainContent() {
   const { 

@@ -126,11 +126,8 @@ export const ResourceDumpSection: React.FC = () => {
       aria-labelledby="resources-heading"
       className="border border-emerald-500/25 rounded-2xl p-5 sm:p-6 bg-card/80 backdrop-blur-md relative shadow-[0_4px_24px_rgba(4,24,18,0.25)]"
     >
-      <span className="ch ch-tl hidden md:block" />
-      <span className="ch ch-tr hidden md:block" />
-
       {/* Header */}
-      <div className="flex flex-wrap items-baseline justify-between gap-3 pb-4 border-b border-border/70">
+      <div className="flex flex-wrap items-baseline justify-between gap-3 border-b border-border/70">
         <div>
           <div className="flex items-center gap-2">
             <span className="font-mono text-xs uppercase tracking-wider text-lime-400 font-semibold flex items-center gap-1.5">
@@ -141,126 +138,10 @@ export const ResourceDumpSection: React.FC = () => {
             <span className="text-xs font-mono text-foreground font-medium">{resources.length} Reference Materials</span>
           </div>
           <p className="text-xs text-muted-foreground mt-0.5 font-light">
-            Quickly dump courses, papers, blogs, and videos you are consuming during the 250 days.
+            Courses, papers, blogs, and videos I am consuming during the 250 days.
           </p>
         </div>
-
-        <button
-          type="button"
-          onClick={() => setIsFormOpen(!isFormOpen)}
-          className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-mono font-bold rounded-lg bg-lime-400 hover:bg-lime-300 text-slate-950 border border-lime-400 transition-all cursor-pointer"
-        >
-          {isFormOpen ? <X className="w-3.5 h-3.5" /> : <Plus className="w-3.5 h-3.5 stroke-[2.5]" />}
-          <span>{isFormOpen ? 'Close Form' : 'Dump New Resource'}</span>
-        </button>
       </div>
-
-      {/* Quick Dump Drawer / Form */}
-      {isFormOpen && (
-        <form onSubmit={handleQuickDump} className="my-5 p-5 rounded-xl border border-lime-400/30 bg-muted/30 space-y-4 text-xs font-mono shadow-sm">
-          <div className="flex items-center justify-between pb-2 border-b border-border/50">
-            <span className="font-bold text-lime-400 uppercase tracking-wider">
-              Dump Reference to Notebook
-            </span>
-            <span className="text-muted-foreground text-[10px]">
-              Stored persistently in your browser
-            </span>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            <div className="sm:col-span-2">
-              <label className="block text-muted-foreground mb-1">Resource URL or Reference</label>
-              <input
-                type="text"
-                value={url}
-                onChange={e => setUrl(e.target.value)}
-                placeholder="https://... (or book title)"
-                className="w-full px-3 py-1.5 rounded-lg border border-border bg-background text-foreground text-xs focus:outline-none focus:border-lime-400"
-                required
-              />
-            </div>
-            <div>
-              <label className="block text-muted-foreground mb-1">Media Type</label>
-              <select
-                value={category}
-                onChange={e => setCategory(e.target.value as ResourceCategory)}
-                className="w-full px-3 py-1.5 rounded-lg border border-border bg-background text-foreground text-xs focus:outline-none focus:border-lime-400 cursor-pointer"
-              >
-                <option value="blog">Blog / Essay</option>
-                <option value="course">Course / Syllabus</option>
-                <option value="paper">Academic Paper</option>
-                <option value="video">Video Lecture / Talk</option>
-                <option value="book">Textbook / Monograph</option>
-                <option value="repo">GitHub Repository</option>
-                <option value="other">Other Reference</option>
-              </select>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <div>
-              <label className="block text-muted-foreground mb-1">Title</label>
-              <input
-                type="text"
-                value={title}
-                onChange={e => setTitle(e.target.value)}
-                placeholder="e.g. Making Deep Learning Go Brrr From First Principles"
-                className="w-full px-3 py-1.5 rounded-lg border border-border bg-background text-foreground text-xs focus:outline-none focus:border-lime-400"
-                required
-              />
-            </div>
-            <div>
-              <label className="block text-muted-foreground mb-1">Author / Institution</label>
-              <input
-                type="text"
-                value={author}
-                onChange={e => setAuthor(e.target.value)}
-                placeholder="e.g. Horace He / PyTorch / GPU MODE"
-                className="w-full px-3 py-1.5 rounded-lg border border-border bg-background text-foreground text-xs focus:outline-none focus:border-lime-400"
-              />
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <div>
-              <label className="block text-muted-foreground mb-1">Key Takeaway or Summary Note</label>
-              <input
-                type="text"
-                value={notes}
-                onChange={e => setNotes(e.target.value)}
-                placeholder="e.g. Memory-bound vs compute-bound and arithmetic intensity"
-                className="w-full px-3 py-1.5 rounded-lg border border-border bg-background text-foreground text-xs focus:outline-none focus:border-lime-400"
-              />
-            </div>
-            <div>
-              <label className="block text-muted-foreground mb-1">Tags (comma separated)</label>
-              <input
-                type="text"
-                value={tagsInput}
-                onChange={e => setTagsInput(e.target.value)}
-                placeholder="e.g. Profiling, Roofline, GPU Arch"
-                className="w-full px-3 py-1.5 rounded-lg border border-border bg-background text-foreground text-xs focus:outline-none focus:border-lime-400"
-              />
-            </div>
-          </div>
-
-          <div className="pt-2 flex justify-end gap-2 border-t border-border/40">
-            <button
-              type="button"
-              onClick={() => setIsFormOpen(false)}
-              className="px-3 py-1.5 rounded text-muted-foreground hover:text-foreground cursor-pointer"
-            >
-              Cancel
-            </button>
-            <button
-              type="submit"
-              className="px-4 py-1.5 rounded-lg bg-lime-400 text-slate-950 font-bold hover:bg-lime-300 border border-lime-400 transition-colors cursor-pointer"
-            >
-              Save to Resource Dump
-            </button>
-          </div>
-        </form>
-      )}
 
       {/* Filter Tabs & Search Bar */}
       <div className="mt-4 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 font-mono text-xs">
@@ -332,16 +213,6 @@ export const ResourceDumpSection: React.FC = () => {
                   </div>
 
                   <div className="flex items-center gap-1">
-                    <button
-                      type="button"
-                      onClick={() => toggleResourceFavorite(res.id)}
-                      title={res.isFavorite ? 'Remove favorite' : 'Mark as favorite'}
-                      className={`p-1 rounded cursor-pointer transition-colors ${
-                        res.isFavorite ? 'text-amber-400' : 'text-muted-foreground hover:text-foreground'
-                      }`}
-                    >
-                      <Star className={`w-3.5 h-3.5 ${res.isFavorite ? 'fill-amber-400' : ''}`} />
-                    </button>
                     {res.url && (
                       <button
                         type="button"
@@ -356,14 +227,6 @@ export const ResourceDumpSection: React.FC = () => {
                         )}
                       </button>
                     )}
-                    <button
-                      type="button"
-                      onClick={() => deleteResource(res.id)}
-                      title="Delete resource"
-                      className="p-1 rounded text-muted-foreground hover:text-destructive transition-colors cursor-pointer"
-                    >
-                      <Trash2 className="w-3.5 h-3.5" />
-                    </button>
                   </div>
                 </div>
 

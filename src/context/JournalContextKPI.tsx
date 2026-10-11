@@ -8,7 +8,7 @@ import {
   TargetProject, 
   LearningResource 
 } from '@/types/journal';
-import { INITIAL_DAYS, INITIAL_USER_PROFILE } from '@/lib/InitialDaysKPI';
+import { INITIAL_DAYS } from '@/lib/InitialDaysKPI';
 import { INITIAL_TARGET_PROJECTS, INITIAL_LEARNING_RESOURCES } from '@/lib/InitialProjsKPI';
 
 export interface UserProfile {
@@ -23,7 +23,6 @@ export type MainNavPage = 'logbook' | 'roadmap' | 'simulations';
 
 interface JournalContextType {
   days: JournalDay[];
-  userProfile: UserProfile;
   projects: TargetProject[];
   resources: LearningResource[];
   searchQuery: string;
@@ -60,7 +59,6 @@ interface JournalContextType {
   addNewDay: () => void;
   deleteDay: (id: string) => void;
   toggleStar: (id: string) => void;
-  updateProfile: (profile: UserProfile) => void;
   resetToDefaults: () => void;
 
   // Actions for Projects
@@ -129,15 +127,6 @@ export const JournalProvider: React.FC<{ children: React.ReactNode }> = ({ child
     return INITIAL_LEARNING_RESOURCES;
   });
 
-  const [userProfile, setUserProfile] = useState<UserProfile>(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY_PROFILE);
-      if (saved) return JSON.parse(saved);
-    } catch {
-      // fallback
-    }
-    return INITIAL_USER_PROFILE;
-  });
 
   const [theme, setTheme] = useState<'dark' | 'light'>(() => {
     try {
@@ -208,15 +197,6 @@ export const JournalProvider: React.FC<{ children: React.ReactNode }> = ({ child
       console.warn('Failed to save resources', e);
     }
   }, [resources]);
-
-  // Sync profile
-  useEffect(() => {
-    try {
-      localStorage.setItem(STORAGE_KEY_PROFILE, JSON.stringify(userProfile));
-    } catch (e) {
-      console.warn('Failed to save profile', e);
-    }
-  }, [userProfile]);
 
   useEffect(() => {
     try {
@@ -291,10 +271,6 @@ export const JournalProvider: React.FC<{ children: React.ReactNode }> = ({ child
     }
   };
 
-  const updateProfile = (profile: UserProfile) => {
-    setUserProfile(profile);
-    setIsProfileModalOpen(false);
-  };
 
   // Project handlers
   const addProject = (projectData: Omit<TargetProject, 'id' | 'order'>) => {
@@ -351,7 +327,6 @@ export const JournalProvider: React.FC<{ children: React.ReactNode }> = ({ child
 
   const resetToDefaults = () => {
     setDays(INITIAL_DAYS);
-    setUserProfile(INITIAL_USER_PROFILE);
     setProjects(INITIAL_TARGET_PROJECTS);
     setResources(INITIAL_LEARNING_RESOURCES);
     setActiveNavPage('logbook');
@@ -398,7 +373,6 @@ export const JournalProvider: React.FC<{ children: React.ReactNode }> = ({ child
     <JournalContext.Provider
       value={{
         days,
-        userProfile,
         projects,
         resources,
         searchQuery,
@@ -429,7 +403,6 @@ export const JournalProvider: React.FC<{ children: React.ReactNode }> = ({ child
         addNewDay,
         deleteDay,
         toggleStar,
-        updateProfile,
         resetToDefaults,
         addProject,
         updateProject,

@@ -86,19 +86,15 @@ export const DayMatrix: React.FC = () => {
       aria-label="Curriculum Roadmap" 
       className="border border-emerald-500/25 rounded-2xl p-5 sm:p-6 bg-card/80 backdrop-blur-md relative shadow-[0_4px_24px_rgba(4,24,18,0.25)]"
     >
-      <span className="ch ch-tl hidden md:block" />
-      <span className="ch ch-tr hidden md:block" />
-
       {/* Header with View Mode Switch */}
       <div className="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-border/70">
         <div>
           <div className="flex items-center gap-2">
             <span className="font-mono text-xs uppercase tracking-wider text-lime-400 font-semibold flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-lime-400 shadow-[0_0_8px_#bef264] animate-pulse" />
               Curriculum Roadmap
             </span>
             <span aria-hidden="true" className="text-muted-foreground opacity-30">/</span>
-            <span className="text-xs font-mono text-foreground font-medium">250-Day KPI Progression</span>
+            <span className="text-xs font-mono text-foreground font-medium">My Progression</span>
           </div>
           <p className="text-xs text-muted-foreground mt-0.5 font-light">
             36 Weeks &middot; ~720 Hours &middot; From Python to Frontier GPU Kernel & Inference Architect.

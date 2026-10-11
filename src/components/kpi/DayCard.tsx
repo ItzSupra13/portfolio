@@ -1,28 +1,23 @@
 "use client"
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { JournalDay } from '@/types/journal';
 import { useJournal } from '@/context/JournalContextKPI';
 import { 
   Copy, 
   Check, 
-  Star, 
   ExternalLink, 
-  Edit3, 
-  Maximize2, 
-  FlaskConical, 
   Code2,
   ChevronDown,
   ChevronUp,
-  Cpu,
-  Sparkles
+  Cpu
 } from 'lucide-react';
 
 interface DayCardProps {
   day: JournalDay;
 }
 
-export const DayCard: React.FC<DayCardProps> = ({ day }) => {
-  const { toggleStar, setEditingDay, setActiveReaderDay, setActiveLab } = useJournal();
+export function DayCard({ day }: DayCardProps) {
+  const { setActiveLab } = useJournal();
   const [copiedCode, setCopiedCode] = useState(false);
   const [copiedMarkdown, setCopiedMarkdown] = useState(false);
   const [isCodeCollapsed, setIsCodeCollapsed] = useState(false);
@@ -92,18 +87,6 @@ ${day.gotchas && day.gotchas.length > 0 ? `**Gotchas:**\n${day.gotchas.map(g => 
 
         {/* Quiet Actions */}
         <div className="flex items-center gap-1">
-          <button
-            type="button"
-            onClick={() => toggleStar(day.id)}
-            title={day.isStarred ? 'Unstar entry' : 'Star entry'}
-            className={`p-1.5 rounded-lg transition-colors cursor-pointer ${
-              day.isStarred
-                ? 'text-amber-400 hover:text-amber-300'
-                : 'text-muted-foreground hover:text-foreground'
-            }`}
-          >
-            <Star className={`w-3.5 h-3.5 ${day.isStarred ? 'fill-amber-400' : ''}`} />
-          </button>
 
           <button
             type="button"
@@ -112,25 +95,6 @@ ${day.gotchas && day.gotchas.length > 0 ? `**Gotchas:**\n${day.gotchas.map(g => 
             className="p-1.5 rounded-lg text-muted-foreground hover:text-lime-400 transition-colors cursor-pointer"
           >
             {copiedMarkdown ? <Check className="w-3.5 h-3.5 text-lime-400" /> : <Copy className="w-3.5 h-3.5" />}
-          </button>
-
-          <button
-            type="button"
-            onClick={() => setActiveReaderDay(day)}
-            title="Open in distraction-free reader"
-            className="p-1.5 rounded-lg text-muted-foreground hover:text-lime-400 transition-colors cursor-pointer"
-          >
-            <Maximize2 className="w-3.5 h-3.5" />
-          </button>
-
-          <button
-            type="button"
-            onClick={() => setEditingDay(day)}
-            title="Edit what you learned"
-            className="inline-flex items-center gap-1 px-2.5 py-1 text-xs font-mono text-muted-foreground hover:text-lime-300 hover:bg-muted/60 rounded-lg transition-colors ml-1 cursor-pointer"
-          >
-            <Edit3 className="w-3 h-3 text-lime-400" />
-            <span>Edit</span>
           </button>
         </div>
       </div>

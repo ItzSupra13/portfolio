@@ -11,11 +11,6 @@ export default function HeaderHero() {
     stats,
     projects,
     resources,
-    setIsProfileModalOpen,
-    addNewDay,
-    setIsExportModalOpen,
-    theme,
-    toggleTheme,
     activeNavPage,
     setActiveNavPage
   } = useJournal();

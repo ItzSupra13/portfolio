@@ -434,7 +434,7 @@
   .editorial-title::after { animation: none; }
   .trajectory-bar::after { transition: none; }
 }
-/* 
+
 @import "tailwindcss";
 
 @custom-variant dark (&:is(.dark *));
@@ -726,4 +726,4 @@
   }
   .grid-rail::before { left: max(24px, calc(50% - 512px)); }
   .grid-rail::after  { right: max(24px, calc(50% - 512px)); }
-} */
+}

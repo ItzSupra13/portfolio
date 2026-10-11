@@ -1,9 +1,9 @@
 "use client"
 import { useJournal } from '@/context/JournalContextRL';
-import { RLPhase, DayStatus } from '@/types/journal';
+import { Phase, DayStatus } from '@/types/journal';
 import { Search, X, ArrowUpDown, LayoutList, Grid } from 'lucide-react';
 
-const PHASES: (RLPhase | 'All')[] = [
+const PHASES: (Phase | 'All')[] = [
   'All',
   'Foundations & MDPs',
   'Tabular Methods & TD',

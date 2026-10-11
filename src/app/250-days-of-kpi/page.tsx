@@ -9,26 +9,18 @@ import { FilterBar } from '@/components/kpi/FilterBar';
 import { DayCard } from '@/components/kpi/DayCard';
 import { InteractiveRoofline } from '@/components/kpi/InteractiveRoofline';
 import { InteractiveBankConflict } from '@/components/kpi/InteractiveBankConflict';
-import { Plus, Github, ArrowUp } from 'lucide-react';
 
-const MainContent: React.FC = () => {
+function MainContent() {
   const { 
     filteredDays, 
     activeNavPage, 
-    addNewDay, 
-    userProfile, 
-    setIsExportModalOpen, 
-    setActiveNavPage 
   } = useJournal();
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
 
   return (
     <div className="min-h-screen relative grid-rail bg-background text-foreground selection:bg-lime-400 selection:text-slate-950 overflow-x-hidden wafer-die-pattern">
-      {/* Ambient atmosphere with deep forest foundation */}
-      <div className="absolute inset-x-0 top-0 h-[640px] emerald-ambient-glow pointer-events-none" />
+      {/* Ambient atmosphere with deep forest foundation
+      <div className="absolute inset-x-0 top-0 h-[640px] emerald-ambient-glow pointer-events-none" /> */}
 
       {/* Outer gutter textures from grid system */}
       <div className="hash-zone-l hidden lg:block" />
@@ -56,17 +48,6 @@ const MainContent: React.FC = () => {
                     <p className="text-base text-foreground font-medium font-editorial">
                       No logbook entries match your filters
                     </p>
-                    <p className="text-xs text-muted-foreground mt-1.5 max-w-sm mx-auto font-sans">
-                      Try clearing search parameters or start documenting today's research breakthrough.
-                    </p>
-                    <button
-                      type="button"
-                      onClick={addNewDay}
-                      className="mt-5 inline-flex items-center gap-1.5 px-4 py-2 rounded bg-foreground text-background text-xs font-mono font-semibold cursor-pointer hover:opacity-90 transition-opacity"
-                    >
-                      <Plus className="w-3.5 h-3.5 stroke-[2.5]" />
-                      <span>Log Today's Entry</span>
-                    </button>
                   </div>
                 )}
               </section>
@@ -75,7 +56,7 @@ const MainContent: React.FC = () => {
 
           {/* ── PAGE 2: ROADMAP (Contains Roadmap Matrix, Aspirational Projects, and Resource Dump) ── */}
           {activeNavPage === 'roadmap' && (
-            <div className="space-y-12 animate-in fade-in duration-300">
+            <div className="space-y-6 animate-in fade-in duration-300">
               {/* 1. Roadmap Matrix Section */}
               <section id="roadmap" aria-labelledby="roadmap-heading" className="relative">
                 <DayMatrix />
@@ -124,38 +105,6 @@ const MainContent: React.FC = () => {
               </a>
               {' '}and Frontier Kernel Engineering. Covering C++ & CUDA, Nsight profiling, Triton, FlashAttention 1→4, CuTe, Distributed Training, and vLLM Serving.
             </p>
-          </div>
-
-          <div className="flex items-center gap-4">
-            <button
-              type="button"
-              onClick={() => setIsExportModalOpen(true)}
-              className="hover:text-foreground transition-colors cursor-pointer"
-            >
-              Export Markdown
-            </button>
-            <span aria-hidden="true">·</span>
-            {userProfile.githubUrl && (
-              <a
-                href={userProfile.githubUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="hover:text-foreground transition-colors flex items-center gap-1"
-              >
-                <Github className="w-3.5 h-3.5" />
-                <span>Source</span>
-              </a>
-            )}
-            <span aria-hidden="true">·</span>
-            <button
-              type="button"
-              onClick={scrollToTop}
-              className="hover:text-foreground transition-colors flex items-center gap-1 cursor-pointer"
-              title="Back to top"
-            >
-              <ArrowUp className="w-3.5 h-3.5" />
-              <span>Top</span>
-            </button>
           </div>
         </div>
       </footer>
