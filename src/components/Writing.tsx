@@ -22,14 +22,14 @@ const writings = [
   //     readTime: '2 m',
   //     slug: 'hi',
   //   },
-  //   {
-  //     date: '11/01/25',
-  //     title: 'Design tokens 101',
-  //     readTime: '2 m',
-  //     slug: 'hi',
-  //   },
   {
-    date: "22/03/25",
+    date: '31/10/26',
+    title: 'GEMM on CPU, GPU, & TPU to near-SOTA',
+    readTime: '42 m',
+    slug: 'gemm-optimization',
+  },
+  {
+    date: "22/03/26",
     title: "Hello World",
     readTime: "5 m",
     slug: "hello-world",

@@ -1,0 +1,221 @@
+/* ─── KPI ROUTE THEME ────────────────────────────────────────
+   Everything in this file is scoped to `.kpi-theme`, which is
+   applied to the root element of /250-days-of-kpi. The universal
+   stylesheet lives in src/app/globals.css and is the fallback for
+   every other route.
+──────────────────────────────────────────────────────────── */
+
+/* ─── EMERALD & LEMONGRASS SILICON COLOR PALETTE ──────────── */
+:root .kpi-theme {
+  --radius: 0.625rem;
+  /* Light mode: crisp matcha tea canvas with clean slate typography */
+  --background: #edfcf2;
+  --foreground: #0f172a;
+  --card: #f4fdf6;
+  --card-foreground: #0f172a;
+  --popover: #f4fdf6;
+  --popover-foreground: #0f172a;
+  --primary: #059669;
+  --primary-foreground: #ffffff;
+  --secondary: #d1fae5;
+  --secondary-foreground: #1e293b;
+  --muted: #e1faea;
+  --muted-foreground: #64748b;
+  --accent: #dcfce7;
+  --accent-foreground: #0f172a;
+  --destructive: #dc2626;
+  --border: #86efac;
+  --input: #a7f3d0;
+  --ring: #10b981;
+  --lemongrass: #65a30d;
+  --lemongrass-foreground: #ffffff;
+  --lemongrass-muted: #d9f99d;
+  --chart-1: #059669;
+  --chart-2: #65a30d;
+  --chart-3: #10b981;
+  --chart-4: #84cc16;
+  --chart-5: #047857;
+  --sidebar: #e6f9ed;
+  --sidebar-foreground: #0f172a;
+  --sidebar-primary: #059669;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #d1fae5;
+  --sidebar-accent-foreground: #0f172a;
+  --sidebar-border: #86efac;
+  --sidebar-ring: #059669;
+}
+
+.dark .kpi-theme {
+  /* Dark mode: 75% Green backgrounds & borders with ultra-readable crisp white & slate text */
+  --background: #041a12;
+  --foreground: #f8fafc;
+  --card: #08261b;
+  --card-foreground: #f8fafc;
+  --popover: #0a2d21;
+  --popover-foreground: #f8fafc;
+  --primary: #10b981;
+  --primary-foreground: #02140d;
+  --secondary: #0d3829;
+  --secondary-foreground: #e2e8f0;
+  --muted: #0a3022;
+  --muted-foreground: #94a3b8;
+  --accent: #124734;
+  --accent-foreground: #f8fafc;
+  --destructive: #ef4444;
+  --border: #155e42;
+  --input: #0b3324;
+  --ring: #bef264;
+  --lemongrass: #bef264;
+  --lemongrass-foreground: #02150e;
+  --lemongrass-muted: #133c26;
+  --chart-1: #10b981;
+  --chart-2: #bef264;
+  --chart-3: #34d399;
+  --chart-4: #a3e635;
+  --chart-5: #059669;
+  --sidebar: #051d14;
+  --sidebar-foreground: #f8fafc;
+  --sidebar-primary: #10b981;
+  --sidebar-primary-foreground: #02140d;
+  --sidebar-accent: #0d3829;
+  --sidebar-accent-foreground: #f8fafc;
+  --sidebar-border: #155e42;
+  --sidebar-ring: #10b981;
+}
+
+/* ─── TYPOGRAPHY UTILITIES ───────────────────────────────── */
+.kpi-theme .font-editorial {
+  font-family: 'Newsreader', Georgia, Cambria, serif;
+}
+
+.kpi-theme .font-code {
+  font-family: var(--font-mono);
+}
+
+/* Hide scrollbar for clean horizontal tabs */
+.kpi-theme .no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.kpi-theme .no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ─── HARDWARE WAFER & EMERALD-LEMONGRASS SYSTEM ──────────── */
+
+/* Ambient aura with concrete subtle tint */
+.kpi-theme .emerald-ambient-glow {
+  background: transparent;
+}
+
+/* Silicon die wafer subtle texture with micro-grid (applied on the scope root) */
+.kpi-theme.wafer-die-pattern {
+  background-color: var(--background);
+}
+
+/* Lemongrass subtle shadow utility */
+.kpi-theme .glow-lemongrass {
+  box-shadow: 0 0 0 1px rgba(190, 242, 100, 0.4);
+}
+
+.kpi-theme .glow-emerald {
+  box-shadow: 0 0 0 1px rgba(16, 185, 129, 0.4);
+}
+
+/* Concrete badge utility */
+.kpi-theme .badge-emerald-lemongrass {
+  background: #0d3829;
+  border: 1px solid #bef264;
+  color: #bef264;
+}
+
+/* The two permanent vertical rail lines with crisp emerald phosphor */
+.kpi-theme.grid-rail::before,
+.kpi-theme.grid-rail::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(52, 211, 153, 0.3);
+  pointer-events: none;
+  z-index: 50;
+}
+.kpi-theme.grid-rail::before { left: max(24px, calc(50% - 512px)); }
+.kpi-theme.grid-rail::after  { right: max(24px, calc(50% - 512px)); }
+
+/* Crosshair marker — emerald phosphor precision with lemongrass accent */
+.kpi-theme .ch {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  pointer-events: none;
+  z-index: 10;
+}
+.kpi-theme .ch::before,
+.kpi-theme .ch::after {
+  content: '';
+  position: absolute;
+  background: #34d399;
+}
+.kpi-theme .ch::before { width: 1px; height: 100%; left: 50%; top: 0; }
+.kpi-theme .ch::after  { width: 100%; height: 1px; top: 50%; left: 0; }
+
+.kpi-theme .ch-tl { top: 0;    left: max(24px, calc(50% - 512px)); transform: translate(-50%, -50%); }
+.kpi-theme .ch-tr { top: 0;    right: max(24px, calc(50% - 512px)); transform: translate(50%, -50%); }
+.kpi-theme .ch-bl { bottom: 0; left: max(24px, calc(50% - 512px)); transform: translate(-50%, 50%); }
+.kpi-theme .ch-br { bottom: 0; right: max(24px, calc(50% - 512px)); transform: translate(50%, 50%); }
+
+/* Dot grid zone — center band with clean solid background */
+.kpi-theme .dot-zone {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Hash texture zone — outer gutters with deep dark forest tone and emerald boundary */
+.kpi-theme .hash-zone-l,
+.kpi-theme .hash-zone-r {
+  position: absolute;
+  top: 0; bottom: 0;
+  width: max(24px, calc(50% - 512px));
+  background-color: #03140e;
+  pointer-events: none;
+  z-index: 0;
+}
+.kpi-theme .hash-zone-l {
+  left: 0;
+  border-right: 1px solid rgba(21, 94, 66, 0.6);
+}
+.kpi-theme .hash-zone-r {
+  right: 0;
+  border-left: 1px solid rgba(21, 94, 66, 0.6);
+}
+
+/* Horizontal section boundary line with emerald hairline */
+.kpi-theme .h-rule {
+  position: absolute;
+  left: 0; right: 0;
+  height: 1px;
+  background: rgba(52, 211, 153, 0.25);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Only show global rails on desktop */
+@media (min-width: 768px) {
+  .kpi-theme.grid-rail::before,
+  .kpi-theme.grid-rail::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: rgba(52, 211, 153, 0.3);
+    pointer-events: none;
+    z-index: 50;
+  }
+  .kpi-theme.grid-rail::before { left: max(24px, calc(50% - 512px)); }
+  .kpi-theme.grid-rail::after  { right: max(24px, calc(50% - 512px)); }
+}

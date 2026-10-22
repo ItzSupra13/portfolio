@@ -9,6 +9,7 @@ import { FilterBar } from '@/components/kpi/FilterBar';
 import { DayCard } from '@/components/kpi/DayCard';
 import { InteractiveRoofline } from '@/components/kpi/InteractiveRoofline';
 import { InteractiveBankConflict } from '@/components/kpi/InteractiveBankConflict';
+import './kpi.css';
 
 function MainContent() {
   const { 
@@ -18,7 +19,7 @@ function MainContent() {
 
 
   return (
-    <div className="min-h-screen relative grid-rail bg-background text-foreground selection:bg-lime-400 selection:text-slate-950 overflow-x-hidden wafer-die-pattern">
+    <div className="kpi-theme min-h-screen relative grid-rail bg-background text-foreground selection:bg-lime-400 selection:text-slate-950 overflow-x-hidden wafer-die-pattern">
       {/* Ambient atmosphere with deep forest foundation
       <div className="absolute inset-x-0 top-0 h-[640px] emerald-ambient-glow pointer-events-none" /> */}
 

@@ -9,9 +9,7 @@ import Writing from "@/components/Writing";
 import Contact from "@/components/Contact";
 import Tools from "@/components/Tools";
 import { GridSection } from "@/components/GridSection";
-import { FaHeart } from "react-icons/fa";
-import Link from "next/link";
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import { VisitorCount } from "@/components/VisitorCount";
 
 export default function Page() {
   return (
@@ -60,18 +58,11 @@ export default function Page() {
 
         {/* FOOTER */}
         <GridSection showHashes hideOnMobile topBorder={false} showCrosshairs>
-          <footer className="flex items-center justify-center py-8 text-xs text-[#8b8b8b]">
-            © 2026 | Made with <FaHeart className="mx-1 text-orange-700" /> by&nbsp;
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Link href="https://asterdev.vercel.app/" className="hover:underline">
-                  AsterDev
-                </Link>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>Yes this is recursive :)</p>
-              </TooltipContent>
-            </Tooltip>
+          <footer className="flex flex-col items-center justify-between gap-3 text-sm text-[#8b8b8b] sm:flex-row">
+            <VisitorCount/>
+            <span>
+              try <code className="rounded px-2 text-zinc-300">curl asterdev.vercel.app</code>
+            </span>
           </footer>
         </GridSection>
       </main>

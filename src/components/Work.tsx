@@ -9,10 +9,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { motion } from "motion/react";
 import { LuMousePointerClick } from "react-icons/lu"
-import { Ascii } from "ascii.rest/react";
-import desertNight from "ascii.rest/pieces/desert-night";
-
-const TABS = ["All", "Full-Stack", "ML & DL", "Backend"];
+const TABS = ["All", "Full-Stack", "ML & DL", "AI Agent", "LLM"];
 
 export default function Work() {
   const [activeTab, setActiveTab] = useState("All");
@@ -26,24 +23,6 @@ export default function Work() {
 
   return (
     <section id="work" className="">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 z-0 overflow-hidden opacity-20 [container-type:size]"
-        style={{
-          maskImage: "radial-gradient(ellipse at center, black 40%, transparent 85%)",
-          WebkitMaskImage: "radial-gradient(ellipse at center, black 40%, transparent 85%)",
-        }}
-      >
-        <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 [&>*]:!h-full [&>*]:!w-full"
-          style={{
-            aspectRatio: "2 / 1",
-            width: "max(100cqw, 200cqh)", // 200cqh = 2 × container height, so it always covers
-          }}
-        >
-          <Ascii piece="misty-forest"/>
-        </div>
-      </div>
       <div className="grid gap-x-10 gap-y-6 md:grid-cols-[125px_1fr]">
         {/* Section Label */}
         <p className="text-lg font-medium text-white/60 md:pr-4 md:text-right">
@@ -189,7 +168,7 @@ export default function Work() {
                       style={project.wip ? { filter: "blur(5px)", opacity: 0.2 } : {}}
                     >
                       <h3 className={`text-sm ${project.wip ? "text-white" : "text-white"}`}>
-                        {project.title}
+                        {project.subtitle}
                       </h3>
                       <p className="text-sm tracking-tight text-white/60">{project.description}</p>
                     </div>

@@ -68,9 +68,9 @@ export default function Hero() {
       {/* ── ASCII BACKGROUND ── */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 z-0 overflow-hidden opacity-20 [container-type:size]"
+        className="pointer-events-none absolute inset-0 z-0 overflow-hidden opacity-30 [container-type:size]"
         style={{
-          maskImage: "radial-gradient(ellipse at center, black 40%, transparent 85%)",
+          maskImage: "radial-gradient(ellipse at center, black 40%, transparent 75%)",
           WebkitMaskImage: "radial-gradient(ellipse at center, black 40%, transparent 85%)",
         }}
       >
@@ -107,7 +107,16 @@ export default function Hero() {
         {/* Name + Role */}
         <div className="flex flex-col items-center">
           <h1 className="flex items-center gap-2 text-3xl font-semibold tracking-tighter text-white">
-            Aster Dev
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Link href="https://asterdev.vercel.app/" className="hover:underline">
+                  AsterDev
+                </Link>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Yes this is recursive :)</p>
+              </TooltipContent>
+            </Tooltip>
             <RiVerifiedBadgeFill className="size-6 fill-[#1db7f9]" />
           </h1>
           <div className="mt-1 flex items-center gap-1.5">
@@ -117,7 +126,7 @@ export default function Hero() {
                 <LinkPreview
                   url="https://axiom-ml.vercel.app/"
                   imageSrc="/landings/AxiomML.png"
-                  className="z-20 bg-gradient-to-br from-purple-500 to-pink-500 bg-clip-text font-bold text-transparent"
+                  className="font-bold text-transparent"
                 >
                   <span className="font-serif tracking-wide text-white italic brightness-110">
                     Axiom-ML

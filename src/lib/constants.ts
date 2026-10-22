@@ -6,7 +6,7 @@ interface Project {
   image: string;
   landing: string;
   tech: string[];
-  category: "Full-Stack" | "ML & DL" | "AI Agent";
+  category: "Full-Stack" | "ML & DL" | "AI Agent" | "LLM";
   sourceUrl?: string;
   liveUrl: string;
   wip?:boolean;
@@ -14,56 +14,68 @@ interface Project {
 }
 export const PROJECTS: Project[] = [
   {
-    id: 1,
-    title: "Axiom-ML",
-    subtitle: "Leetcode for AI Algorithms & Benchmarks",
-    description:
-      "Don't just import models. Code them from scratch. Even the ones meant for AI! A one stop platform to understand and code your everyday Algorithms from scratch.",
-    image: "/logos/axiom-ml.png",
-    landing: "/landings/AxiomML.png",
-    tech: ["Next.js", "Docker", "Stripe"],
-    category: "Full-Stack",
-    liveUrl: "https://axiom-ml.vercel.app/",
+  		id: 0,
+  		title: 'MatMul++',
+  		subtitle: "Optimizing MatMul to near-SOTA from scratch",
+      description: 'A step-by-step optimization of matrix multiplication on a CPU, GPU, and TPU to match SOTA performance',
+  		image: '/logos/origyn.jpg',
+  		landing: '/landings/matmulpp.png',
+  		tech: ['CUDA', 'A100'],
+  		category: 'LLM',
+  		sourceUrl: 'https://github.com/ItzSupra13/gemm-optimization',
+  		liveUrl: 'https://asterdev.vercel.app/gemm-optimization', // 2  months
   },
-  {
-    id: 2,
-    title: "Origyn",
-    subtitle: "Custom AI Harness built from scratch",
-    description: "Do Anything with local models. Generate Images, Music, Videos. Clone Voice. Vibecode & Design Apps. Use Tools with RAG Pipelines and Deep Agents with browser.",
-    image: "/logos/origyn.jpg",
-    landing: "/landings/Aesthetify.png",
-    tech: ["Next.js", "TypeScript", "Framer"],
-    category: "Full-Stack",
-    sourceUrl: "https://github.com/yourrepo",
-    liveUrl: "https://aesthetify.com",
-  }, // 4 month
-  {
-  	id: 3,
-  	title: 'Policily',
-    subtitle: 'Multi-agent swarm with information diffusion models for Businesses. Simulate your next policy, AD, product or GTM before its even launched.',
-		description: 'Cluely Clone that helps in cheating in OAs hehe.',  		image: '/logos/cheatly.jpg',
-  	landing: '/landings/GitGud.png',
-  	tech: ['Node.js', 'Docker'],
-  	category: 'AI Agent',
-  	sourceUrl: 'https://github.com/yourrepo',
-  	liveUrl: 'https://gitgud.com',
-    wip: true,
-    wipHint: "Experimenting with Information Diffusion Models",
-  },
-  {
-    id: 4,
-    title: "ArchClik",
-    subtitle: "Open-Source Clicky inspired Computer use agent for Arch Environments, can use Hyprland.",
-    description: "Computer-use local models to assist Aged Individuals in using their Computers in a much more tech-savvy manner",
-    image: "/logos/gitgud.svg",
-    landing: "/landings/GitGud.png",
-    tech: ["Node.js", "Docker"],
-    category: "Full-Stack",
-    sourceUrl: "https://github.com/yourrepo",
-    liveUrl: "https://gitgud.com",
-    wip: true,
-    wipHint: "Experimenting with computer use agents",
-  } // 1 month
+  // {
+  //   id: 1,
+  //   title: "Axiom-ML",
+  //   subtitle: "Leetcode for AI Algorithms & Benchmarks",
+  //   description:
+  //     "Don't just import models. Code them from scratch. Even the ones meant for AI! A one stop platform to understand and code your everyday Algorithms from scratch.",
+  //   image: "/logos/axiom-ml.png",
+  //   landing: "/landings/AxiomML.png",
+  //   tech: ["Next.js", "Docker", "Stripe"],
+  //   category: "Full-Stack",
+  //   liveUrl: "https://axiom-ml.vercel.app/",
+  // },
+  // {
+  //   id: 2,
+  //   title: "Origyn",
+  //   subtitle: "Custom AI Harness built from scratch",
+  //   description: "Do Anything with local models. Generate Images, Music, Videos. Clone Voice. Vibecode & Design Apps. Use Tools with RAG Pipelines and Deep Agents with browser.",
+  //   image: "/logos/origyn.jpg",
+  //   landing: "/landings/Aesthetify.png",
+  //   tech: ["Next.js", "TypeScript", "Framer"],
+  //   category: "Full-Stack",
+  //   sourceUrl: "https://github.com/yourrepo",
+  //   liveUrl: "https://aesthetify.com",
+  // }, // 4 month
+  // {
+  // 	id: 3,
+  // 	title: 'Policily',
+  //   subtitle: 'Multi-agent swarm with information diffusion models for Businesses. Simulate your next policy, AD, product or GTM before its even launched.',
+	// 	description: 'Cluely Clone that helps in cheating in OAs hehe.',  		image: '/logos/cheatly.jpg',
+  // 	landing: '/landings/GitGud.png',
+  // 	tech: ['Node.js', 'Docker'],
+  // 	category: 'AI Agent',
+  // 	sourceUrl: 'https://github.com/yourrepo',
+  // 	liveUrl: 'https://gitgud.com',
+  //   wip: true,
+  //   wipHint: "Experimenting with Information Diffusion Models",
+  // },
+  // {
+  //   id: 4,
+  //   title: "ArchClik",
+  //   subtitle: "Open-Source Clicky inspired Computer use agent for Arch Environments, can use Hyprland.",
+  //   description: "Computer-use local models to assist Aged Individuals in using their Computers in a much more tech-savvy manner",
+  //   image: "/logos/gitgud.svg",
+  //   landing: "/landings/GitGud.png",
+  //   tech: ["Node.js", "Docker"],
+  //   category: "Full-Stack",
+  //   sourceUrl: "https://github.com/yourrepo",
+  //   liveUrl: "https://gitgud.com",
+  //   wip: true,
+  //   wipHint: "Experimenting with computer use agents",
+  // }, // 1 month
   // 	{
   // 		id: 5,
   // 		title: '16-bit Computer from Scratch',

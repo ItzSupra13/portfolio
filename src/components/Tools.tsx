@@ -14,22 +14,20 @@ type Tool = {
 };
 
 const tools: Tool[] = [
-  {
-    id: "01",
-    name: "stack.md skill maker",
-    description:
-      "Select your tech stack, get a clean markdown snippet ready to be used by any Agent.",
-    tag: "Developer",
-    href: "/tools/stack-md",
-  },
+  // {
+  //   id: "01",
+  //   name: "stack.md skill maker",
+  //   description:
+  //     "Select your tech stack, get a clean markdown snippet ready to be used by any Agent.",
+  //   tag: "Developer",
+  //   href: "/tools/stack-md",
+  // },
   {
     id: "02",
     name: "Holiday optimizer",
     description:
       "Maximize your leaves. Enter your country & remaining PTO — get the optimal long-weekend plan.",
     tag: "Productivity",
-    paid: true,
-    price: "$1",
     href: "/tools/holiday-optimizer",
   },
 ];
