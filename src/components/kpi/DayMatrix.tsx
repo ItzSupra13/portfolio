@@ -39,7 +39,7 @@ const PHASE_GROUPS: { name: Phase; range: [number, number]; weeks: string; hours
   },
   { 
     name: 'Inference & Serving', 
-    range: [161, 210], 
+    range: [161, 198], 
     weeks: 'Weeks 24–30',
     hours: 140,
     description: 'Prefill vs Decode dynamics, PagedAttention in vLLM, continuous batching, chunked prefill, SGLang, shipping custom quantization kernels.',
@@ -47,7 +47,7 @@ const PHASE_GROUPS: { name: Phase; range: [number, number]; weeks: string; hours
   },
   { 
     name: 'Portfolio & Job Search', 
-    range: [211, 250], 
+    range: [199, 200], 
     weeks: 'Weeks 31–36',
     hours: 120,
     description: 'Portfolio consolidation, LeetGPU whiteboard challenges, deep ML systems architecture mock interviews, Sarvam AI readiness dossier.',
@@ -62,7 +62,7 @@ export const DayMatrix: React.FC = () => {
 
   // Map of dayNumber -> day object
   const dayMap = new Map(days.map(d => [d.dayNumber, d]));
-  const numbers = Array.from({ length: 250 }, (_, i) => i + 1);
+  const numbers = Array.from({ length: 200 }, (_, i) => i + 1);
 
   const handleCellClick = (dayNumber: number) => {
     const existingDay = dayMap.get(dayNumber);
@@ -126,7 +126,7 @@ export const DayMatrix: React.FC = () => {
               }`}
             >
               <Grid className="w-3.5 h-3.5" />
-              <span>250-Grid</span>
+              <span>200-Grid</span>
             </button>
           </div>
 
@@ -219,12 +219,12 @@ export const DayMatrix: React.FC = () => {
               })}
             </div>
           ) : (
-            /* Dense 250-Grid Heat Matrix View */
+            /* Dense 200-Grid Heat Matrix View */
             <div className="space-y-4">
               <div className="flex flex-wrap items-center justify-between text-xs font-mono text-muted-foreground">
                 <span className="font-semibold text-foreground flex items-center gap-2">
                   <Sparkles className="w-3.5 h-3.5 text-lime-400" />
-                  <span>250-Day Engineering Heatmap</span>
+                  <span>200-Day Engineering Heatmap</span>
                 </span>
                 <div className="flex items-center gap-4">
                   <div className="flex items-center gap-1.5">

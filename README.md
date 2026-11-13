@@ -1,0 +1,3 @@
+- make Send "message" only visible on laptop view
+- Improve footer look on mobile and troubleshoot why count is not working
+- Make spacing consistent in wirting mobile view

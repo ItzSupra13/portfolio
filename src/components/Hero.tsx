@@ -169,11 +169,11 @@ export default function Hero() {
         <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center">
           <button
             className="group relative w-full rounded-xl border border-dashed border-white/30 bg-gradient-to-b from-[#f0652f] to-[#d44d1d] px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:scale-[1.02] hover:border-white/60 hover:shadow-[0_0_20px_rgba(240,101,47,0.4)] active:scale-[0.95] sm:w-auto"
-            onClick={() => window.open("/cv.pdf", "_blank")}
+            onClick={() => window.open("/resume.pdf", "_blank")}
           >
             <span className="flex items-center justify-center gap-2">
               <FaEye className="text-lg transition-transform" />
-              View CV
+              View Resume
             </span>
           </button>
           <span className="hidden text-sm text-white/40 sm:inline">or</span>

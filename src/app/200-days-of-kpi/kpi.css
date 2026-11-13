@@ -1,10 +1,3 @@
-/* ─── KPI ROUTE THEME ────────────────────────────────────────
-   Everything in this file is scoped to `.kpi-theme`, which is
-   applied to the root element of /250-days-of-kpi. The universal
-   stylesheet lives in src/app/globals.css and is the fallback for
-   every other route.
-──────────────────────────────────────────────────────────── */
-
 /* ─── EMERALD & LEMONGRASS SILICON COLOR PALETTE ──────────── */
 :root .kpi-theme {
   --radius: 0.625rem;

@@ -92,19 +92,10 @@ function MainContent() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-6 text-xs font-mono">
           <div className="space-y-1 text-center sm:text-left">
             <div className="text-foreground font-semibold font-editorial text-sm">
-              250 Days of KPI — Kernel Performance & Inference Engineering
+              200 Days of KPI — Kernel Performance & Inference Engineering
             </div>
             <p className="text-muted-foreground text-[11px] font-sans">
-              Inspired by{' '}
-              <a 
-                href="https://pavelsimo.github.io/100-days-of-cuda/index.html" 
-                target="_blank" 
-                rel="noreferrer"
-                className="text-foreground hover:text-emerald-500 underline transition-colors"
-              >
-                Pavel Simo's 100 Days of CUDA
-              </a>
-              {' '}and Frontier Kernel Engineering. Covering C++ & CUDA, Nsight profiling, Triton, FlashAttention 1→4, CuTe, Distributed Training, and vLLM Serving.
+              Is 200 days enough to get a job chat? Let's find out (Although the main goal is to learn)
             </p>
           </div>
         </div>

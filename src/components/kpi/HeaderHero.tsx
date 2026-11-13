@@ -25,7 +25,7 @@ export const HeaderHero: React.FC = () => {
     setActiveNavPage
   } = useJournal();
 
-  const progressPercent = Math.min(100, Math.round((stats.completedDays / 250) * 100));
+  const progressPercent = Math.min(100, Math.round((stats.completedDays / 200) * 100));
 
   return (
     <header className="relative border-b border-border/80 pt-6 pb-6">
@@ -40,7 +40,7 @@ export const HeaderHero: React.FC = () => {
         <div className="flex flex-wrap items-center justify-between gap-4 pb-6 mb-8 border-b border-border/60">
           {/* Unboxed Metadata (Zero-Pill Discipline with Lemongrass & Emerald Accents) */}
           <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground font-mono">
-            <span>Started on 12/10/2026</span>
+            <span>Started on 17/11/2026</span>
             <span aria-hidden="true" className="opacity-30">·</span>
             <a href={"https://github.com/ItzSupra13/portfolio"} target="_blank" className="hover:text-foreground transition-colors inline-flex items-center gap-1 underline underline-offset-2">
               <FaGithub className="w-3 h-3" />
@@ -62,7 +62,7 @@ export const HeaderHero: React.FC = () => {
               <span>A First-Principles Systems & Hardware Journey</span>
             </div>
             <h1 className="font-editorial text-4xl sm:text-5xl lg:text-[3.25rem] font-bold tracking-tight text-foreground leading-[1.08]">
-              250 Days of KPI <span className="font-light italic text-muted-foreground text-3xl sm:text-4xl lg:text-[2.6rem] block sm:inline sm:ml-2">— Kernel, & Inference Engineering</span>
+              200 Days of KPI <span className="font-light italic text-muted-foreground text-3xl sm:text-4xl lg:text-[2.6rem] block sm:inline sm:ml-2">— Kernel, Performance & Inference Engineering</span>
             </h1>
           </div>
           <p className="text-base sm:text-lg text-muted-foreground leading-relaxed font-light">
@@ -76,7 +76,7 @@ export const HeaderHero: React.FC = () => {
             <div className="flex items-center gap-3">
               <span className="text-foreground font-semibold flex items-center gap-2">
                 <Activity className="w-3.5 h-3.5 text-lime-400" />
-                <span>Trajectory: {stats.completedDays} / 250 days documented</span>
+                <span>Trajectory: {stats.completedDays} / 200 days documented</span>
               </span>
               <span className="text-lime-400 font-bold bg-lime-400/10 border border-lime-400/25 px-1.5 py-0.5 rounded text-[11px]">
                 {progressPercent}%
@@ -97,11 +97,11 @@ export const HeaderHero: React.FC = () => {
           <div className="relative w-full h-2.5 bg-muted/60 rounded-full overflow-hidden flex border border-border/40 p-[1px]">
             <div
               className="h-full bg-lime-400 transition-all duration-500 rounded-full"
-              style={{ width: `${(stats.completedDays / 250) * 100}%` }}
+              style={{ width: `${(stats.completedDays / 200) * 100}%` }}
             />
             <div
               className="h-full bg-amber-400 transition-all duration-500 rounded-full"
-              style={{ width: `${(stats.inProgressDays / 250) * 100}%` }}
+              style={{ width: `${(stats.inProgressDays / 200) * 100}%` }}
             />
           </div>
         </div>

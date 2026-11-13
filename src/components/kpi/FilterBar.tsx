@@ -98,7 +98,7 @@ export const FilterBar: React.FC = () => {
             title={`Sort ${sortOrder === 'asc' ? 'Newest first' : 'Oldest first'}`}
           >
             <ArrowUpDown className="w-3.5 h-3.5 text-lime-400" />
-            <span className="hidden sm:inline font-medium">{sortOrder === 'asc' ? 'Day 1→250' : 'Day 250→1'}</span>
+            <span className="hidden sm:inline font-medium">{sortOrder === 'asc' ? 'Day 1→200' : 'Day 200→1'}</span>
           </button>
         </div>
       </div>
@@ -130,7 +130,7 @@ export const FilterBar: React.FC = () => {
           <span className="flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-lime-400 shadow-[0_0_6px_#bef264]" />
             <span>
-              Showing {filteredDays.length} of 250 logbook entries
+              Showing {filteredDays.length} of 200 entries
               {selectedPhase !== 'All' && ` in "${selectedPhase}"`}
               {selectedStatus !== 'all' && ` (${selectedStatus})`}
             </span>

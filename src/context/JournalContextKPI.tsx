@@ -80,12 +80,12 @@ interface JournalContextType {
 
 const JournalContext = createContext<JournalContextType | undefined>(undefined);
 
-const STORAGE_KEY_DAYS = '250_days_of_kpi_days_v2';
-const STORAGE_KEY_PROFILE = '250_days_of_kpi_profile_v2';
-const STORAGE_KEY_THEME = '250_days_of_kpi_theme_v2';
-const STORAGE_KEY_PROJECTS = '250_days_of_kpi_projects_v2';
-const STORAGE_KEY_RESOURCES = '250_days_of_kpi_resources_v2';
-const STORAGE_KEY_PAGE = '250_days_of_kpi_page_v2';
+const STORAGE_KEY_DAYS ='200_days_of_kpi_days_v2';
+const STORAGE_KEY_PROFILE = '200_days_of_kpi_profile_v2';
+const STORAGE_KEY_THEME = '200_days_of_kpi_theme_v2';
+const STORAGE_KEY_PROJECTS = '200_days_of_kpi_projects_v2';
+const STORAGE_KEY_RESOURCES = '200_days_of_kpi_resources_v2';
+const STORAGE_KEY_PAGE = '200_days_of_kpi_page_v2';
 
 export const JournalProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [days, setDays] = useState<JournalDay[]>(() => {
@@ -225,7 +225,7 @@ export const JournalProvider: React.FC<{ children: React.ReactNode }> = ({ child
 
   const addNewDay = () => {
     const maxDayNum = days.reduce((max, d) => Math.max(max, d.dayNumber), 0);
-    const nextDayNum = maxDayNum < 250 ? maxDayNum + 1 : maxDayNum + 1;
+    const nextDayNum = maxDayNum < 200 ? maxDayNum + 1 : maxDayNum + 1;
     const now = new Date().toISOString().split('T')[0];
     
     let defaultPhase: Phase = 'C++ & CUDA Foundations';
@@ -341,10 +341,10 @@ export const JournalProvider: React.FC<{ children: React.ReactNode }> = ({ child
   const completedCount = days.filter(d => d.status === 'completed').length;
   const inProgressCount = days.filter(d => d.status === 'in-progress').length;
   const stats: JournalStats = {
-    totalDays: 250,
+    totalDays: 200,
     completedDays: completedCount,
     inProgressDays: inProgressCount,
-    plannedDays: Math.max(0, 250 - completedCount - inProgressCount),
+    plannedDays: Math.max(0, 200 - completedCount - inProgressCount),
     currentStreak: 10,
     algorithmsCount: days.filter(d => !!d.codeSnippet).length,
     papersCount: days.reduce((acc, d) => acc + (d.resources?.length || 0), 0)

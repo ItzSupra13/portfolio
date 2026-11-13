@@ -89,7 +89,7 @@ export const ProjectsSection: React.FC = () => {
             <span className="text-xs font-mono text-foreground font-medium">{projects.length} Target Endeavors</span>
           </div>
           <p className="text-xs text-muted-foreground mt-0.5 font-light">
-            Hands-on benchmark testbeds, kernels, and systems experiments targeted during this 250-day KPI journey.
+            Hands-on benchmark testbeds, kernels, and systems experiments I am targeting on COMPLETING.
           </p>
         </div>
       </div>

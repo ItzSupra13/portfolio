@@ -10,7 +10,7 @@ export const INITIAL_DAYS: JournalDay[] = [
     status: 'completed',
     isStarred: true,
     summary: 'Mastered modern C++ memory management primitives essential for GPU computing: raw pointers vs smart pointers, pointer arithmetic, contiguous 1D layout for multi-dimensional tensors, and avoiding implicit copies.',
-    explanation: `Kicked off the 250-Day KPI (Kernel Performance and Inference Engineering) roadmap. Coming from a Python/PyTorch background, writing high-performance kernels requires an absolute mental model of how data is laid out in physical silicon.
+    explanation: `Kicked off the 200-Day KPI (Kernel Performance and Inference Engineering) roadmap. Coming from a Python/PyTorch background, writing high-performance kernels requires an absolute mental model of how data is laid out in physical silicon.
 
 Key concepts internalized today:
 1. Pointer Arithmetic & Stride: Multi-dimensional tensors in CUDA are virtually always flattened into 1D row-major buffers: index = row * width + col.

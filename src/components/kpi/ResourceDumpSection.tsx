@@ -129,17 +129,14 @@ export const ResourceDumpSection: React.FC = () => {
       {/* Header */}
       <div className="flex flex-wrap items-baseline justify-between gap-3 border-b border-border/70">
         <div>
-          <div className="flex items-center gap-2">
-            <span className="font-mono text-xs uppercase tracking-wider text-lime-400 font-semibold flex items-center gap-1.5">
+          <div className="flex items-center gap-2 mb-1">
+            <span className="font-mono text-sm text-lime-400 font-semibold flex items-center gap-1.5">
               <Database className="w-3.5 h-3.5 text-lime-400" />
               Research & Study Dump
             </span>
             <span aria-hidden="true" className="text-muted-foreground opacity-30">/</span>
-            <span className="text-xs font-mono text-foreground font-medium">{resources.length} Reference Materials</span>
+            <span className="text-xs font-mono text-foreground font-medium">Courses, papers, blogs, and videos I am consuming during the days.</span>
           </div>
-          <p className="text-xs text-muted-foreground mt-0.5 font-light">
-            Courses, papers, blogs, and videos I am consuming during the 250 days.
-          </p>
         </div>
       </div>
 

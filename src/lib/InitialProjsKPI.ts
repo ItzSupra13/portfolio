@@ -4,20 +4,20 @@ export const INITIAL_TARGET_PROJECTS: TargetProject[] = [
   {
     id: 'proj-gemm-ladder',
     order: 1,
-    title: 'GEMM Worklog: cuBLAS Parity Ladder (80–90% Target)',
-    description: 'Progression from naive global memory matmul → coalescing → shared memory tiling → register blocking (float4 vectorized loads) → warp tiling → WMMA Tensor Cores. Document % of cuBLAS achieved at each milestone on a single GPU.',
+    title: 'Making Matrix Multiplication go BRRR with CUDA',
+    description: 'Progression from naive global memory matmul to trying to beat CUBLAS. Document % of cuBLAS achieved at each milestone on a single GPU.',
     status: 'in-progress',
-    targetTimeline: 'Weeks 1–5 & 11–14 (Phases 1 & 3)',
-    techStack: ['CUDA C++20', 'Shared Memory', 'WMMA Tensor Cores', 'Nsight Compute', 'cuBLAS'],
-    notes: 'Definition of done: tiled shared-memory kernel within 2–3x cuBLAS in Phase 1, pushed to >80% cuBLAS parity in Phase 3 with written breakdown of memory coalescing, bank conflict elimination, and register pressure.',
-    repoUrl: 'https://github.com/username/cuda-gemm-worklog'
+    targetTimeline: '2 Months',
+    techStack: ['CUDA', 'Nsight Compute', 'cuBLAS', ],
+    notes: 'Definition of done: Written a harness that executes all kernels, times them properly, pushed to >80% cuBLAS parity with written breakdown of memory coalescing, bank conflict elimination, and register pressure and made a blog to store it all',
+    repoUrl: 'https://github.com/ItzSupra13/sgemm'
   },
   {
     id: 'proj-transpose-bank-conflicts',
     order: 2,
     title: 'Matrix Transpose Optimization & Bank Conflict Elimination',
-    description: 'Reimplement NVIDIA/cuda-samples matrix transpose optimizations (naive → coalesced → bank-conflict-free via +1 shared memory padding). Measure and reproduce bandwidth saturation curves on rented GPUs.',
-    status: 'in-progress',
+    description: 'ReimplemenRoadmat NVIDIA/cuda-samples matrix transpose optimizations (naive → coalesced → bank-conflict-free via +1 shared memory padding). Measure and reproduce bandwidth saturation curves on rented GPUs.',
+    status: 'wishlist',
     targetTimeline: 'Weeks 3–5 (Phase 1)',
     techStack: ['CUDA C++', 'Shared Memory Banks', 'Memory Coalescing', 'Nsight Systems'],
     notes: 'Eliminate all 32-way bank conflicts during column store phase by padding `__shared__ float tile[TILE_DIM][TILE_DIM + 1]`. Achieves near peak HBM bandwidth.',
@@ -311,5 +311,73 @@ export const INITIAL_LEARNING_RESOURCES: LearningResource[] = [
     tags: ['SGLang', 'RadixAttention', 'Prefix Caching', 'Phase 5'],
     dateAdded: '2026-03-12',
     isFavorite: true
-  }
+  },
+  {
+    id: 'llm-georgia-tech',
+    title: 'A Research Paper first approach to LLMs',
+    url: 'https://cocoxu.github.io/CS8803-LLM-spring2026/',
+    category: 'repo',
+    authorOrSource: 'Wei Xu',
+    notes: 'Examine RadixAttention prefix caching trees and comparative benchmark advantages over standard continuous batching.',
+    tags: ['SGLang', 'RadixAttention', 'Prefix Caching', 'Phase 5'],
+    dateAdded: '2026-11-13',
+    isFavorite: true
+  },
+  {
+    id: 'dive',
+    title: 'Dive into Systems',
+    url: 'https://diveintosystems.org/book/index.html',
+    category: 'docs',
+    authorOrSource: 'Suzanne, Tia, Kevi',
+    notes: 'Examine RadixAttention prefix caching trees and comparative benchmark advantages over standard continuous batching.',
+    tags: ['SGLang', 'RadixAttention', 'Prefix Caching', 'Phase 5'],
+    dateAdded: '2026-11-13',
+    isFavorite: true
+  },
+  {
+    id: 'mech-int-1',
+    title: 'Inside the Black Box',
+    url: 'https://mechinterp.neuralavb.com/',
+    category: 'docs',
+    authorOrSource: 'AVB',
+    notes: 'Examine RadixAttention prefix caching trees and comparative benchmark advantages over standard continuous batching.',
+    tags: ['SGLang', 'RadixAttention', 'Prefix Caching', 'Phase 5'],
+    dateAdded: '2026-11-13',
+    isFavorite: true
+  },
+  {
+    id: 'ant-mech-int',
+    title: 'Anthropic\'s Interpretability Research',
+    url: 'https://transformer-circuits.pub/',
+    category: 'docs',
+    authorOrSource: 'Anthropic',
+    notes: 'Examine RadixAttention prefix caching trees and comparative benchmark advantages over standard continuous batching.',
+    tags: ['SGLang', 'RadixAttention', 'Prefix Caching', 'Phase 5'],
+    dateAdded: '2026-11-13',
+    isFavorite: true
+  },
+  {
+    id: 'llm-stanford',
+    title: 'LLMs Stanford CME295',
+    url: 'https://cme295.stanford.edu/syllabus/',
+    category: 'docs',
+    authorOrSource: 'Stanford',
+    notes: 'Examine RadixAttention prefix caching trees and comparative benchmark advantages over standard continuous batching.',
+    tags: ['SGLang', 'RadixAttention', 'Prefix Caching', 'Phase 5'],
+    dateAdded: '2026-11-13',
+    isFavorite: true
+  },
+  {
+    id: 'llm-from-scratch',
+    title: 'LLM modelling from scratch',
+    url: 'https://cs336.stanford.edu/',
+    category: 'docs',
+    authorOrSource: 'Stanford',
+    notes: 'Examine RadixAttention prefix caching trees and comparative benchmark advantages over standard continuous batching.',
+    tags: ['SGLang', 'RadixAttention', 'Prefix Caching', 'Phase 5'],
+    dateAdded: '2026-11-13',
+    isFavorite: true
+  },
+
+
 ];

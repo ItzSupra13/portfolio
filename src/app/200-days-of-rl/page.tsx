@@ -7,7 +7,6 @@ import ResourceDumpSection from '@/components/rl/ResourceDumpSection';
 import SimulationsSection from '@/components/rl/SimulationsSection';
 import FilterBar from '@/components/rl/FilterBar';
 import DayCard from '@/components/rl/DayCard';
-import DayReaderModal from '@/components/rl/DayReader';
 import InteractiveGridworld from '@/components/rl/InteractiveGridWorld';
 import InteractiveBandit from '@/components/rl/InteractiveBandit';
 
@@ -76,7 +75,6 @@ function MainContent() {
       </main>
 
       {/* Modals & Overlays */}
-      <DayReaderModal/>
       <InteractiveGridworld />
       <InteractiveBandit />
     </div>
