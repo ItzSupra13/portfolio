@@ -59,10 +59,10 @@ export default function Page() {
         {/* FOOTER */}
         <GridSection showHashes hideOnMobile topBorder={false} showCrosshairs>
           <footer className="flex flex-col items-center justify-between gap-3 text-sm text-[#8b8b8b] sm:flex-row">
-            <VisitorCount/>
             <span>
-              try <code className="rounded px-2 text-zinc-300">curl -L asterdev.vercel.app</code>
+              try <code className="rounded px-1 text-white">curl -L asterdev.vercel.app</code>
             </span>
+            <VisitorCount/>
           </footer>
         </GridSection>
       </main>

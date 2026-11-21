@@ -121,7 +121,7 @@ export default function Hero() {
           </h1>
           <div className="mt-1 flex items-center gap-1.5">
             <div className="text-2xl tracking-tight">
-              <span className="text-white/60">Wiritng</span>&nbsp;&nbsp;
+              <span className="text-white/60">Writng</span>&nbsp;&nbsp;
               <Highlighter action="underline" color="#5315c0">
                 <LinkPreview
                   url="https://asterdev.vercel.app/gemm-optimization"
