@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 
+// app/rss/route.ts  ->  https://asterdev.vercel.app/rss
+//
 // Same URL, two outputs:
 //   - feed readers   -> RSS XML
 //   - browsers       -> a styled HTML page (chosen by the Accept header)
@@ -181,9 +183,16 @@ function htmlPage(origin: string) {
 export function GET(req: Request) {
     const origin = new URL(req.url).origin;
     const accept = req.headers.get("accept") ?? "";
+    const fetchDest = req.headers.get("sec-fetch-dest");
 
-    // browsers always ask for text/html; feed readers ask for rss/xml or */*
-    const wantsHtml = accept.includes("text/html");
+    // Real browsers navigating to the page send "Sec-Fetch-Dest: document".
+    // Online feed viewers / fetchers don't, even if their Accept header
+    // mentions text/html, so they fall through to XML.
+    // Fallback for old browsers without Sec-Fetch: Accept must *start* with text/html.
+    const wantsHtml =
+        fetchDest !== null
+            ? fetchDest === "document"
+            : accept.trim().startsWith("text/html");
 
     const body = wantsHtml ? htmlPage(origin) : xmlFeed(origin);
 
@@ -192,8 +201,10 @@ export function GET(req: Request) {
             "Content-Type": wantsHtml
                 ? "text/html; charset=utf-8"
                 : "application/rss+xml; charset=utf-8",
-            Vary: "Accept",
-            "Cache-Control": "public, s-maxage=3600, stale-while-revalidate",
+            // the CDN may not key its cache on these headers, so don't let it
+            // store one version and serve it to the other kind of client
+            Vary: "Accept, Sec-Fetch-Dest",
+            "Cache-Control": "no-cache",
         },
     });
 }
