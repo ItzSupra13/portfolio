@@ -30,19 +30,19 @@ const items = [
         title: "matmul++",
         path: "/gemm-optimization",
         description: "optimized matmul on gpu to SOTA",
-        date: "2026-10-01",
+        date: "2026-12-01",
     },
     {
         title: "bandits",
         path: "/bandits",
         description: "pytorch & pygame portable custom rl library",
-        date: "2026-08-01",
+        date: "2026-01-01",
     },
     {
         title: "back2sq1",
         path: "/back2sq1",
         description: "16-bit computer from scratch. runs tetris and python.",
-        date: "2026-06-01",
+        date: "2027-03-01",
     },
 ];
 
