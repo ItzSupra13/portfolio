@@ -121,15 +121,15 @@ export default function Hero() {
           </h1>
           <div className="mt-1 flex items-center gap-1.5">
             <div className="text-2xl tracking-tight">
-              <span className="text-white/60">Building</span>&nbsp;&nbsp;
+              <span className="text-white/60">Wiritng</span>&nbsp;&nbsp;
               <Highlighter action="underline" color="#5315c0">
                 <LinkPreview
-                  url="https://axiom-ml.vercel.app/"
+                  url="https://asterdev.vercel.app/gemm-optimization"
                   imageSrc="/landings/AxiomML.png"
                   className="font-bold text-transparent"
                 >
                   <span className="font-serif tracking-wide text-white italic brightness-110">
-                    Axiom-ML
+                    MatMul++
                   </span>
                 </LinkPreview>
               </Highlighter>

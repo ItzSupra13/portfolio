@@ -18,12 +18,12 @@ export default function GlobalNotFound() {
               message: "the page you asked for never existed :(",
             }}
           />
-          <Link
+          <a
             href="/"
             className="rounded-lg border border-dashed border-white/10 bg-white/[0.03] px-6 py-3 text-sm text-white/80 transition hover:border-white/20 hover:bg-white/[0.06]"
           >
             Back home
-          </Link>
+          </a>
         </main>
       </body>
     </html>

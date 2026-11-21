@@ -49,7 +49,7 @@ const BANNER = [
 const projects = [
     ["matmul++", "optimized matmul on gpu to SOTA", "/gemm-optimization"],
     ["bandits", "pytorch & pygame portable custom rl library", "/bandits"],
-    ["back2sq1", "16-bit computer from scratch. runs tetris and python.", "/back2sq1"],
+    ["back2sq1", "16-bit computer from scratch. runs tetris and snake.", "/back2sq1"],
     // ["infi", "a lightweight local-first llm inference engine", "infi"],
 ];
 
