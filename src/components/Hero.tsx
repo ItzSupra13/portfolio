@@ -125,7 +125,7 @@ export default function Hero() {
               <Highlighter action="underline" color="#5315c0">
                 <LinkPreview
                   url="https://asterdev.vercel.app/gemm-optimization"
-                  imageSrc="/landings/AxiomML.png"
+                  imageSrc="/landings/matmulpp.png"
                   className="font-bold text-transparent"
                 >
                   <span className="font-serif tracking-wide text-white italic brightness-110">

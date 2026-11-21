@@ -120,7 +120,7 @@ export default function Contact() {
 
               {/* Message */}
               <div className="mb-5 flex flex-col gap-1.5">
-                <label className="text-[11px] tracking-widest text-white/25 uppercase">
+                <label className="text-[11px] tracking-widest text-white/25 uppercase mb-1">
                   Message
                 </label>
                 <textarea
@@ -137,7 +137,7 @@ export default function Contact() {
               {/* Footer Row */}
               <div className="flex items-center justify-between gap-4">
                 <p className="text-xs leading-relaxed text-white/20">
-                  or email at <span className="text-white/40">itzasterdev@gmail.com</span>
+                  or email at <span className="text-white/40">itzasterdev@gmail.com</span>, sending pigeons is fine as well!
                 </p>
                 <button
                   onClick={handleSubmit}

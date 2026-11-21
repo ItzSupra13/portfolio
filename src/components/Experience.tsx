@@ -3,7 +3,8 @@ export default function Experience() {
     <section className="">
       <div className="grid gap-x-10 gap-y-6 md:grid-cols-[125px_1fr]">
         {/* Section Label */}
-        <p className="text-lg font-medium text-white/60 md:pr-4 md:text-right">Experience</p>
+        <p className="text-lg font-medium text-white/60 md:pr-4 md:text-right">Experience<br />
+          <span className="text-[11px] text-white/40"><s>It's all over the place</s> I'm flexible :P</span></p>
 
         {/* Timeline Container */}
         <div className="relative">
