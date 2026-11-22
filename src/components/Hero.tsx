@@ -73,7 +73,7 @@ export default function Hero({ visitorCount }: { visitorCount?: React.ReactNode 
   }, []);
 
   return (
-    <section className="relative overflow-hidden pt-8 pb-8 text-center">
+    <section className="relative overflow-hidden pt-6 pb-8 text-center">
       {/* ── ASCII BACKGROUND ── */}
       <div
         aria-hidden
@@ -96,7 +96,7 @@ export default function Hero({ visitorCount }: { visitorCount?: React.ReactNode 
 
       <div className="relative z-10 flex flex-col items-center">
         {/* Greeting */}
-        <div className="m-6 text-4xl font-bold text-white/30">
+        <div className="m-8 text-4xl font-bold text-white/30">
           <WordRotate words={words} />
         </div>
 

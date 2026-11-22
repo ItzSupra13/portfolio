@@ -13,6 +13,14 @@ const writings: {
   color: string;
   status: Status;
 }[] = [
+  // {
+  //     date: "01/12/26",
+  //     title: "Understaing AI Layoffs using Game Theory",
+  //     readTime: "18 m",
+  //     slug: "layoffs-gt",
+  //     color: "#7fee64",
+  //     status: "in progress",
+  //   },
     {
       date: "01/12/26",
       title: "GEMM on CPU, GPU, & TPU to near-SOTA",
