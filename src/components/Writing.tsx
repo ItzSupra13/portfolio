@@ -23,7 +23,7 @@ const writings = [
   //     slug: 'hi',
   //   },
   {
-    date: '31/10/26',
+    date: '30/11/26',
     title: 'GEMM on CPU, GPU, & TPU to near-SOTA',
     readTime: '42 m',
     slug: 'gemm-optimization',

@@ -52,13 +52,13 @@ export default function Page() {
         </GridSection>
 
         {/* CONTACT: Maybe you don't want a bottom border right before the footer */}
-        <GridSection hideOnMobile topBorder={false}>
+        <GridSection hideOnMobile topBorder={false} showCrosshairs>
           <Contact />
         </GridSection>
 
         {/* FOOTER */}
-        <GridSection showHashes hideOnMobile topBorder={false} showCrosshairs>
-          <footer className="flex flex-col items-center justify-between gap-3 text-sm text-[#8b8b8b] sm:flex-row">
+        <GridSection showHashes hideOnMobile topBorder={false}>
+          <footer className="mx-2 flex flex-col items-center justify-between gap-3 text-sm text-[#8b8b8b] sm:flex-row">
             <span>
               try <code className="rounded px-1 text-white">curl -L asterdev.vercel.app</code>
             </span>

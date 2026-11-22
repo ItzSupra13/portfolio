@@ -39,6 +39,13 @@ export default function Hero() {
   const [time, setTime] = useState("");
   const [copied, setCopied] = useState(false);
   const email = "itzasterdev@gmail.com";
+  const [flipped, setFlipped] = useState(false);
+  const [loadGif, setLoadGif] = useState(false);
+
+  const toggleFlip = () => {
+    if (!flipped) setLoadGif(true); // mount the gif so it starts from frame 1
+    setFlipped((f) => !f);
+  };
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -94,12 +101,35 @@ export default function Hero() {
 
         {/* Avatar */}
         <div className="group relative mb-4 inline-block">
-          <div className="absolute inset-0 rounded-full bg-blue-500/10 blur-md transition-all duration-500 group-hover:bg-blue-500/20" />
-          <div className="group relative h-20 w-20">
-            <div className="relative h-full w-full overflow-hidden rounded-full border border-white/10 bg-zinc-900">
-              <Image src="/supra.jpeg" alt="Profile" fill priority className="zoom-in-20 object-cover" />
-            </div>
-            <div className="absolute right-0 bottom-0 flex size-5 items-center justify-center rounded-full bg-zinc-950 ring-[3px] ring-zinc-950">
+          <div className="absolute inset-0 rounded-full transition-all duration-500 group-hover:bg-[#0d0d0d]" />
+          <div className="group relative h-20 w-20 [perspective:600px]">
+            <button
+              type="button"
+              onClick={toggleFlip}
+              aria-label="Flip profile picture"
+              className="relative block h-full w-full cursor-pointer rounded-full transition-transform duration-500 [transform-style:preserve-3d]"
+              style={{ transform: flipped ? "rotateY(180deg)" : "none" }}
+              onTransitionEnd={(e) => {
+                if (e.target === e.currentTarget && !flipped) setLoadGif(false);
+              }}>
+              <div className="absolute inset-0 overflow-hidden rounded-full bg-zinc-900 [backface-visibility:hidden]">
+                <Image src="/supra.jpeg" alt="Profile" fill priority className="zoom-in-20 object-cover" />
+              </div>
+              <div className="absolute inset-0 overflow-hidden rounded-full bg-[#0a0a0a] [backface-visibility:hidden] [transform:rotateY(180deg)]">
+                {loadGif && (
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Image src="/bad-apple.gif" alt="Bad Apple!!" fill unoptimized className="object-cover mix-blend-lighten" />
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>Curious eh?</p>
+                    </TooltipContent>
+                  </Tooltip>
+                )}
+              </div>
+            </button>
+
+            <div className="pointer-events-none absolute right-0 bottom-0 flex size-5 items-center justify-center rounded-full bg-zinc-950 ring-[2.5px] ring-zinc-950">
               <BsFillCircleFill className="fill-[#16bf5e]" />
             </div>
           </div>
@@ -166,7 +196,7 @@ export default function Hero() {
           </span>
           <Tooltip>
             <TooltipTrigger asChild>
-              <a href="/rss" target="_blank" rel="noopener noreferrer" aria-label="RSS feed">
+              <a href="/rss" target="_blank" rel="noopener noreferrer" aria-label="RSS feed" className="hidden sm:block">
                 <span className="text-3xl transition hover:text-white"><FaRss /></span>
               </a>
             </TooltipTrigger>
