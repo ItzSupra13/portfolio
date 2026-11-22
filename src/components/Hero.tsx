@@ -19,6 +19,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip
 import { Kbd } from "./ui/kbd";
 import { Ascii } from "ascii.rest/react";
 import { earthrise } from "ascii.rest/pieces";
+import { FaRss } from "react-icons/fa6";
 
 export default function Hero() {
   const words = useMemo(() => [
@@ -121,7 +122,7 @@ export default function Hero() {
           </h1>
           <div className="mt-1 flex items-center gap-1.5">
             <div className="text-2xl tracking-tight">
-              <span className="text-white/60">Writng</span>&nbsp;&nbsp;
+              <span className="text-white/60">Writing</span>&nbsp;&nbsp;
               <Highlighter action="underline" color="#5315c0">
                 <LinkPreview
                   url="https://asterdev.vercel.app/gemm-optimization"
@@ -163,6 +164,14 @@ export default function Hero() {
               </TooltipContent>
             </Tooltip>
           </span>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <a href="/rss" target="_blank" rel="noopener noreferrer" aria-label="RSS feed">
+                <span className="text-3xl transition hover:text-white"><FaRss /></span>
+              </a>
+            </TooltipTrigger>
+            <TooltipContent><p>RSS feed</p></TooltipContent>
+          </Tooltip>
         </div>
 
         {/* CTAs */}
