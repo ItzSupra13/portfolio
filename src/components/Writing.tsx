@@ -3,38 +3,33 @@
 import Link from "next/link";
 import { BsClock } from "react-icons/bs";
 
-const writings = [
-  //   {
-  //     date: '21/02/25',
-  //     title: 'How to think like both a designer & engineer',
-  //     readTime: '2 m',
-  //     slug: 'hi'
-  //   },
-  //   {
-  //     date: '16/02/25',
-  //     title: 'UI Performance',
-  //     readTime: '4 m',
-  //     slug: 'hi',
-  //   },
-  //   {
-  //     date: '12/02/25',
-  //     title: 'How AI is changing my workflow',
-  //     readTime: '2 m',
-  //     slug: 'hi',
-  //   },
-  {
-    date: '30/11/26',
-    title: 'GEMM on CPU, GPU, & TPU to near-SOTA',
-    readTime: '42 m',
-    slug: 'gemm-optimization',
-  },
-  {
-    date: "22/03/26",
-    title: "Hello World",
-    readTime: "5 m",
-    slug: "hello-world",
-  },
-];
+type Status = "completed" | "in progress";
+
+const writings: {
+  date: string;
+  title: string;
+  readTime: string;
+  slug: string;
+  color: string;
+  status: Status;
+}[] = [
+    {
+      date: "30/11/26",
+      title: "GEMM on CPU, GPU, & TPU to near-SOTA",
+      readTime: "42 m",
+      slug: "gemm-optimization",
+      color: "#7fee64",
+      status: "in progress",
+    },
+    {
+      date: "22/03/26",
+      title: "Hello World",
+      readTime: "5 m",
+      slug: "hello-world",
+      color: "#f0652f",
+      status: "completed",
+    },
+  ];
 
 export default function Writing() {
   return (
@@ -46,26 +41,37 @@ export default function Writing() {
         {/* Content */}
         <div className="w-full">
           <div className="divide-y divide-white/5 overflow-hidden">
-            {writings.map((item, index) => (
+            {writings.map((item) => (
               <Link
                 href={`/${item.slug}`}
-                key={index}
-                className="group w-full flex items-center justify-between px-2 rounded-sm py-2 transition-all duration-300 hover:bg-white/[0.04]"
+                key={item.slug}
+                style={
+                  {
+                    "--c": item.color,
+                    "--cbg": `${item.color}1a`, // same color at ~10% opacity
+                  } as React.CSSProperties
+                }
+                className="group flex w-full items-start justify-between gap-3 rounded-sm px-2 py-2 transition-all duration-300 hover:bg-[var(--cbg)]"
               >
                 {/* Left */}
-                <div className="flex items-center gap-6">
+                <div className="flex min-w-0 items-start gap-6">
                   {/* Date */}
-                  <span className="text-sm text-white/40 w-[80px]">{item.date}</span>
+                  <span className="w-[80px] shrink-0 text-sm leading-6 text-white/40 transition-colors group-hover:text-[var(--c)]">
+                    {item.date}
+                  </span>
 
                   {/* Title */}
-                  <span className="text-white tracking-tighter font-sans transition-colors">
+                  <span className="font-sans leading-6 tracking-tighter text-white transition-colors group-hover:text-[var(--c)]">
                     {item.title}
+                    <span className="ml-2 text-sm tracking-normal text-white/30">
+                      {item.status === "in progress" && (<span className="ml-2 text-sm tracking-normal text-white/30">— in progress</span>)}
+                    </span>
                   </span>
                 </div>
 
                 {/* Right */}
-                <div className="flex items-center gap-1 text-[#8f8f8f] text-sm">
-                  <BsClock className="size-3.5" />
+                <div className="flex h-6 shrink-0 items-center gap-1 whitespace-nowrap text-sm text-[#8f8f8f] transition-colors group-hover:text-[var(--c)]">
+                  <BsClock className="size-3.5 shrink-0" />
                   <span className="ml-1 font-mono tracking-tighter">{item.readTime}</span>
                 </div>
               </Link>

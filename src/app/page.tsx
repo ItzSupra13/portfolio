@@ -16,7 +16,7 @@ export default function Page() {
     <>
       <main className="relative min-h-screen overflow-x-hidden bg-[#0d0d0d] text-white selection:bg-white/10">
         <GridSection Hero showHashes showPattern showCrosshairs>
-          <Hero />
+          <Hero visitorCount={<VisitorCount />} />
         </GridSection>
 
         <GridSection hideOnMobile topBorder={false}>
@@ -58,11 +58,10 @@ export default function Page() {
 
         {/* FOOTER */}
         <GridSection showHashes hideOnMobile topBorder={false}>
-          <footer className="mx-2 flex flex-col items-center justify-between gap-3 text-sm text-[#8b8b8b] sm:flex-row">
+          <footer className="mx-2 flex flex-col items-center justify-center gap-3 text-sm text-[#8b8b8b] sm:flex-row">
             <span>
               try <code className="rounded px-1 text-white">curl -L asterdev.vercel.app</code>
             </span>
-            <VisitorCount/>
           </footer>
         </GridSection>
       </main>

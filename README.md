@@ -1,3 +1,2 @@
 - make Send "message" only visible on laptop view
-- Make writing spacing consistent in wirting mobile view
 - Make mobile project card more sleek

@@ -5,7 +5,7 @@ export async function VisitorCount() {
     return (
         <span>
             <span className="tabular-nums">
-                visitor <span><code className="rounded pr-2 text-white">#{visits !== null && <span>{visits.toLocaleString()}</span>}</code></span>
+                <span><code className="rounded ">{visits !== null && <span>{visits.toLocaleString()}</span>}</code> views</span>
             </span>
         </span>
     );

@@ -7,6 +7,7 @@ import { FaGithub } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 import { FaEye } from "react-icons/fa";
+import { IoEyeOutline } from "react-icons/io5";
 import { IoMail } from "react-icons/io5";
 import { RiVerifiedBadgeFill } from "react-icons/ri";
 import { Highlighter } from "@/components/ui/highlighter";
@@ -21,7 +22,7 @@ import { Ascii } from "ascii.rest/react";
 import { earthrise } from "ascii.rest/pieces";
 import { FaRss } from "react-icons/fa6";
 
-export default function Hero() {
+export default function Hero({ visitorCount }: { visitorCount?: React.ReactNode }) {
   const words = useMemo(() => [
     { text: "Hello", tracking: "tracking-tight" },
     { text: "नमस्ते", tracking: "tracking-wider" },
@@ -211,7 +212,7 @@ export default function Hero() {
             onClick={() => window.open("/resume.pdf", "_blank")}
           >
             <span className="flex items-center justify-center gap-2">
-              <FaEye className="text-lg transition-transform" />
+              <FaEye className="text-lg transition-transform size-3" />
               View Resume
             </span>
           </button>
@@ -226,10 +227,11 @@ export default function Hero() {
 
         {/* Location + Clock */}
         <div className="mt-10 flex items-center gap-3">
-          <p className="text-xs tracking-[0.25em] text-white/30 uppercase">CCU, INDIA</p>
-          <div className="flex items-center gap-1.5 font-mono text-xs tracking-wider text-white/40">
-            <BsClock className="size-3.5" />
-            <span>{time || "00:00:00"} GMT+5:30</span>
+          <p className="text-xs tracking-[0.25em] text-white/40 uppercase">CCU, INDIA</p>
+          <div className="flex items-center gap-1.5 text-xs tracking-wider text-white/40">
+            <BsClock className="size-3" />
+            <span className="font-mono mr-2">{time || "00:00:00"} GMT+5:30</span>
+            <IoEyeOutline /> {visitorCount}
           </div>
         </div>
 

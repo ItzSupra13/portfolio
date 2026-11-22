@@ -141,7 +141,7 @@ export default function Contact() {
                 </p>
                 <button
                   onClick={handleSubmit}
-                  className="flex items-center gap-2 rounded-xl border border-dashed border-white/20 bg-gradient-to-b from-[#f0652f] to-[#d44d1d] px-5 py-2.5 text-sm font-medium text-white transition-all duration-200 hover:scale-[1.02] hover:border-white/40 hover:shadow-[0_0_18px_rgba(240,101,47,0.35)] active:scale-[0.97]"
+                  className="flex shrink-0 items-center gap-2 whitespace-nowrap rounded-xl border border-dashed border-white/20 bg-gradient-to-b from-[#f0652f] to-[#d44d1d] px-5 py-2.5 text-sm font-medium text-white transition-all duration-200 hover:scale-[1.02] hover:border-white/40 hover:shadow-[0_0_18px_rgba(240,101,47,0.35)] active:scale-[0.97]"
                 >
                   Send message
                   <svg
