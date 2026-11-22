@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   description: "Portfolio Website | Aster Dev | Supratim Chakraborty",
   openGraph: {
     title: "Aster Dev",
-    description: "HI I'm Supratim Chakraborty aka Aster Dev & this is my Portfolio Website :)",
+    description: "Hi I'm Supratim Chakraborty aka Aster Dev & this is my portfolio website :)",
     url: "https://asterdev.vercel.app",
     siteName: "Asterdev",
     images: [

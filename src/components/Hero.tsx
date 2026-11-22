@@ -73,7 +73,7 @@ export default function Hero({ visitorCount }: { visitorCount?: React.ReactNode 
   }, []);
 
   return (
-    <section className="relative overflow-hidden pt-9 pb-8 text-center">
+    <section className="relative overflow-hidden pt-8 pb-8 text-center">
       {/* ── ASCII BACKGROUND ── */}
       <div
         aria-hidden
@@ -226,12 +226,14 @@ export default function Hero({ visitorCount }: { visitorCount?: React.ReactNode 
         </div>
 
         {/* Location + Clock */}
-        <div className="mt-10 flex items-center gap-3">
+        <div className="mt-8 flex items-center gap-3">
           <p className="text-xs tracking-[0.25em] text-white/40 uppercase">CCU, INDIA</p>
           <div className="flex items-center gap-1.5 text-xs tracking-wider text-white/40">
             <BsClock className="size-3" />
-            <span className="font-mono mr-2">{time || "00:00:00"} GMT+5:30</span>
-            <IoEyeOutline /> {visitorCount}
+            <span className="font-mono">{time || "00:00:00"} IST</span>
+            <span className="ml-2 hidden items-center gap-1.5 sm:flex">
+              <IoEyeOutline /> {visitorCount}
+            </span>
           </div>
         </div>
 

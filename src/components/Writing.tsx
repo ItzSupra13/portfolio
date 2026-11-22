@@ -14,7 +14,7 @@ const writings: {
   status: Status;
 }[] = [
     {
-      date: "30/11/26",
+      date: "01/12/26",
       title: "GEMM on CPU, GPU, & TPU to near-SOTA",
       readTime: "42 m",
       slug: "gemm-optimization",
@@ -48,7 +48,7 @@ export default function Writing() {
                 style={
                   {
                     "--c": item.color,
-                    "--cbg": `${item.color}1a`, // same color at ~10% opacity
+                    "--cbg": `${item.color}1a`,
                   } as React.CSSProperties
                 }
                 className="group flex w-full items-start justify-between gap-3 rounded-sm px-2 py-2 transition-all duration-300 hover:bg-[var(--cbg)]"

@@ -1,2 +1,4 @@
 - make Send "message" only visible on laptop view
 - Make mobile project card more sleek
+- Add very tiny glassy blur at the bottom
+- change metadata image of asterdev - make it better and more sleek ig using claude by giving hero and about
