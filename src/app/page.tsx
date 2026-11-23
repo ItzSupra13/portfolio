@@ -19,7 +19,7 @@ export default function Page() {
           <Hero visitorCount={<VisitorCount />} />
         </GridSection>
 
-        <GridSection hideOnMobile topBorder={false}>
+        <GridSection hideOnMobile topBorder={false} showHashes>
           <About />
         </GridSection>
 
@@ -27,7 +27,7 @@ export default function Page() {
           <Experience />
         </GridSection>
 
-        <GridSection hideOnMobile topBorder={false}>
+        <GridSection hideOnMobile topBorder={false} showHashes>
           <Work />
         </GridSection>
 
@@ -35,7 +35,7 @@ export default function Page() {
           <Writing />
         </GridSection>
 
-        <GridSection hideOnMobile topBorder={false}>
+        <GridSection hideOnMobile topBorder={false} showHashes>
           <Tools />
         </GridSection>
 
@@ -43,7 +43,7 @@ export default function Page() {
           <Education />
         </GridSection>
 
-        <GridSection hideOnMobile topBorder={false}>
+        <GridSection hideOnMobile topBorder={false} showHashes>
           <TechStack />
         </GridSection>
 
@@ -52,7 +52,7 @@ export default function Page() {
         </GridSection>
 
         {/* CONTACT: Maybe you don't want a bottom border right before the footer */}
-        <GridSection hideOnMobile topBorder={false} showCrosshairs>
+        <GridSection hideOnMobile topBorder={false} showCrosshairs showHashes>
           <Contact />
         </GridSection>
 

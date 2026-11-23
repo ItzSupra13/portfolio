@@ -73,11 +73,11 @@ export default function Hero({ visitorCount }: { visitorCount?: React.ReactNode 
   }, []);
 
   return (
-    <section className="relative overflow-hidden pt-6 pb-8 text-center">
+    <section className="relative pt-6 pb-8 text-center">
       {/* ── ASCII BACKGROUND ── */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 z-0 overflow-hidden opacity-30 [container-type:size]"
+        className="pointer-events-none absolute top-0 left-1/2 z-0 h-full w-[900px] max-w-[calc(100vw-48px)] -translate-x-1/2 overflow-hidden opacity-30 [container-type:size]"
         style={{
           maskImage: "radial-gradient(ellipse at center, black 40%, transparent 75%)",
           WebkitMaskImage: "radial-gradient(ellipse at center, black 40%, transparent 85%)",

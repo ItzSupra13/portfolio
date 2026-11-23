@@ -7,7 +7,7 @@ import { CompanyLogoData } from "@/lib/constants";
 const InfiniteScrollingLogosAnimation = () => {
   return (
     <div className="py-2 overflow-hidden">
-      <div className="mx-auto max-w-4xl px-8 sm:px-12 lg:px-15">
+      <div className="mx-auto max-w-3xl pl-6 pr-12 sm:pl-9 sm:pr-15 lg:pr-18 lg:pl-12">
         <div
           className="flex relative overflow-hidden"
           /* Modern Fade Mask - much cleaner than pseudo-elements */
