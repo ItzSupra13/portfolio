@@ -13,8 +13,7 @@ import InteractiveBandit from '@/components/rl/InteractiveBandit';
 function MainContent() {
   const { 
     filteredDays, 
-    activeNavPage, 
-    addNewDay,  
+    activeNavPage,   
   } = useJournal();
 
   return (

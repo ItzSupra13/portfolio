@@ -23,7 +23,7 @@ export default function Experience() {
               <p className="mb-2 text-xs text-[#8b8b8b]">November 2025 — November 2025</p>
 
               {/* Role */}
-              <h3 className="text-lg font-semibold tracking-tight text-white">Freelance Work</h3>
+              <h3 className="text-lg font-semibold tracking-tight text-white">Freelance Gig</h3>
 
               {/* Company */}
               <p className="mb-3 text-sm text-white/60">AI Movie Co-Director</p>

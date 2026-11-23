@@ -25,16 +25,16 @@ import { FaRss } from "react-icons/fa6";
 export default function Hero({ visitorCount }: { visitorCount?: React.ReactNode }) {
   const words = useMemo(() => [
     { text: "Hello", tracking: "tracking-tight" },
-    { text: "नमस्ते", tracking: "tracking-wider" },
     { text: "নমস্কার", tracking: "tracking-wider" },
-    { text: "Hola", tracking: "tracking-tight" },
-    { text: "Bonjour", tracking: "tracking-tight" },
-    { text: "Ciao", tracking: "tracking-tight" },
+    { text: "नमस्ते", tracking: "tracking-wider" },
     { text: "こんにちは", tracking: "tracking-wide" },
-    { text: "안녕하세요", tracking: "tracking-normal" },
+    { text: "Bonjour", tracking: "tracking-tight" },
     { text: "你好", tracking: "tracking-wide" },
-    { text: "Olá", tracking: "tracking-tight" },
+    { text: "안녕하세요", tracking: "tracking-normal" },
     { text: "Guten Tag", tracking: "tracking-tight" },
+    { text: "Hola", tracking: "tracking-tight" },
+    { text: "Ciao", tracking: "tracking-tight" },
+    { text: "Olá", tracking: "tracking-tight" },
   ], []);
 
   const [time, setTime] = useState("");
@@ -142,7 +142,7 @@ export default function Hero({ visitorCount }: { visitorCount?: React.ReactNode 
             <Tooltip>
               <TooltipTrigger asChild>
                 <Link href="https://asterdev.vercel.app/" className="hover:underline">
-                  AsterDev
+                  Aster Dev
                 </Link>
               </TooltipTrigger>
               <TooltipContent>

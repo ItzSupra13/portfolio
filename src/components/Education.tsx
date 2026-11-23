@@ -74,9 +74,9 @@ export default function Education() {
 
               {/* Description */}
               <p className="max-w-xl text-[16px] leading-relaxed tracking-tight text-[#8b8b8b] sm:text-base">
-                Applying <span className="text-zinc-200">Mechanical Engineering</span> principles to 
+                Applying <span className="text-zinc-200">Robot Learning</span> principles to 
                 the future of <span className="text-zinc-200">Autonomous Robotic Systems</span>. 
-                Leveraging Machine Learning to solve complex challenges in kinematics, and real-time physical simulations via Reinforcement Learning.
+                Leveraging Machine Learning to solve challenges in kinematics, and real-time physical simulations via Reinforcement Learning.
               </p>
             </div>
           </div>

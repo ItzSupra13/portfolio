@@ -34,7 +34,7 @@ const writings: {
       title: "Hello World",
       readTime: "5 m",
       slug: "hello-world",
-      color: "#f0652f",
+      color: "#a78bfa",
       status: "completed",
     },
   ];
