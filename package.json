@@ -10,6 +10,7 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "@paper-design/shaders-react": "^0.0.82",
     "@radix-ui/react-hover-card": "^1.1.15",
     "@upstash/redis": "^1.39.0",
     "@vercel/analytics": "^2.0.1",

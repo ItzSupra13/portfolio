@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     description: "Portfolio Website | Supratim Chakraborty",
     images: ["https://asterdev.vercel.app/me.png"],
   },
-  alternates: { types: { "application/rss+xml": "/rss" } },
+  alternates: { types: { "application/rss+xml": "/feed" } },
 };
 
 export default function RootLayout({

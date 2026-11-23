@@ -197,7 +197,7 @@ export default function Hero({ visitorCount }: { visitorCount?: React.ReactNode 
           </span>
           <Tooltip>
             <TooltipTrigger asChild>
-              <a href="/rss" target="_blank" rel="noopener noreferrer" aria-label="RSS feed" className="hidden sm:block">
+              <a href="/feed" target="_blank" rel="noopener noreferrer" aria-label="RSS feed" className="hidden sm:block">
                 <span className="text-3xl transition hover:text-white"><FaRss /></span>
               </a>
             </TooltipTrigger>

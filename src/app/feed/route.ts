@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-// app/rss/route.ts  ->  https://asterdev.vercel.app/rss
+// app/feed/route.ts  ->  https://asterdev.vercel.app/rss
 //
 // Same URL, two outputs:
 //   - feed readers   -> RSS XML
@@ -69,7 +69,7 @@ function xmlFeed(origin: string) {
     <language>en</language>
     <managingEditor>${esc(SITE.email)} (${esc(SITE.title)})</managingEditor>
     <lastBuildDate>${rfc822(items[0].date)}</lastBuildDate>
-    <atom:link href="${esc(origin)}/rss" rel="self" type="application/rss+xml" />
+    <atom:link href="${esc(origin)}/feed" rel="self" type="application/rss+xml" />
 ${itemsXml}
   </channel>
 </rss>
@@ -77,7 +77,7 @@ ${itemsXml}
 }
 
 function htmlPage(origin: string) {
-    const feedUrl = `${origin}/rss`;
+    const feedUrl = `${origin}/feed`;
 
     const cards = items
         .map(

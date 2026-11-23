@@ -15,6 +15,22 @@ const writings: {
 }[] = [
   // {
   //     date: "01/12/26",
+  //     title: "How a GPU chip is fabricated or some shi",
+  //     readTime: "18 m",
+  //     slug: "fab",
+  //     color: "#7fee64",
+  //     status: "in progress",
+  //   },
+  // {
+  //     date: "01/12/26",
+  //     title: "LLMs explained like LEGOs",
+  //     readTime: "18 m",
+  //     slug: "lego-transformer",
+  //     color: "#7fee64",
+  //     status: "in progress",
+  //   },
+  // {
+  //     date: "01/12/26",
   //     title: "Understaing AI Layoffs using Game Theory",
   //     readTime: "18 m",
   //     slug: "layoffs-gt",
@@ -32,7 +48,7 @@ const writings: {
     {
       date: "22/03/26",
       title: "Hello World",
-      readTime: "5 m",
+      readTime: "05 m",
       slug: "hello-world",
       color: "#a78bfa",
       status: "completed",

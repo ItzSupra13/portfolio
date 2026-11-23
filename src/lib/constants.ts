@@ -11,6 +11,8 @@ interface Project {
   liveUrl: string;
   wip?:boolean;
   wipHint?:string;
+  colors: string[];
+  imageSide?: "left" | "right";
 }
 export const PROJECTS: Project[] = [
   {
@@ -22,20 +24,22 @@ export const PROJECTS: Project[] = [
   		landing: '/landings/matmulpp.png',
   		tech: ['CUDA', 'A100'],
   		category: 'LLM',
-  		sourceUrl: 'https://github.com/ItzSupra13/gemm-optimization',
+  		sourceUrl: 'https://github.com/ItzSupra13/sgemm',
   		liveUrl: 'https://asterdev.vercel.app/gemm-optimization', // 2  months
+      colors: ["#059669", "#f0fdf4", "#86efac", "#22c55e"],
   },
   // {
   //   id: 1,
   //   title: "Axiom-ML",
   //   subtitle: "Leetcode for AI Algorithms & Benchmarks",
-  //   description:
-  //     "Don't just import models. Code them from scratch. Even the ones meant for AI! A one stop platform to understand and code your everyday Algorithms from scratch.",
+  //   description: "Don't just import models. Code them from scratch. Even the ones meant for AI!",
   //   image: "/logos/axiom-ml.png",
   //   landing: "/landings/AxiomML.png",
   //   tech: ["Next.js", "Docker", "Stripe"],
   //   category: "Full-Stack",
   //   liveUrl: "https://axiom-ml.vercel.app/",
+  //   imageSide: "left",
+  //   colors: ["#1e3fd8","#f6f8ff","#a5d8ff","#38bdf8"],
   // },
   // {
   //   id: 2,
