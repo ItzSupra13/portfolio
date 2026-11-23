@@ -13,37 +13,6 @@ import GradientASCII from "@/components/web/GradientASCII";
 
 const TABS = ["All", "Full-Stack", "ML & DL", "AI Agent", "LLM"];
 
-/* Halftone dot grid with coloured patches: a faint white grid everywhere,
-   plus the same grid in `color` revealed through two soft blobs. */
-function DotField({ color, side }: { color: string; side: "left" | "right" }) {
-  const x1 = side === "right" ? "88%" : "12%";
-  const x2 = side === "right" ? "6%" : "94%";
-  const blob =
-    `radial-gradient(ellipse 50% 60% at ${x1} 10%, black 0%, transparent 70%), ` +
-    `radial-gradient(ellipse 28% 35% at ${x2} 88%, black 0%, transparent 70%)`;
-
-  return (
-    <div aria-hidden className="pointer-events-none absolute inset-0">
-      <div
-        className="absolute inset-0 opacity-50"
-        style={{
-          backgroundImage: "radial-gradient(rgba(255,255,255,0.22) 1px, transparent 1.3px)",
-          backgroundSize: "10px 10px",
-        }}
-      />
-      <div
-        className="absolute inset-0"
-        style={{
-          backgroundImage: `radial-gradient(${color} 1.5px, transparent 1.9px)`,
-          backgroundSize: "10px 10px",
-          maskImage: blob,
-          WebkitMaskImage: blob,
-        }}
-      />
-    </div>
-  );
-}
-
 export default function Work() {
   const [activeTab, setActiveTab] = useState("All");
   const [showAll, setShowAll] = useState(false);
@@ -181,6 +150,8 @@ export default function Work() {
                           intro
                           lightMode={false}
                           className="rounded-t-2xl"
+                          dpr={1.5}
+                          style={{}}
                         />
                       </div>
 
@@ -237,6 +208,8 @@ export default function Work() {
                           clickEffect="wave"
                           intro
                           lightMode={false}
+                          dpr={1.5}
+                          style={{}}
                           className={side === "right" ? "rounded-r-xl" : "rounded-l-xl"}
                         />
                       </div>
