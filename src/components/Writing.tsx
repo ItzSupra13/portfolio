@@ -29,14 +29,6 @@ const writings: {
   //     color: "#7fee64",
   //     status: "in progress",
   //   },
-  // {
-  //     date: "01/12/26",
-  //     title: "Understaing AI Layoffs using Game Theory",
-  //     readTime: "18 m",
-  //     slug: "layoffs-gt",
-  //     color: "#7fee64",
-  //     status: "in progress",
-  //   },
     {
       date: "01/12/26",
       title: "GEMM on CPU, GPU, & TPU to near-SOTA",
@@ -44,6 +36,14 @@ const writings: {
       slug: "gemm-optimization",
       color: "#7fee64",
       status: "in progress",
+    },
+      {
+      date: "03/11/26",
+      title: "Understaing AI Layoffs using Game Theory",
+      readTime: "13 m",
+      slug: "layoffs-gt",
+      color: "#f0f0f0",
+      status: "completed",
     },
     {
       date: "22/03/26",

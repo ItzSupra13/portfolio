@@ -1,3 +1,3 @@
 - make Send "message" only visible on laptop view
 - Add very tiny glassy blur at the bottom
-- change metadata image of asterdev - make it better and more sleek ig using claude by giving hero and about
+- change metadata image of asterdev - make it better and more sleek ig using claude by giving hero and about (and footer and right clicker maybe) like 
