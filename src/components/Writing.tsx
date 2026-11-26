@@ -41,7 +41,7 @@ const writings: {
       date: "03/11/26",
       title: "Understaing AI Layoffs using Game Theory",
       readTime: "13 m",
-      slug: "layoffs-gt",
+      slug: "layoff-gt",
       color: "#f0f0f0",
       status: "completed",
     },
@@ -67,7 +67,7 @@ export default function Writing() {
           <div className="divide-y divide-white/5 overflow-hidden">
             {writings.map((item) => (
               <Link
-                href={`/${item.slug}`}
+                href={`/blog/${item.slug}`}
                 key={item.slug}
                 style={
                   {
