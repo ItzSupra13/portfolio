@@ -3,7 +3,6 @@ interface Project {
   title: string;
   subtitle: string;
   description: string;
-  image: string;
   landing: string;
   tech: string[];
   category: "Full-Stack" | "ML & DL" | "AI Agent" | "LLM";
@@ -12,20 +11,19 @@ interface Project {
   wip?:boolean;
   wipHint?:string;
   colors: string[];
-  imageSide?: "left" | "right";
+  landingSide?: "left" | "right";
 }
 export const PROJECTS: Project[] = [
   {
   		id: 0,
   		title: 'MatMul++',
   		subtitle: "Optimizing MatMul to near-SOTA from scratch",
-      description: 'A step-by-step optimization of matrix multiplication on a CPU, GPU, and TPU to match SOTA performance',
-  		image: '/logos/origyn.jpg',
+      description: 'A step-by-step optimization of matrix multiplication on a T4 GPU to match SOTA performance',
   		landing: '/landings/matmulpp.png',
   		tech: ['CUDA', 'A100'],
   		category: 'LLM',
   		sourceUrl: 'https://github.com/ItzSupra13/sgemm',
-  		liveUrl: 'https://asterdev.vercel.app/gemm-optimization', // 2  months
+  		liveUrl: 'https://asterdev.vercel.app/blog/gemm-optimization',
       colors: ["#059669", "#f0fdf4", "#86efac", "#22c55e"],
   },
   // {
@@ -38,7 +36,7 @@ export const PROJECTS: Project[] = [
   //   tech: ["Next.js", "Docker", "Stripe"],
   //   category: "Full-Stack",
   //   liveUrl: "https://axiom-ml.vercel.app/",
-  //   imageSide: "left",
+  //   landingSide: "left",
   //   colors: ["#1e3fd8","#f6f8ff","#a5d8ff","#38bdf8"],
   // },
   // {

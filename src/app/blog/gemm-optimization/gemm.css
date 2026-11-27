@@ -1,0 +1,436 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans, 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif);
+  --font-serif: 'Times New Roman', Times, 'Newsreader', Georgia, Cambria, serif;
+  --font-mono: var(--font-geist-mono, 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace);
+  --color-lemongrass: var(--lemongrass);
+  --color-lemongrass-foreground: var(--lemongrass-foreground);
+  --color-lemongrass-muted: var(--lemongrass-muted);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+}
+
+/* ─── SUBSTACK & BLOGGER EDITORIAL TYPOGRAPHY RULES ─── */
+html,
+body {
+  font-family: 'Times New Roman', Times, 'Newsreader', Georgia, Cambria, serif;
+  font-size: 18px;
+  line-height: 1.75;
+  letter-spacing: -0.01em;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* ─── BLOG EDITORIAL CONTENT COLUMN (LEFT-BASED WITH DECENT LEFT PADDING) ─── */
+.blog-content-bar {
+  width: 100%;
+  max-width: 720px;
+  margin-left: 0;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .blog-content-bar {
+    max-width: 760px;
+    padding-left: 3rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .blog-content-bar {
+    max-width: 800px;
+    padding-left: 4.5rem;
+    padding-right: 2.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .blog-content-bar {
+    max-width: 840px;
+    padding-left: 6rem;
+    padding-right: 2.25rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .blog-content-bar {
+    max-width: 870px;
+    padding-left: 7.5rem;
+    padding-right: 2.25rem;
+  }
+}
+
+/* ─── TABLE OF CONTENTS (STAYS CENTERED) ─── */
+.blog-content-bar-centered {
+  width: 100%;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .blog-content-bar-centered {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .blog-content-bar-centered {
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
+  }
+}
+
+/* All editorial blog paragraphs, lists, and blockquotes render in Times New Roman */
+p,
+li,
+blockquote,
+.blog-prose,
+.font-serif {
+  font-family: 'Times New Roman', Times, 'Newsreader', Georgia, Cambria, serif;
+  letter-spacing: -0.01em;
+}
+
+/* Main Titles and Section Headings retain modern Sans-Serif */
+h1,
+h2,
+h3,
+h4,
+.main-title {
+  font-family: var(--font-sans);
+}
+
+/* Code, Memory Addresses, and Technical Data retain Monospace */
+code,
+pre,
+kbd,
+samp,
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* ─── BASE VARIABLES DEFAULT (GPU EMERALD & LEMONGRASS) ─── */
+:root {
+  --radius: 0.625rem;
+  /* Light mode: crisp matcha tea canvas with clean slate typography */
+  --background: #edfcf2;
+  --foreground: #0f172a;
+  --card: #f4fdf6;
+  --card-foreground: #0f172a;
+  --popover: #f4fdf6;
+  --popover-foreground: #0f172a;
+  --primary: #059669;
+  --primary-foreground: #ffffff;
+  --secondary: #d1fae5;
+  --secondary-foreground: #1e293b;
+  --muted: #e1faea;
+  --muted-foreground: #64748b;
+  --accent: #dcfce7;
+  --accent-foreground: #0f172a;
+  --destructive: #dc2626;
+  --border: #86efac;
+  --input: #a7f3d0;
+  --ring: #10b981;
+  --lemongrass: #65a30d;
+  --lemongrass-foreground: #ffffff;
+  --lemongrass-muted: #d9f99d;
+  --chart-1: #059669;
+  --chart-2: #65a30d;
+  --chart-3: #10b981;
+  --chart-4: #84cc16;
+  --chart-5: #047857;
+  --sidebar: #e6f9ed;
+  --sidebar-foreground: #0f172a;
+  --sidebar-primary: #059669;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #d1fae5;
+  --sidebar-accent-foreground: #0f172a;
+  --sidebar-border: #86efac;
+  --sidebar-ring: #059669;
+}
+
+/* ─── GPU THEME (EMERALD & LEMONGRASS) ─── */
+.dark,
+[data-unit="gpu"].dark,
+[data-unit="gpu"] {
+  --background: #041a12;
+  --foreground: #f8fafc;
+  --card: #08261b;
+  --card-foreground: #f8fafc;
+  --popover: #0a2d21;
+  --popover-foreground: #f8fafc;
+  --primary: #10b981;
+  --primary-foreground: #02140d;
+  --secondary: #0d3829;
+  --secondary-foreground: #e2e8f0;
+  --muted: #0a3022;
+  --muted-foreground: #94a3b8;
+  --accent: #124734;
+  --accent-foreground: #f8fafc;
+  --destructive: #ef4444;
+  --border: #155e42;
+  --input: #0b3324;
+  --ring: #bef264;
+  --lemongrass: #bef264;
+  --lemongrass-foreground: #02150e;
+  --lemongrass-muted: #133c26;
+  --chart-1: #10b981;
+  --chart-2: #bef264;
+  --chart-3: #34d399;
+  --chart-4: #a3e635;
+  --chart-5: #059669;
+  --sidebar: #051d14;
+  --sidebar-foreground: #f8fafc;
+  --sidebar-primary: #10b981;
+  --sidebar-primary-foreground: #02140d;
+  --sidebar-accent: #0d3829;
+  --sidebar-accent-foreground: #f8fafc;
+  --sidebar-border: #155e42;
+  --sidebar-ring: #10b981;
+}
+
+/* ─── CPU THEME (AMBER & GOLDEN OCHRE) ─── */
+[data-unit="cpu"].dark,
+[data-unit="cpu"] {
+  --background: #141006;
+  --foreground: #fefce8;
+  --card: #1f1909;
+  --card-foreground: #fefce8;
+  --popover: #261e0b;
+  --popover-foreground: #fefce8;
+  --primary: #f59e0b;
+  --primary-foreground: #1c1302;
+  --secondary: #2d230d;
+  --secondary-foreground: #fef3c7;
+  --muted: #241c09;
+  --muted-foreground: #a8a29e;
+  --accent: #3b2e11;
+  --accent-foreground: #fefce8;
+  --destructive: #ef4444;
+  --border: #785317;
+  --input: #291f09;
+  --ring: #fde047;
+  --lemongrass: #facc15;
+  --lemongrass-foreground: #1c1302;
+  --lemongrass-muted: #382909;
+  --chart-1: #f59e0b;
+  --chart-2: #facc15;
+  --chart-3: #fbbf24;
+  --chart-4: #eab308;
+  --chart-5: #d97706;
+  --sidebar: #171207;
+  --sidebar-foreground: #fefce8;
+  --sidebar-primary: #f59e0b;
+  --sidebar-primary-foreground: #1c1302;
+  --sidebar-accent: #2d230d;
+  --sidebar-accent-foreground: #fefce8;
+  --sidebar-border: #785317;
+  --sidebar-ring: #f59e0b;
+}
+
+/* ─── TPU THEME (ROYAL PURPLE & VIOLET) ─── */
+[data-unit="tpu"].dark,
+[data-unit="tpu"] {
+  --background: #0f0a1c;
+  --foreground: #faf5ff;
+  --card: #17102b;
+  --card-foreground: #faf5ff;
+  --popover: #1f143a;
+  --popover-foreground: #faf5ff;
+  --primary: #a855f7;
+  --primary-foreground: #0b0217;
+  --secondary: #281747;
+  --secondary-foreground: #f3e8ff;
+  --muted: #1e1136;
+  --muted-foreground: #94a3b8;
+  --accent: #371e61;
+  --accent-foreground: #faf5ff;
+  --destructive: #ef4444;
+  --border: #582a94;
+  --input: #1f1238;
+  --ring: #d8b4fe;
+  --lemongrass: #c084fc;
+  --lemongrass-foreground: #0b0217;
+  --lemongrass-muted: #301654;
+  --chart-1: #a855f7;
+  --chart-2: #c084fc;
+  --chart-3: #8b5cf6;
+  --chart-4: #e879f9;
+  --chart-5: #7c3aed;
+  --sidebar: #120c24;
+  --sidebar-foreground: #faf5ff;
+  --sidebar-primary: #a855f7;
+  --sidebar-primary-foreground: #0b0217;
+  --sidebar-accent: #281747;
+  --sidebar-accent-foreground: #faf5ff;
+  --sidebar-border: #582a94;
+  --sidebar-ring: #a855f7;
+}
+
+/* ─── FUTURE THEME (ANALOG IN-MEMORY CYBERNETIC CYAN) ─── */
+[data-unit="future"].dark,
+[data-unit="future"] {
+  --background: #03141a;
+  --foreground: #ecfeff;
+  --card: #08222c;
+  --card-foreground: #ecfeff;
+  --popover: #0b2a36;
+  --popover-foreground: #ecfeff;
+  --primary: #06b6d4;
+  --primary-foreground: #021a22;
+  --secondary: #0d3848;
+  --secondary-foreground: #cffafe;
+  --muted: #0a2f3e;
+  --muted-foreground: #94a3b8;
+  --accent: #114c62;
+  --accent-foreground: #ecfeff;
+  --destructive: #ef4444;
+  --border: #155e75;
+  --input: #0e3d4e;
+  --ring: #22d3ee;
+  --lemongrass: #22d3ee;
+  --lemongrass-foreground: #021a22;
+  --lemongrass-muted: #164e63;
+  --chart-1: #06b6d4;
+  --chart-2: #22d3ee;
+  --chart-3: #38bdf8;
+  --chart-4: #67e8f9;
+  --chart-5: #0891b2;
+  --sidebar: #041820;
+  --sidebar-foreground: #ecfeff;
+  --sidebar-primary: #06b6d4;
+  --sidebar-primary-foreground: #021a22;
+  --sidebar-accent: #0d3848;
+  --sidebar-accent-foreground: #ecfeff;
+  --sidebar-border: #155e75;
+  --sidebar-ring: #06b6d4;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  /* Custom subtle scrollbars adaptable to active theme */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--background);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+  }
+}
+
+.font-editorial {
+  font-family: 'Newsreader', Georgia, Cambria, serif;
+}
+
+.font-code {
+  font-family: var(--font-mono);
+}
+
+/* Hide scrollbar for clean horizontal tabs */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ─── HARDWARE WAFER & THEME AMBIENT SYSTEM ──────────── */
+.wafer-die-pattern {
+  background-color: var(--background);
+}
+
+.glow-primary {
+  box-shadow: 0 0 0 1px var(--primary);
+}
+
+.glow-lemongrass {
+  box-shadow: 0 0 0 1px rgba(190, 242, 100, 0.4);
+}
+
+.glow-emerald {
+  box-shadow: 0 0 0 1px rgba(16, 185, 129, 0.4);
+}
+
+.badge-emerald-lemongrass {
+  background: var(--secondary);
+  border: 1px solid var(--primary);
+  color: var(--foreground);
+}
+
+/* Subtle crosshair and alignment markers */
+.ch {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  pointer-events: none;
+  z-index: 10;
+}
+.ch::before, .ch::after {
+  content: '';
+  position: absolute;
+  background: var(--primary);
+  opacity: 0.6;
+}
+.ch::before { width: 1px; height: 100%; left: 50%; top: 0; }
+.ch::after  { width: 100%; height: 1px; top: 50%; left: 0; }

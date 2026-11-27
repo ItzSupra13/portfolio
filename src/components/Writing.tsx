@@ -30,12 +30,12 @@ const writings: {
   //     status: "in progress",
   //   },
     {
-      date: "01/12/26",
-      title: "GEMM on CPU, GPU, & TPU to near-SOTA",
+      date: "23/11/26",
+      title: "Optimizing GEMM on GPU to near-SOTA with CUDA",
       readTime: "42 m",
       slug: "gemm-optimization",
       color: "#7fee64",
-      status: "in progress",
+      status: "completed",
     },
       {
       date: "03/11/26",

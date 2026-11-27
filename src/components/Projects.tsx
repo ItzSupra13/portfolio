@@ -60,7 +60,7 @@ export default function Work() {
           {/* Projects */}
           <motion.div layout className="space-y-6">
             {visibleProjects.map((project, i) => {
-              const side = project.imageSide ?? "right";
+              const side = project.landingSide ?? "right";
               const accent = project.colors[3] ?? "#60a5fa";
 
               return (
